@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const Button = ({ name, front_classes, back_classes }: { name: string, front_classes: string, back_classes: string }) => {

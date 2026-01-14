@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
+import "./globals.css";
 
 const londrinaSolid = Londrina_Solid({
   variable: "--font-londrina-solid",

@@ -1,15 +1,32 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 
 const Navbar = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen((previousOpen) => !previousOpen)
+    };
+
+    const navItems = () => {
+        return (
+            <div className="w-full flex flex-col items-stretch gap-5 p-10">
+                <Button name='Register' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-pink' />
+                <Button name='Login' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-purple' />
+            </div>
+        );
+    };
+
     return (
         <nav className="fixed p-2 top-0 left-0 right-0 z-50">
             <div className="max-w-7xl mx-auto h-auto flex items-center justify-between bg-white-transparent border border-white backdrop:blur-2xl rounded-2xl px-5 py-2.5">
                 <Link href="/">
                     <Image
-                        src="/logo.svg"
+                        src="/icons/logo.svg"
                         alt="worky-logo"
                         width={100}
                         height={50}
@@ -21,6 +38,21 @@ const Navbar = () => {
                     <Button name='Register' front_classes='h-10 w-40 border-2 border-black' back_classes='h-10 w-40 bg-custom-pink' />
                     <Button name='Login' front_classes='h-10 w-40 border-2 border-black' back_classes='h-10 w-40 bg-custom-purple' />
                 </div>
+
+                <div className="flex md:hidden transition-all duration-300 ease-in-out">
+                    <Image
+                        onClick={toggleMenu}
+                        src={`icons/${isOpen ? 'close' : 'menu'}.svg`}
+                        alt={`${isOpen ? 'close' : 'menu'}-icon`}
+                        width={50}
+                        height={50}
+                        priority
+                    />
+                </div>
+            </div>
+
+            <div className={`absolute mt-4 w-11/12 mx-auto h-auto flex md:hidden items-center justify-center bg-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out ${isOpen ? "right-0 left-0" : "-right-full"}`}>
+                {navItems()}
             </div>
         </nav>
     );

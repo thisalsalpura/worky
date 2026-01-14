@@ -17,7 +17,7 @@
 @layer utilities {
 
   .cus-btn-con {
-    @apply relative flex flex-col transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer;
+    @apply relative w-full flex flex-col transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer;
   }
 
   .cus-btn-front {
@@ -38,5 +38,5 @@ body {
 }
 
 .clip-custom {
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }
