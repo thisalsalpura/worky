@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Button from './Button';
+import Button from '../Button';
 
-const Navbar = () => {
+const Index_Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +14,7 @@ const Navbar = () => {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col items-stretch gap-5 p-10">
+            <div className="w-full flex flex-col items-stretch gap-8 p-10">
                 <Button name='Register' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-pink' />
                 <Button name='Login' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-purple' />
             </div>
@@ -22,8 +22,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed p-2 top-0 left-0 right-0 z-50">
-            <div className="max-w-7xl mx-auto h-auto flex items-center justify-between bg-white-transparent border border-white backdrop:blur-2xl rounded-2xl px-5 py-2.5">
+        <nav className="sticky p-2 top-0 left-0 right-0 z-50">
+            <div className="max-w-7xl mx-auto h-auto flex items-center justify-between bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-2xl px-5 py-2.5">
                 <Link href="/">
                     <Image
                         src="/icons/logo.svg"
@@ -51,11 +51,11 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`absolute mt-4 w-11/12 mx-auto h-auto flex md:hidden items-center justify-center bg-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out ${isOpen ? "right-0 left-0" : "-right-full"}`}>
+            <div className={`absolute mt-4 w-11/12 mx-auto h-auto flex md:hidden items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out ${isOpen ? "right-0 left-0" : "-right-full"}`}>
                 {navItems()}
             </div>
         </nav>
     );
 }
 
-export default Navbar;
+export default Index_Navbar;

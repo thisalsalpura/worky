@@ -9,7 +9,8 @@
   --font-heading: var(--font-londrina-solid);
   --font-body: var(--font-ropa-sans);
 
-  --color-white-transparent: rgba(255, 255, 255, 0.4);
+  --color-custom-white-transparent: rgba(255, 255, 255, 0.4);
+  --color-custom-light-black: #1C1C21;
   --color-custom-pink: #D578CD;
   --color-custom-purple: #6A1CB9;
 }
@@ -39,4 +40,20 @@ body {
 
 .clip-custom {
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.custom-text-style {
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  -webkit-background-clip: text;
+}
+
+.custom-text-style-pink {
+  -webkit-text-stroke: 1px var(--color-custom-pink);
+}
+
+.custom-text-style-purple {
+  -webkit-text-stroke: 1px var(--color-custom-purple);
 }
