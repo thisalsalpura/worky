@@ -45,9 +45,13 @@ body {
 .custom-text-style {
   color: transparent;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.025em;
   background: transparent;
   -webkit-background-clip: text;
+}
+
+.custom-text-style-black {
+  -webkit-text-stroke: 1px var(--foreground);
 }
 
 .custom-text-style-pink {
