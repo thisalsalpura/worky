@@ -4,10 +4,10 @@
 @import "swiper/css/autoplay";
 
 :root {
-  --background: #EEEEEE;
-  --foreground: #000000;
+  --white: #EEEEEE;
+  --black: #000000;
 
-  --swiper-pagination-color: #6A1CB9;
+  --swiper-pagination-color: #EEEEEE;
   --swiper-pagination-bullet-inactive-color: #000000;
   --swiper-pagination-bullet-inactive-opacity: 0.5;
 }
@@ -16,6 +16,7 @@
   --font-heading: var(--font-londrina-solid);
   --font-body: var(--font-ropa-sans);
 
+  --color-custom-white: #EEEEEE;
   --color-custom-white-transparent: rgba(255, 255, 255, 0.4);
   --color-custom-light-black: #1C1C21;
   --color-custom-pink: #D578CD;
@@ -40,8 +41,8 @@
 
 body {
   height: 100%;
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-body);
   overflow-x: hidden;
 }
@@ -58,8 +59,12 @@ body {
   -webkit-background-clip: text;
 }
 
+.custom-text-style-white {
+  -webkit-text-stroke: 1px var(--white);
+}
+
 .custom-text-style-black {
-  -webkit-text-stroke: 1px var(--foreground);
+  -webkit-text-stroke: 1px var(--black);
 }
 
 .custom-text-style-pink {
