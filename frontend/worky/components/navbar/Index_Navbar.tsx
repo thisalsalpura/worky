@@ -51,7 +51,7 @@ const Index_Navbar = () => {
                 </div>
             </div>
 
-            <div className={`absolute mt-4 w-11/12 mx-auto h-auto flex md:hidden items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out ${isOpen ? "right-0 left-0" : "-right-full"}`}>
+            <div className={`absolute mt-4 w-11/12 mx-auto h-auto items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out ${isOpen ? "flex md:hidden right-0 left-0" : "hidden -right-full"}`}>
                 {navItems()}
             </div>
         </nav>

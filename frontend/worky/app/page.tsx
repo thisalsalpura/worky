@@ -44,12 +44,12 @@ export default function Home() {
             }}
             pagination={{ clickable: true }}
             modules={[Autoplay, Pagination]}
-            className="h-64 lg:h-80"
+            className="w-full h-auto"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="flex flex-col items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg">
-                <FontAwesomeIcon icon={category.icon} className="text-7xl lg:text-9xl" />
-                <p className="text-xl lg:text-3xl text-center font-heading custom-text-style custom-text-style-black">
+              <SwiperSlide key={category.id} className="flex! flex-col items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg p-10 gap-10">
+                <FontAwesomeIcon icon={category.icon} className="text-7xl lg:text-9xl text-center" />
+                <p className="mb-2.5 text-xl lg:text-3xl text-center font-heading custom-text-style custom-text-style-black">
                   {category.title}
                 </p>
               </SwiperSlide>
