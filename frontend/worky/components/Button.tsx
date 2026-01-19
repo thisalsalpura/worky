@@ -1,7 +1,13 @@
 'use client';
 import React from 'react';
 
-const Button = ({ name, front_classes, back_classes }: { name: string, front_classes: string, back_classes: string }) => {
+interface ButtonProps {
+  name: string;
+  front_classes: string;
+  back_classes: string;
+}
+
+const Button = ({ name, front_classes, back_classes }: ButtonProps) => {
   return (
     <button className='cus-btn-con'>
       <div className={`${front_classes || ''} cus-btn-front clip-custom`}>

@@ -1,15 +1,15 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { categories } from '@/constants/categories';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TiltCard from '@/components/TiltCard';
 
 export default function Home() {
   return (
     <div className="flex flex-col h-full items-center justify-center gap-10">
-      <section className="w-full h-auto bg-custom-light-black border border-black rounded-lg">
+      <section className="w-full h-auto bg-custom-light-black border-2 border-black rounded-lg">
         <div className="grid grid-cols-12 grid-rows-12 h-full">
           <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-5">
             <p className="text-2xl md:text-xl lg:text-3xl text-center md:text-left font-heading custom-text-style custom-text-style-white"><span className="custom-text-style-pink">Find skilled freelancers ready to bring your ideas to life.</span> Post your project, connect with talent, and get quality work done—on your terms.</p>
@@ -42,8 +42,7 @@ export default function Home() {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={{ clickable: true }}
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay]}
             breakpoints={{
               320: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
@@ -52,11 +51,13 @@ export default function Home() {
             className="w-full h-auto"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="flex! flex-col items-center justify-center bg-custom-light-black border border-black rounded-lg p-10 gap-10">
-                <FontAwesomeIcon icon={category.icon} className="text-7xl lg:text-9xl text-custom-white text-center" />
-                <p className="mb-2.5 text-xl lg:text-3xl text-center font-heading custom-text-style custom-text-style-white">
-                  {category.title}
-                </p>
+              <SwiperSlide key={category.id} className="flex justify-center p-4">
+                <TiltCard className="flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-10">
+                  <FontAwesomeIcon icon={category.icon} className="text-7xl lg:text-9xl text-custom-white text-center tilt-pop" />
+                  <p className="mb-2.5 text-base sm:text-xl xl:text-2xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
+                    {category.title}
+                  </p>
+                </TiltCard>
               </SwiperSlide>
             ))}
           </Swiper>
