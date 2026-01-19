@@ -35,7 +35,7 @@ export default function Home() {
       <section className="flex flex-col w-full h-auto items-start justify-center">
         <p className="text-3xl text-left font-heading tracking-wide custom-text-style custom-text-style-black">Categories</p>
 
-        <div className="w-full h-auto mt-5">
+        <div className="mt-5 w-full h-64 sm:h-80">
           <Swiper
             spaceBetween={30}
             autoplay={{
@@ -48,13 +48,13 @@ export default function Home() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="w-full h-auto"
+            className="w-full h-full"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="flex justify-center p-4">
-                <TiltCard className="flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-10">
-                  <FontAwesomeIcon icon={category.icon} className="text-7xl lg:text-9xl text-custom-white text-center tilt-pop" />
-                  <p className="mb-2.5 text-base sm:text-xl xl:text-2xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
+              <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
+                <TiltCard className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
+                  <FontAwesomeIcon icon={category.icon} className="text-7xl sm:text-9xl text-custom-white text-center tilt-pop" />
+                  <p className="text-xl sm:text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
                     {category.title}
                   </p>
                 </TiltCard>
