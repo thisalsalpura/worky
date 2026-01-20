@@ -35,7 +35,7 @@ export default function Home() {
       <section className="flex flex-col w-full h-auto items-start justify-center">
         <p className="text-3xl text-left font-heading tracking-wide custom-text-style custom-text-style-black">Categories</p>
 
-        <div className="mt-5 w-full h-64 sm:h-80">
+        <div className="mt-5 w-full h-full">
           <Swiper
             spaceBetween={30}
             autoplay={{
@@ -51,10 +51,10 @@ export default function Home() {
             className="w-full h-full"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
-                <TiltCard className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
-                  <FontAwesomeIcon icon={category.icon} className="text-7xl sm:text-9xl text-custom-white text-center tilt-pop" />
-                  <p className="text-xl sm:text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
+              <SwiperSlide key={category.id} className="h-auto flex justify-center p-4">
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
+                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center tilt-pop" />
+                  <p className="text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
                     {category.title}
                   </p>
                 </TiltCard>
