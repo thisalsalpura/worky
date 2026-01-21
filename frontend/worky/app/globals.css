@@ -1,15 +1,10 @@
 @import "tailwindcss";
 @import "swiper/css";
-@import "swiper/css/pagination";
 @import "swiper/css/autoplay";
 
 :root {
   --white: #EEEEEE;
   --black: #000000;
-
-  --swiper-pagination-color: #EEEEEE;
-  --swiper-pagination-bullet-inactive-color: #000000;
-  --swiper-pagination-bullet-inactive-opacity: 0.5;
 }
 
 @theme inline {
@@ -24,7 +19,6 @@
 }
 
 @layer utilities {
-
   .cus-btn-con {
     @apply relative w-full flex flex-col transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer;
   }
@@ -36,7 +30,6 @@
   .cus-btn-back {
     @apply ml-1 -mt-9 rounded-md z-10;
   }
-
 }
 
 body {
@@ -73,6 +66,20 @@ body {
 
 .custom-text-style-purple {
   -webkit-text-stroke: 1px var(--color-custom-purple);
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+.swiper-slide>div {
+  height: 100%;
+  width: 100%;
 }
 
 .transform-style-preserve-3d {

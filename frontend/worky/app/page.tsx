@@ -21,7 +21,7 @@ export default function Home() {
               alt="home-image"
               width={240}
               height={240}
-              className='object-cover'
+              className='object-cover aspect-square'
               priority
             />
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-auto flex justify-center p-4">
                 <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
-                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center tilt-pop" />
+                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
                     {category.title}
                   </p>
@@ -62,10 +62,6 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
-      </section>
-
-      <section>
-
       </section>
     </div>
   );
