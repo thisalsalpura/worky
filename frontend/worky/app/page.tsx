@@ -5,6 +5,7 @@ import { Autoplay } from 'swiper/modules';
 import { categories } from '@/constants/categories';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TiltCard from '@/components/TiltCard';
+import Button from '@/components/Button';
 
 export default function Home() {
   return (
@@ -32,12 +33,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col w-full h-auto items-start justify-center">
-        <p className="text-3xl text-left font-heading tracking-wide custom-text-style custom-text-style-black">Categories</p>
+      <section className="flex flex-col w-full h-auto items-center justify-center gap-4">
+        <div className="w-full h-auto flex items-center justify-start p-4">
+          <p className="text-4xl text-left font-heading custom-text-style custom-text-style-black">Categories</p>
+        </div>
 
-        <div className="mt-5 w-full h-full">
+        <div className="w-full h-auto">
           <Swiper
-            spaceBetween={30}
+            spaceBetween={16}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
@@ -61,6 +64,36 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </section>
+
+      <section className="w-full h-auto grid grid-cols-12 grid-rows-12 items-center justify-center gap-4">
+        <div className="h-full col-span-12 lg:col-span-4 row-span-2 lg:row-span-12 flex items-center justify-start lg:justify-center p-4">
+          <p className="text-4xl text-left lg:text-center font-heading custom-text-style custom-text-style-black wrap-break-word">Let&apos;s work Together!</p>
+        </div>
+
+        <div className="h-full col-span-12 lg:col-span-4 row-span-5 lg:row-span-12 flex items-center justify-center p-4">
+          <TiltCard className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
+            <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Seller</h2>
+
+            <div className="w-full h-0.5 bg-white opacity-25" />
+
+            <p className="text-lg text-white text-center font-body">Turn your skills into income. Create your profile, showcase your expertise and start getting hired by clients who value what you do.</p>
+
+            <Button name='Register' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-pink' text_color='text-white' />
+          </TiltCard>
+        </div>
+
+        <div className="h-full col-span-12 lg:col-span-4 row-span-5 lg:row-span-12 flex items-center justify-center p-4">
+          <TiltCard className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
+            <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Buyer</h2>
+
+            <div className="w-full h-0.5 bg-white opacity-25" />
+
+            <p className="text-lg text-white text-center font-body">Find skilled freelancers ready to bring your ideas to life. Post your project, connect with talent and get quality work done—on your terms.</p>
+
+            <Button name='Login' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-purple' text_color='text-white' />
+          </TiltCard>
         </div>
       </section>
     </div>
