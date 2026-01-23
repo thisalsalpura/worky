@@ -20,7 +20,7 @@
 
 @layer utilities {
   .cus-btn-con {
-    @apply relative inline-flex flex-col transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer;
+    @apply relative flex flex-col transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer;
   }
 
   .cus-btn-front {
@@ -38,6 +38,14 @@ body {
   color: var(--black);
   font-family: var(--font-body);
   overflow-x: hidden;
+}
+
+.bg-blur {
+  inset: 0;
+  background-color: #ffffff33;
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  transition: 250ms;
 }
 
 .clip-custom {
