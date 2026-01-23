@@ -14,9 +14,9 @@ const Index_Navbar = () => {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col items-stretch gap-8 p-10">
-                <Button name='Register' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-pink' />
-                <Button name='Login' front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-purple' />
+            <div className="w-full flex flex-col items-center gap-8 p-10">
+                <Button name='Register' fullWidth front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-pink' />
+                <Button name='Login' fullWidth front_classes='h-10 w-full border-2 border-black' back_classes='h-10 w-full bg-custom-purple' />
             </div>
         );
     };

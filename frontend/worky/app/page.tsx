@@ -9,7 +9,9 @@ import Button from '@/components/Button';
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full items-center justify-center gap-10">
+    <div className="flex flex-col h-full items-center justify-center gap-12">
+
+      {/* HERO SECTION */}
       <section className="w-full h-auto bg-custom-light-black border-2 border-black rounded-lg">
         <div className="grid grid-cols-12 grid-rows-12 h-full">
           <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-5">
@@ -33,9 +35,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CATEGORIES SECTION */}
       <section className="flex flex-col w-full h-auto items-center justify-center gap-4">
-        <div className="w-full h-auto flex items-center justify-start p-4">
-          <p className="text-4xl text-left font-heading custom-text-style custom-text-style-black">Categories</p>
+        <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
+          <p className="text-4xl text-center md:text-left font-heading custom-text-style custom-text-style-black">Categories</p>
         </div>
 
         <div className="w-full h-auto">
@@ -54,7 +57,7 @@ export default function Home() {
             className="w-full h-full"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="h-auto flex justify-center p-4">
+              <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
                 <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
                   <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
@@ -67,35 +70,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full h-auto grid grid-cols-12 grid-rows-12 items-center justify-center gap-4">
-        <div className="h-full col-span-12 lg:col-span-4 row-span-2 lg:row-span-12 flex items-center justify-start lg:justify-center p-4">
-          <p className="text-4xl text-left lg:text-center font-heading custom-text-style custom-text-style-black wrap-break-word">Let&apos;s work Together!</p>
+      {/* WORK TOGETHER SECTION */}
+      <section className='flex flex-col w-full h-auto items-center justify-center gap-4'>
+        <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
+          <p className="text-4xl text-center md:text-left font-heading custom-text-style custom-text-style-black">Let&apos;s work Together!</p>
         </div>
 
-        <div className="h-full col-span-12 lg:col-span-4 row-span-5 lg:row-span-12 flex items-center justify-center p-4">
-          <TiltCard className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
-            <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Seller</h2>
+        <div className="w-full h-auto grid grid-cols-12 grid-rows-12 items-center justify-center gap-4">
+          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4">
+            <div className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5 lg:gap-10">
+              <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Seller</h2>
 
-            <div className="w-full h-0.5 bg-white opacity-25" />
+              <div className="w-full h-0.5 bg-white opacity-25" />
 
-            <p className="text-lg text-white text-center font-body">Turn your skills into income. Create your profile, showcase your expertise and start getting hired by clients who value what you do.</p>
+              <p className="text-lg text-white text-center font-body">Turn your skills into income. Create your profile, showcase your expertise and start getting hired by clients who value what you do.</p>
 
-            <Button name='Register' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-pink' text_color='text-white' />
-          </TiltCard>
-        </div>
+              <Button name='Register' fullWidth front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-pink' text_color='text-white' />
+            </div>
+          </div>
 
-        <div className="h-full col-span-12 lg:col-span-4 row-span-5 lg:row-span-12 flex items-center justify-center p-4">
-          <TiltCard className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5">
-            <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Buyer</h2>
+          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4">
+            <div className="h-full flex flex-col items-center justify-between bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5 lg:gap-10">
+              <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Buyer</h2>
 
-            <div className="w-full h-0.5 bg-white opacity-25" />
+              <div className="w-full h-0.5 bg-white opacity-25" />
 
-            <p className="text-lg text-white text-center font-body">Find skilled freelancers ready to bring your ideas to life. Post your project, connect with talent and get quality work done—on your terms.</p>
+              <p className="text-lg text-white text-center font-body">Find skilled freelancers ready to bring your ideas to life. Post your project, connect with talent and get quality work done—on your terms.</p>
 
-            <Button name='Login' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-purple' text_color='text-white' />
-          </TiltCard>
+              <Button name='Login' fullWidth front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-purple' text_color='text-white' />
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* JOIN WORKY SECTION */}
+      <section className="w-full h-auto p-4">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-black rounded-lg p-10 gap-5 lg:gap-10">
+          <h2 className="text-2xl md:text-3xl text-white text-center font-heading">Freelance services at your fingertips</h2>
+
+          <div className="w-full h-0.5 bg-white opacity-25" />
+
+          <Button name='Join Worky' front_classes='h-10 w-40 border-2 border-white' back_classes='h-10 w-40 bg-custom-purple' text_color='text-white' />
+        </div>
+      </section>
+
     </div>
   );
 }
