@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
+import Index_Navbar from "@/components/navbar/Index_Navbar";
+import "@/libs/fontawesome"
 import "./globals.css";
 
 const londrinaSolid = Londrina_Solid({
@@ -41,9 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`}>
+
+        <Index_Navbar />
+
         <div className="max-w-7xl mx-auto min-h-screen p-5">
           {children}
         </div>
+
       </body>
     </html>
   );
