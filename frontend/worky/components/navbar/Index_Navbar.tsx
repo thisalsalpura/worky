@@ -26,7 +26,7 @@ const Index_Navbar = () => {
             <div className="max-w-7xl mx-auto h-auto flex items-center justify-between bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-2xl px-5 py-2.5">
                 <Link href="/">
                     <Image
-                        src="/icons/logo.svg"
+                        src="/icons/logo-black.svg"
                         alt="worky-logo"
                         width={100}
                         height={50}

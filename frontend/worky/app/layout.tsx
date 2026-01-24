@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
 import Index_Navbar from "@/components/navbar/Index_Navbar";
+import Footer from "@/components/Footer";
 import "@/libs/fontawesome"
 import "./globals.css";
 
@@ -49,6 +50,8 @@ export default function RootLayout({
         <div className="max-w-7xl mx-auto min-h-screen p-5">
           {children}
         </div>
+
+        <Footer />
 
       </body>
     </html>
