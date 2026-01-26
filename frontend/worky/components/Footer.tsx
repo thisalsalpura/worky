@@ -1,13 +1,16 @@
 import React from 'react';
+import Link from 'next/link';
 import { social_medias } from '@/constants/social_medias';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     return (
-        <footer className='max-w-7xl mx-auto h-auto flex items-center justify-center p-5'>
+        <footer className='max-w-7xl mx-auto w-full h-auto flex items-center justify-center p-5'>
             <div className='w-full h-full flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8'>
-                <h2 className="text-2xl md:text-3xl text-white text-left font-heading">Worky</h2>
+                <Link href="/">
+                    <h2 className="text-2xl md:text-3xl text-white text-left font-heading">Worky</h2>
+                </Link>
 
                 <div className="w-full h-0.5 bg-white opacity-10" />
 
@@ -25,38 +28,38 @@ const Footer = () => {
                     </div>
 
                     <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
-                        <h2 className="text-lg text-white text-left font-body font-semibold">Company</h2>
+                        <h2 className="text-lg text-white text-left font-body font-semibold">Services</h2>
 
                         <ul className="text-sm text-white text-left font-body space-y-1">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">Integrations</a></li>
                         </ul>
                     </div>
 
                     <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
-                        <h2 className="text-lg text-white text-left font-body font-semibold">Company</h2>
+                        <h2 className="text-lg text-white text-left font-body font-semibold">Resources</h2>
 
                         <ul className="text-sm text-white text-left font-body space-y-1">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Tutorials</a></li>
+                            <li><a href="#">Webinars</a></li>
                         </ul>
                     </div>
 
                     <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
-                        <h2 className="text-lg text-white text-left font-body font-semibold">Company</h2>
+                        <h2 className="text-lg text-white text-left font-body font-semibold">Legal</h2>
 
                         <ul className="text-sm text-white text-left font-body space-y-1">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">GDPR</a></li>
+                            <li><a href="#">Compliance</a></li>
                         </ul>
                     </div>
                 </div>

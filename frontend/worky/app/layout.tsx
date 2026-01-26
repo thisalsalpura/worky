@@ -44,15 +44,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`}>
+        <div className="min-h-screen flex flex-col">
 
-        <Index_Navbar />
+          <Index_Navbar />
 
-        <div className="max-w-7xl mx-auto min-h-screen p-5">
-          {children}
+          <main className="flex-1 max-w-7xl mx-auto w-full p-5">
+            {children}
+          </main>
+
+          <Footer />
+
         </div>
-
-        <Footer />
-
       </body>
     </html>
   );
