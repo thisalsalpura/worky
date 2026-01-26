@@ -2,15 +2,15 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import { categories } from '@/constants/categories';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { categories } from '@/constants/categories';
 import TiltCard from '@/components/TiltCard';
 import Button from '@/components/Button';
 
-export default function Home() {
+const Index = () => {
   return (
-    <div className="flex flex-col h-full items-center justify-center gap-12">
+    <main className="w-full h-full flex flex-col items-center justify-center gap-12">
 
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-custom-light-black border-2 border-custom-light-black rounded-lg">
@@ -23,8 +23,8 @@ export default function Home() {
             <Image
               src="/images/home-img.svg"
               alt="home-image"
-              width={240}
-              height={240}
+              width={250}
+              height={250}
               className='object-cover aspect-square'
               priority
             />
@@ -88,7 +88,7 @@ export default function Home() {
 
               <div className="w-full h-0.5 bg-white opacity-10" />
 
-              <Button name='Register' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-pink' text_color='text-white' />
+              <Button name='Register' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-pink' text_color='text-white' />
             </div>
           </div>
 
@@ -102,7 +102,7 @@ export default function Home() {
 
               <div className="w-full h-0.5 bg-white opacity-10" />
 
-              <Button name='Login' front_classes='h-10 w-full border-2 border-white' back_classes='h-10 w-full bg-custom-purple' text_color='text-white' />
+              <Button name='Login' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function Home() {
 
           <div className="w-full h-0.5 bg-white opacity-10" />
 
-          <Button name='Join Worky' btn_class='mx-auto w-full sm:w-40' front_classes='h-10 w-full sm:w-40 border-2 border-white' back_classes='h-10 w-full sm:w-40 bg-blue-700' text_color='text-white' />
+          <Button name='Join Worky' href='/login' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
         </div>
       </section>
 
@@ -162,13 +162,15 @@ export default function Home() {
           <div className="w-full h-auto flex flex-col md:flex-row gap-4">
             <input id="email" name="email" type="email" className="w-full h-11 bg-blur text-lg text-white font-body border-2 border-white rounded-md p-2" placeholder="Your Email Address..." required />
 
-            <Button name='Subscribe' btn_class='mx-auto w-full sm:w-40' front_classes='h-10 w-full sm:w-40 border-2 border-white' back_classes='h-10 w-full sm:w-40 bg-blue-700' text_color='text-white' />
+            <Button name='Subscribe' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
           </div>
 
-          <p className="text-lg text-white text-left font-body">By subscribing, you agree to our <span className="text-blue-700 cursor-pointer">Terms of Service</span> and <span className="text-blue-700 cursor-pointer">Privacy Policy</span>.</p>
+          <p className="text-lg text-white text-left font-body">By subscribing, you agree to our <span className="text-custom-purple cursor-pointer">Terms of Service</span> and <span className="text-custom-purple cursor-pointer">Privacy Policy</span>.</p>
         </div>
       </section>
 
-    </div>
+    </main>
   );
 }
+
+export default Index;
