@@ -40,7 +40,7 @@ const Login = () => {
                         </div>
 
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8">
+                            <div className="w-full h-auto flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
                                 <h3 className="text-2xl text-white text-left font-heading">Login</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-4'>
@@ -91,7 +91,7 @@ const Login = () => {
                         className="w-full h-full grid grid-cols-12"
                     >
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8">
+                            <div className="w-full h-auto flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
                                 <h3 className="text-2xl text-white text-left font-heading">Register</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-4'>

@@ -15,11 +15,11 @@ const Index = () => {
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-custom-light-black border-2 border-custom-light-black rounded-lg">
         <div className="grid grid-cols-12 grid-rows-12 h-full">
-          <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-4">
+          <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-5">
             <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-left font-heading custom-text-style custom-text-style-white"><span className="custom-text-style-pink">Find skilled freelancers ready to bring your ideas to life.</span> Post your project, connect with talent and get quality work done—on your terms.</h3>
           </div>
 
-          <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center overflow-hidden p-4">
+          <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center overflow-hidden p-5">
             <Image
               src="/images/home-img.svg"
               alt="home-image"
@@ -30,7 +30,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-4">
+          <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-5">
             <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-right font-heading custom-text-style custom-text-style-white">Turn your skills into income. <span className="custom-text-style-purple">Create your profile, showcase your expertise and start getting hired by clients who value what you do.</span></h3>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Index = () => {
           >
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-6">
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6">
                   <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
                     {category.title}
@@ -79,7 +79,7 @@ const Index = () => {
 
         <div className="w-full h-auto grid grid-cols-12 grid-rows-12">
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pr-12">
-            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-6 lg:gap-8">
+            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
               <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Seller</h3>
 
               <div className="w-full h-0.5 bg-white opacity-10" />
@@ -93,7 +93,7 @@ const Index = () => {
           </div>
 
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pl-12">
-            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-6 lg:gap-8">
+            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
               <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Buyer</h3>
 
               <div className="w-full h-0.5 bg-white opacity-10" />
@@ -110,7 +110,7 @@ const Index = () => {
 
       {/* JOIN WORKY SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8">
+        <div className="w-full h-full flex flex-col justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Freelance services at your fingertips</h3>
 
           <div className="w-full h-0.5 bg-white opacity-10" />
@@ -121,7 +121,7 @@ const Index = () => {
 
       {/* DOWNLOAD APP SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Work fast from anywhere</h3>
 
           <div className="w-full h-0.5 bg-white opacity-10" />
@@ -152,7 +152,7 @@ const Index = () => {
 
       {/* NEWSLETTER SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-start justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8">
+        <div className="w-full h-full flex flex-col items-start justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-white text-left font-heading">Get more updates</h3>
 
           <div className="w-full h-0.5 bg-white opacity-10" />

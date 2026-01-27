@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
     return (
         <footer className='max-w-7xl mx-auto w-full h-auto flex items-center justify-center p-5'>
-            <div className='w-full h-full flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-10 gap-8'>
+            <div className='w-full h-full flex flex-col bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8'>
                 <Link href="/">
                     <h2 className="text-2xl md:text-3xl text-white text-left font-heading">Worky</h2>
                 </Link>

@@ -14,7 +14,7 @@ const Index_Navbar = () => {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col gap-8 p-10">
+            <div className="w-full flex flex-col gap-8 p-5 sm:p-10">
                 <Button name='Register' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-black' back_classes='h-10 bg-custom-pink' />
                 <Button name='Login' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-black' back_classes='h-10 bg-custom-purple' />
             </div>
