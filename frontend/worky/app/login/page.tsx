@@ -46,14 +46,14 @@ const Login = () => {
                                 <div className='w-full h-auto flex flex-col gap-4'>
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='login_email' className="text-white text-left font-body font-semibold">Email Address</label>
-                                        <input id="login_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
+                                        <input id="login_email" className="w-full h-10 bg-blur text-white font-body px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='login_password' className="text-white text-left font-body font-semibold">Password</label>
                                         <div className="relative">
-                                            <input id="login_password" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
-                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
+                                            <input id="login_password" className="w-full h-10 bg-blur text-white font-body px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
+                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white cursor-pointer">
                                                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                             </button>
                                         </div>
@@ -97,24 +97,24 @@ const Login = () => {
                                 <div className='w-full h-auto flex flex-col gap-4'>
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='register_fname' className="text-white text-left font-body font-semibold">First Name</label>
-                                        <input id="register_fname" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="text" placeholder="Enter first name" required />
+                                        <input id="register_fname" className="w-full h-10 bg-blur text-white font-body px-2.5 rounded-md" type="text" placeholder="Enter first name" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='register_lname' className="text-white text-left font-body font-semibold">Last Name</label>
-                                        <input id="register_lname" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="text" placeholder="Enter last name" required />
+                                        <input id="register_lname" className="w-full h-10 bg-blur text-white font-body px-2.5 rounded-md" type="text" placeholder="Enter last name" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='register_email' className="text-white text-left font-body font-semibold">Email Address</label>
-                                        <input id="register_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
+                                        <input id="register_email" className="w-full h-10 bg-blur text-white font-body px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='register_password' className="text-white text-left font-body font-semibold">Password</label>
                                         <div className="relative">
-                                            <input id="register_password" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
-                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
+                                            <input id="register_password" className="w-full h-10 bg-blur text-white font-body px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
+                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white cursor-pointer">
                                                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                             </button>
                                         </div>

@@ -160,7 +160,7 @@ const Index = () => {
           <p className="text-lg text-white text-left font-body">Subscribe to our newsletter and never miss an opportunity—whether you&apos;re hiring or offering your skills.</p>
 
           <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-4">
-            <input id="email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Your email address..." required />
+            <input id="email" className="w-full h-10 bg-blur text-white font-body px-2.5 border-2 border-white rounded-md" type="email" placeholder="Your email address..." required />
 
             <Button name='Subscribe' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
           </div>
