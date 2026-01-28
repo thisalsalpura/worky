@@ -10,7 +10,7 @@ import Button from '@/components/Button';
 
 const Index = () => {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center gap-12">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-12">
 
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-custom-light-black border-2 border-custom-light-black rounded-lg">
@@ -159,8 +159,8 @@ const Index = () => {
 
           <p className="text-lg text-white text-left font-body">Subscribe to our newsletter and never miss an opportunity—whether you&apos;re hiring or offering your skills.</p>
 
-          <div className="w-full h-auto flex flex-col md:flex-row gap-4">
-            <input id="email" name="email" type="email" className="w-full h-11 bg-blur text-lg text-white font-body border-2 border-white rounded-md p-2" placeholder="Your Email Address..." required />
+          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-4">
+            <input id="email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Your email address..." required />
 
             <Button name='Subscribe' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
           </div>
@@ -169,7 +169,7 @@ const Index = () => {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }
 

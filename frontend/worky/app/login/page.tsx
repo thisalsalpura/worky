@@ -13,7 +13,7 @@ const Login = () => {
     const [isLogin, setIsLogin] = useState(true);
 
     return (
-        <main className='w-full h-full flex items-center justify-center'>
+        <div className='w-full h-full flex items-center justify-center'>
             <AnimatePresence mode="wait">
                 {isLogin ? (
                     <motion.div
@@ -25,7 +25,7 @@ const Login = () => {
                         className="w-full h-full grid grid-cols-12"
                     >
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
-                            <h2 className="absolute text-9xl text-center font-heading custom-text-style custom-text-style-purple">Worky</h2>
+                            <h1 className="absolute text-9xl text-center font-heading custom-text-style custom-text-style-purple">Worky</h1>
 
                             <div className="w-auto h-auto flex items-center justify-center z-10">
                                 <Image
@@ -45,15 +45,15 @@ const Login = () => {
 
                                 <div className='w-full h-auto flex flex-col gap-4'>
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
-                                        <label htmlFor='login_email' className="text-white text-left font-body font-semibold">Email</label>
-                                        <input id="login_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email" required />
+                                        <label htmlFor='login_email' className="text-white text-left font-body font-semibold">Email Address</label>
+                                        <input id="login_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='login_password' className="text-white text-left font-body font-semibold">Password</label>
                                         <div className="relative">
                                             <input id="login_password" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
-                                            <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
+                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
                                                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                             </button>
                                         </div>
@@ -106,15 +106,15 @@ const Login = () => {
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
-                                        <label htmlFor='register_email' className="text-white text-left font-body font-semibold">Email</label>
-                                        <input id="register_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email" required />
+                                        <label htmlFor='register_email' className="text-white text-left font-body font-semibold">Email Address</label>
+                                        <input id="register_email" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 rounded-md" type="email" placeholder="Enter email address" required />
                                     </div>
 
                                     <div className='w-full h-auto flex flex-col gap-1.5'>
                                         <label htmlFor='register_password' className="text-white text-left font-body font-semibold">Password</label>
                                         <div className="relative">
                                             <input id="register_password" className="w-full h-10 bg-blur text-white font-body py-0.5 px-2.5 pr-10 rounded-md" type={showPassword ? "text" : "password"} placeholder="Enter password" required />
-                                            <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
+                                            <button aria-label="Toggle password visibility" type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-white">
                                                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                             </button>
                                         </div>
@@ -132,7 +132,7 @@ const Login = () => {
                         </div>
 
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
-                            <h2 className="absolute text-9xl text-center font-heading custom-text-style custom-text-style-purple">Worky</h2>
+                            <h1 className="absolute text-9xl text-center font-heading custom-text-style custom-text-style-purple">Worky</h1>
 
                             <div className="w-auto h-auto flex items-center justify-center z-10">
                                 <Image
@@ -148,7 +148,7 @@ const Login = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </main>
+        </div>
     );
 }
 

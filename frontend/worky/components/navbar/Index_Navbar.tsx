@@ -39,16 +39,15 @@ const Index_Navbar = () => {
                     <Button name='Login' href='/login' btn_class='w-40' front_classes='h-10 border-2 border-black' back_classes='h-10 bg-custom-purple' />
                 </div>
 
-                <div className="flex md:hidden transition-all duration-300 ease-in-out">
+                <button className="flex md:hidden transition-all duration-300 ease-in-out" onClick={toggleMenu} type="button" aria-label="Toggle menu">
                     <Image
-                        onClick={toggleMenu}
-                        src={`icons/${isOpen ? 'close' : 'menu'}.svg`}
+                        src={`/icons/${isOpen ? 'close' : 'menu'}.svg`}
                         alt={`${isOpen ? 'close' : 'menu'}-icon`}
                         width={50}
                         height={50}
                         priority
                     />
-                </div>
+                </button>
             </div>
 
             <div className={`${isOpen ? "flex md:hidden right-0 left-0" : "hidden -right-full"} absolute mt-2 w-11/12 mx-auto h-auto items-center justify-center bg-custom-white-transparent border border-white backdrop:blur-2xl rounded-lg transition-all duration-300 ease-in-out`}>

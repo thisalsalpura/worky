@@ -72,7 +72,9 @@ const Footer = () => {
 
                         <div className="flex flex-wrap justify-start gap-4">
                             {social_medias.map((social_media) => (
-                                <FontAwesomeIcon key={social_media.id} icon={social_media.icon} href={social_media.href} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
+                                <a key={social_media.id} href={social_media.href} aria-label={`Visit our ${social_media.id} page`} target="_blank" rel="noopener noreferrer">
+                                    <FontAwesomeIcon icon={social_media.icon} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
+                                </a>
                             ))}
                         </div>
                     </div>
@@ -80,8 +82,12 @@ const Footer = () => {
                         <p className="text-left sm:text-right text-white font-body font-semibold">Mobile App</p>
 
                         <div className="flex flex-wrap justify-start sm:justify-end gap-4">
-                            <FontAwesomeIcon icon={faGooglePlay} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
-                            <FontAwesomeIcon icon={faApple} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
+                            <a href="#" aria-label="Download on Google Play" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faGooglePlay} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
+                            </a>
+                            <a href="#" aria-label="Download on App Store" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faApple} className="text-2xl text-white cursor-pointer hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out" />
+                            </a>
                         </div>
                     </div>
                 </div>
