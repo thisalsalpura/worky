@@ -10,32 +10,38 @@ import {
 export const social_medias = [
     {
         id: "1",
+        name: "Instagram",
         href: "/",
-        icon: faSquareInstagram,
+        icon: faSquareInstagram
     },
     {
         id: "2",
+        name: "Facebook",
         href: "/",
-        icon: faSquareFacebook,
+        icon: faSquareFacebook
     },
     {
         id: "3",
+        name: "Threads",
         href: "/",
-        icon: faSquareThreads,
+        icon: faSquareThreads
     },
     {
         id: "4",
+        name: "X Twitter",
         href: "/",
-        icon: faSquareXTwitter,
+        icon: faSquareXTwitter
     },
     {
         id: "5",
+        name: "Youtube",
         href: "/",
-        icon: faSquareYoutube,
+        icon: faSquareYoutube
     },
     {
         id: "6",
+        name: "LinkedIn",
         href: "/",
-        icon: faSquareLinkedin,
-    },
+        icon: faSquareLinkedin
+    }
 ] as const;

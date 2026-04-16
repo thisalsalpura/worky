@@ -3,33 +3,33 @@ import {
   faMicrochip,
   faVideo,
   faSignature,
-  faMusic,
+  faMusic
 } from "@fortawesome/free-solid-svg-icons";
 
 export const categories = [
   {
     id: "design",
     title: "Graphic & Design",
-    icon: faPenNib,
+    icon: faPenNib
   },
   {
     id: "tech",
     title: "Programming & Tech",
-    icon: faMicrochip,
+    icon: faMicrochip
   },
   {
     id: "video",
     title: "Video & Animation",
-    icon: faVideo,
+    icon: faVideo
   },
   {
     id: "writing",
     title: "Writing & Translation",
-    icon: faSignature,
+    icon: faSignature
   },
   {
     id: "music",
     title: "Music & Audio",
-    icon: faMusic,
-  },
+    icon: faMusic
+  }
 ] as const;

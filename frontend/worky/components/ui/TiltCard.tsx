@@ -1,15 +1,15 @@
 'use client';
-import { useEffect, useRef, ReactNode } from 'react';
+import React, { useEffect, useRef, ReactNode } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 
-interface TiltCardProps {
+type TiltCardProps = {
     children: ReactNode;
-    className?: string;
+    className: string;
 }
 
-export default function TiltCard({ children, className = '' }: TiltCardProps) {
+export function TiltCard({ children, className }: TiltCardProps) {
 
-    const tiltRef = useRef<HTMLDivElement | null>(null);
+    const tiltRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const tiltNode = tiltRef.current;
@@ -20,7 +20,7 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
             speed: 400,
             perspective: 1000,
             scale: 1.05,
-            glare: false,
+            glare: false
         });
 
         return () => {
@@ -30,7 +30,7 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
     }, []);
 
     return (
-        <div ref={tiltRef} className={`transform-style-preserve-3d ${className}`}>
+        <div ref={tiltRef} className={`${className} transform-style-preserve-3d`}>
             {children}
         </div>
     );

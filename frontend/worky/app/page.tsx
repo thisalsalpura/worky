@@ -4,19 +4,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { TiltCard } from '@/components/ui/TiltCard';
 import { categories } from '@/constants/categories';
-import TiltCard from '@/components/TiltCard';
-import Button from '@/components/Button';
+import { Button } from '@/components/ui/Button';
 
 const Index = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-12">
+    <main className="w-full h-full flex flex-col items-center justify-center gap-12">
 
       {/* HERO SECTION */}
-      <section className="w-full h-auto bg-custom-light-black border-2 border-custom-light-black rounded-lg">
+      <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
         <div className="grid grid-cols-12 grid-rows-12 h-full">
           <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-5">
-            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-left font-heading custom-text-style custom-text-style-white"><span className="custom-text-style-pink">Find skilled freelancers ready to bring your ideas to life.</span> Post your project, connect with talent and get quality work done—on your terms.</h3>
+            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+              Find skilled freelancers ready to bring your ideas to Life. <span className="text-primary-container">Post your project, connect with talent and get quality work done—on your Terms.</span>
+            </h3>
           </div>
 
           <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center overflow-hidden p-5">
@@ -31,22 +33,24 @@ const Index = () => {
           </div>
 
           <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-5">
-            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-right font-heading custom-text-style custom-text-style-white">Turn your skills into income. <span className="custom-text-style-purple">Create your profile, showcase your expertise and start getting hired by clients who value what you do.</span></h3>
+            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-right font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+              <span className="text-primary-container">Turn your skills into Income.</span> Create your profile, showcase your expertise and start getting hired by clients who value what you Do.
+            </h3>
           </div>
         </div>
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section className="flex flex-col w-full h-auto items-center justify-center gap-4">
+      <section className="w-full h-auto flex flex-col items-center justify-center gap-4">
         <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
-          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style custom-text-style-black">Categories</h2>
+          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Categories</h2>
         </div>
 
         <div className="w-full h-auto">
           <Swiper
             spaceBetween={16}
             autoplay={{
-              delay: 2500,
+              delay: 3000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
@@ -59,9 +63,9 @@ const Index = () => {
           >
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6">
-                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-custom-white text-center aspect-square tilt-pop" />
-                  <p className="text-3xl text-center font-heading custom-text-style custom-text-style-white tilt-pop">
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6">
+                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-background text-center aspect-square tilt-pop" />
+                  <p className="text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
                     {category.title}
                   </p>
                 </TiltCard>
@@ -72,37 +76,37 @@ const Index = () => {
       </section>
 
       {/* WORK TOGETHER SECTION */}
-      <section className='flex flex-col w-full h-auto items-center justify-center gap-4'>
+      <section className='w-full h-auto flex flex-col items-center justify-center gap-4'>
         <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
-          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style custom-text-style-black">Let&apos;s work Together!</h2>
+          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Let&apos;s work Together!</h2>
         </div>
 
         <div className="w-full h-auto grid grid-cols-12 grid-rows-12">
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pr-12">
-            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
-              <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Seller</h3>
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
+              <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
 
-              <div className="w-full h-0.5 bg-white opacity-10" />
+              <div className="w-full h-0.5 bg-outline" />
 
-              <p className="text-lg text-white text-center font-body">Turn your skills into income. Create your profile, showcase your expertise and start getting hired by clients who value what you do.</p>
+              <p className="text-lg text-background text-center font-base">Turn your skills into Income. Create your profile, showcase your expertise and start getting hired by clients who value what you Do.</p>
 
-              <div className="w-full h-0.5 bg-white opacity-10" />
+              <div className="w-full h-0.5 bg-outline" />
 
-              <Button name='Register' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-pink' text_color='text-white' />
+              <Button name="Become a Seller" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
 
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pl-12">
-            <div className="w-full h-full flex flex-col justify-between bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
-              <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Buyer</h3>
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
+              <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
 
-              <div className="w-full h-0.5 bg-white opacity-10" />
+              <div className="w-full h-0.5 bg-outline" />
 
-              <p className="text-lg text-white text-center font-body">Find skilled freelancers ready to bring your ideas to life. Post your project, connect with talent and get quality work done—on your terms.</p>
+              <p className="text-lg text-background text-center font-base">Find skilled freelancers ready to bring your ideas to Life. Post your project, connect with talent and get quality work done—on your Terms.</p>
 
-              <div className="w-full h-0.5 bg-white opacity-10" />
+              <div className="w-full h-0.5 bg-outline" />
 
-              <Button name='Login' href='/login' btn_class='w-full' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
+              <Button name="Hire Freelancers" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
         </div>
@@ -110,40 +114,40 @@ const Index = () => {
 
       {/* JOIN WORKY SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
-          <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Freelance services at your fingertips</h3>
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+          <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
 
-          <div className="w-full h-0.5 bg-white opacity-10" />
+          <div className="w-full h-0.5 bg-outline" />
 
-          <Button name='Join Worky' href='/login' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
+          <Button name="Join Worky" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
         </div>
       </section>
 
       {/* DOWNLOAD APP SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
-          <h3 className="text-2xl md:text-3xl text-white text-center font-heading">Work fast from anywhere</h3>
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+          <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
 
-          <div className="w-full h-0.5 bg-white opacity-10" />
+          <div className="w-full h-0.5 bg-outline" />
 
-          <p className="text-lg text-white text-center font-body">Stay up to date and move work forward with Worky on IOS & Android. Download the app today.</p>
+          <p className="text-lg text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
           <div className="flex flex-col md:flex-row gap-8">
-            <TiltCard className="w-auto inline-flex items-center justify-center gap-4 bg-blur border-2 border-white rounded-2xl p-4 cursor-pointer">
-              <FontAwesomeIcon icon={faApple} className="text-4xl text-white" />
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+              <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-base text-white font-body tilt-pop">Download on the</p>
-                <p className="text-xl text-white font-body tilt-pop">App Store</p>
+                <p className="text-sm text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
+                <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">App Store</p>
               </div>
             </TiltCard>
 
-            <TiltCard className="w-auto inline-flex items-center justify-center gap-4 bg-blur border-2 border-white rounded-2xl p-4 cursor-pointer">
-              <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-white" />
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+              <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-base text-white font-body tilt-pop">Download on the</p>
-                <p className="text-xl text-white font-body tilt-pop">Play Store</p>
+                <p className="text-sm text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
+                <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Play Store</p>
               </div>
             </TiltCard>
           </div>
@@ -152,24 +156,18 @@ const Index = () => {
 
       {/* NEWSLETTER SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-start justify-center bg-custom-light-black border-2 border-custom-light-black rounded-lg p-5 sm:p-10 gap-8">
-          <h3 className="text-2xl md:text-3xl text-white text-left font-heading">Get more updates</h3>
+        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+          <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
 
-          <div className="w-full h-0.5 bg-white opacity-10" />
+          <div className="w-full h-0.5 bg-outline" />
 
-          <p className="text-lg text-white text-left font-body">Subscribe to our newsletter and never miss an opportunity—whether you&apos;re hiring or offering your skills.</p>
+          <p className="text-lg text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
 
-          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-4">
-            <input id="email" className="w-full h-10 bg-blur text-white font-body px-2.5 border-2 border-white rounded-md" type="email" placeholder="Your email address..." required />
-
-            <Button name='Subscribe' btn_class='w-full sm:w-40' front_classes='h-10 border-2 border-white' back_classes='h-10 bg-custom-purple' text_color='text-white' />
-          </div>
-
-          <p className="text-lg text-white text-left font-body">By subscribing, you agree to our <span className="text-custom-purple cursor-pointer">Terms of Service</span> and <span className="text-custom-purple cursor-pointer">Privacy Policy</span>.</p>
+          <p className="text-lg text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
         </div>
       </section>
 
-    </div>
+    </main>
   );
 }
 

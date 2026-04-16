@@ -1,4 +1,4 @@
-import Bubble from "@/components/Bubble";
+import Bubble from "@/components/ui/Bubble";
 
 const Home = () => {
     return (
