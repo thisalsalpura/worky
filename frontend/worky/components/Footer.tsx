@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { social_medias } from '@/constants/social_medias';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
