@@ -42,15 +42,15 @@
 
 @layer utilities {
   .cus-btn {
-    @apply h-12 text-sm font-base font-semibold flex items-center justify-center rounded-xl px-5 gap-5 transition-colors duration-300 cursor-pointer;
+    @apply h-12 font-base font-semibold flex items-center justify-center rounded-xl px-5 gap-5 transition-colors duration-300 cursor-pointer;
   }
 
   .cus-btn-ping {
-    @apply absolute w-full h-full inline-flex rounded-full opacity-80 animate-ping;
+    @apply absolute w-full h-full flex flex-row rounded-full opacity-80 animate-ping;
   }
 
   .cus-btn-ping-dot {
-    @apply relative w-4 h-4 inline-flex rounded-full;
+    @apply relative w-4 h-4 flex flex-row rounded-full;
   }
 }
 

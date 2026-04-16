@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,14 +10,9 @@ export function Index_Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
 
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setMounted(true), 0);
-        return () => clearTimeout(timer);
-    }, []);
+    const isDark = resolvedTheme === 'dark';
 
     const toggleMenu = () => {
         setIsOpen((previousOpen) => !previousOpen)
@@ -38,7 +33,7 @@ export function Index_Navbar() {
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
                     <Link href="/">
                         <Image
-                            src={mounted && theme === 'dark' ? '/icons/logo-white.svg' : '/icons/logo-black.svg'}
+                            src={`/icons/${isDark ? 'logo-white.svg' : 'logo-black.svg'}`}
                             alt="worky-logo"
                             width={96}
                             height={48}

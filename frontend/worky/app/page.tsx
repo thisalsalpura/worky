@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 
 const Index = () => {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center gap-12">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-12">
 
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
@@ -86,11 +86,11 @@ const Index = () => {
             <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
 
-              <div className="w-full h-0.5 bg-outline" />
+              <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <p className="text-lg text-background text-center font-base">Turn your skills into Income. Create your profile, showcase your expertise and start getting hired by clients who value what you Do.</p>
+              <p className="text-background text-center font-base">Turn your skills into Income. Create your profile, showcase your expertise and start getting hired by clients who value what you Do.</p>
 
-              <div className="w-full h-0.5 bg-outline" />
+              <div className="w-full h-0.5 bg-outline opacity-20" />
 
               <Button name="Become a Seller" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
@@ -100,11 +100,11 @@ const Index = () => {
             <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
 
-              <div className="w-full h-0.5 bg-outline" />
+              <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <p className="text-lg text-background text-center font-base">Find skilled freelancers ready to bring your ideas to Life. Post your project, connect with talent and get quality work done—on your Terms.</p>
+              <p className="text-background text-center font-base">Find skilled freelancers ready to bring your ideas to Life. Post your project, connect with talent and get quality work done—on your Terms.</p>
 
-              <div className="w-full h-0.5 bg-outline" />
+              <div className="w-full h-0.5 bg-outline opacity-20" />
 
               <Button name="Hire Freelancers" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
@@ -117,7 +117,7 @@ const Index = () => {
         <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
 
-          <div className="w-full h-0.5 bg-outline" />
+          <div className="w-full h-0.5 bg-outline opacity-20" />
 
           <Button name="Join Worky" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
         </div>
@@ -128,16 +128,16 @@ const Index = () => {
         <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
 
-          <div className="w-full h-0.5 bg-outline" />
+          <div className="w-full h-0.5 bg-outline opacity-20" />
 
-          <p className="text-lg text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
+          <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
           <div className="flex flex-col md:flex-row gap-8">
             <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-sm text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
+                <p className="text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
                 <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">App Store</p>
               </div>
             </TiltCard>
@@ -146,7 +146,7 @@ const Index = () => {
               <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-sm text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
+                <p className="text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
                 <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Play Store</p>
               </div>
             </TiltCard>
@@ -159,15 +159,15 @@ const Index = () => {
         <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
           <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
 
-          <div className="w-full h-0.5 bg-outline" />
+          <div className="w-full h-0.5 bg-outline opacity-20" />
 
-          <p className="text-lg text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
+          <p className="text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
 
-          <p className="text-lg text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
+          <p className="text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }
 

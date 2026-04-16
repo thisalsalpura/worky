@@ -23,7 +23,7 @@ const ropaSans = Ropa_Sans({
 export const metadata: Metadata = {
   title: {
     template: "Worky",
-    default: "Worky - Freelance Marketplace Platform",
+    default: "Worky - Freelance Marketplace Platform"
   },
   description: "Worky is a scalable Freelance Marketplace Platform, connecting Clients and Freelancers Efficiently.",
   keywords: [

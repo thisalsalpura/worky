@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, ReactNode } from 'react';
+import { useEffect, useRef, ReactNode } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 
 type TiltCardProps = {
