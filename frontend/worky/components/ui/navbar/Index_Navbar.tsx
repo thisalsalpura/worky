@@ -1,16 +1,16 @@
 'use client';
 import { useState } from 'react';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../Button';
 import { ThemeToggle } from '../ThemeToggle';
+import { useTheme } from 'next-themes';
 
 export function Index_Navbar() {
 
-    const [isOpen, setIsOpen] = useState(false);
-
     const { resolvedTheme } = useTheme();
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const isDark = resolvedTheme === 'dark';
 
@@ -33,7 +33,7 @@ export function Index_Navbar() {
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
                     <Link href="/">
                         <Image
-                            src={`/icons/${isDark ? 'logo-white.svg' : 'logo-black.svg'}`}
+                            src={`/icons/logo-${isDark ? "white" : "black"}.svg`}
                             alt="worky-logo"
                             width={96}
                             height={48}

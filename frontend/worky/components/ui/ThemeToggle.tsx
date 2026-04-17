@@ -15,11 +15,7 @@ export function ThemeToggle() {
             className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group"
             aria-label="Toggle Theme"
         >
-            {isDark ? (
-                <FontAwesomeIcon icon={faSun} className="text-lg text-on-primary group-hover:text-primary" />
-            ) : (
-                <FontAwesomeIcon icon={faMoon} className="text-lg text-on-primary group-hover:text-primary" />
-            )}
+            <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="text-lg text-on-primary group-hover:text-primary" />
         </button>
     );
 }
