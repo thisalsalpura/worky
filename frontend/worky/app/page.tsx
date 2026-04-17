@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -7,8 +8,14 @@ import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { TiltCard } from '@/components/ui/TiltCard';
 import { categories } from '@/constants/categories';
 import { Button } from '@/components/ui/Button';
+import { CustomTextField } from '@/components/ui/CustomTextField';
 
 const Index = () => {
+
+  const [email, setEmail] = useState<string>("");
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-12">
 
@@ -162,6 +169,24 @@ const Index = () => {
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
           <p className="text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
+
+          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-4">
+            <CustomTextField
+              label="Email Address"
+              type="email"
+              variant="outlined"
+              fullWidth
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setErrors(prev => ({ ...prev, email: "" }));
+              }}
+              error={!!errors.email}
+              helperText={errors.email}
+            />
+
+            <Button name="Subscribe" btnContainer="w-full sm:w-40 text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+          </div>
 
           <p className="text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
         </div>
