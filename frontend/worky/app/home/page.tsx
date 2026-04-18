@@ -1,4 +1,5 @@
-import Bubble from "@/components/ui/Bubble";
+'use client';
+import { Bubble } from "@/components/ui/Bubble";
 
 const Home = () => {
     return (
@@ -9,7 +10,7 @@ const Home = () => {
 
                 {/* CENTER */}
                 <Bubble
-                    className="h-80 w-80 bg-custom-pink opacity-70 mix-blend-multiply"
+                    className="w-80 h-80 bg-primary opacity-70 mix-blend-multiply"
                     style={{ left: '48%', top: '42%' }}
                     x={[25, -25, 15]}
                     y={[-15, 25, -10]}
@@ -18,7 +19,7 @@ const Home = () => {
                 />
 
                 <Bubble
-                    className="h-72 w-72 bg-custom-purple opacity-70 mix-blend-multiply"
+                    className="w-72 h-72 bg-on-primary opacity-70 mix-blend-multiply"
                     style={{ left: '35%', top: '30%' }}
                     x={[-20, 30, -10]}
                     y={[-20, 30, -10]}
@@ -28,7 +29,7 @@ const Home = () => {
 
                 {/* LEFT SIDE */}
                 <Bubble
-                    className="h-72 w-72 bg-custom-pink opacity-80 mix-blend-multiply"
+                    className="w-72 h-72 bg-primary opacity-80 mix-blend-multiply"
                     style={{ left: '-10%', top: '15%' }}
                     x={[-40, 20, -10]}
                     y={[-30, 40, -20]}
@@ -37,7 +38,7 @@ const Home = () => {
                 />
 
                 <Bubble
-                    className="h-56 w-56 bg-custom-purple opacity-75 mix-blend-multiply"
+                    className="w-56 h-56 bg-on-primary opacity-75 mix-blend-multiply"
                     style={{ left: '5%', top: '55%' }}
                     x={[-30, 30, -20]}
                     y={[20, -40, 10]}
@@ -47,7 +48,7 @@ const Home = () => {
 
                 {/* RIGHT SIDE */}
                 <Bubble
-                    className="h-72 w-72 bg-custom-pink opacity-80 mix-blend-multiply"
+                    className="w-72 h-72 bg-primary opacity-80 mix-blend-multiply"
                     style={{ right: '5%', top: '20%' }}
                     x={[30, -30, 20]}
                     y={[-40, 30, -10]}
@@ -56,7 +57,7 @@ const Home = () => {
                 />
 
                 <Bubble
-                    className="h-60 w-60 bg-custom-purple opacity-75 mix-blend-multiply"
+                    className="w-60 h-60 bg-on-primary opacity-75 mix-blend-multiply"
                     style={{ right: '-10%', top: '55%' }}
                     x={[40, -20, 10]}
                     y={[30, -40, 20]}

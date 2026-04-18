@@ -30,7 +30,7 @@ const Login = () => {
     const [errors, setErrors] = useState<Record<string, string>>({});
 
     return (
-        <main className='w-full h-full flex items-center justify-center'>
+        <div className='w-full h-full flex items-center justify-center'>
             <AnimatePresence mode="wait">
                 {isLogin ? (
                     <motion.div
@@ -230,7 +230,7 @@ const Login = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </main>
+        </div>
     );
 }
 
