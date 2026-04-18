@@ -1,5 +1,8 @@
 'use client';
-import { InputAdornment, TextField, TextFieldProps } from "@mui/material";
+import { useState } from 'react';
+import { TextField, TextFieldProps, InputAdornment, IconButton } from "@mui/material";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 type CustomTextFieldProps = TextFieldProps & {
     prefix?: string;
@@ -9,9 +12,26 @@ export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
 
     const isMultiline = props.multiline;
 
+    const isPasswordField = props.type === 'password';
+
+    const [showPassword, setShowPassword] = useState<boolean>(false);
+
+    const inputType = isPasswordField && showPassword ? 'text' : props.type;
+
+    const handleClickShowPassword = () => setShowPassword((prev) => !prev);
+
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
+
+    const handleMouseUpPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
+
     const baseTypography = {
         fontSize: '16px',
-        fontFamily: 'var(--font-ropa-sans), sans-serif'
+        fontFamily: 'var(--font-ropa-sans), sans-serif',
+        fontWeight: 600
     };
 
     const baseColor = 'var(--color-on-primary)';
@@ -24,12 +44,37 @@ export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
         </InputAdornment>
     ) : props.InputProps?.startAdornment;
 
+    const endAdornment = isPasswordField ? (
+        <InputAdornment position="end">
+            <IconButton
+                edge="end"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                onMouseUp={handleMouseUpPassword}
+                aria-label={showPassword ? 'Hide The Password' : 'Display The Password'}
+                sx={{
+                    color: baseColor,
+                    p: '6px',
+                    mr: '2px',
+                    '&:hover': {
+                        backgroundColor: 'transparent',
+                        opacity: 0.8
+                    }
+                }}
+            >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className='text-base text-on-primary' />
+            </IconButton>
+        </InputAdornment>
+    ) : props.InputProps?.endAdornment;
+
     return (
         <TextField
             {...props}
+            type={inputType}
             InputProps={{
                 ...props.InputProps,
-                startAdornment
+                startAdornment,
+                endAdornment
             }}
             sx={[
                 {
@@ -54,9 +99,15 @@ export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
                     },
                     '& .MuiInputAdornment-root': {
                         color: baseColor,
+                        '&.MuiInputAdornment-positionEnd': {
+                            marginRight: '2px'
+                        },
                         '& .MuiTypography-root': {
                             ...baseTypography,
                             color: baseColor
+                        },
+                        '& .svg-inline--fa': {
+                            color: 'inherit'
                         }
                     },
                     '& .MuiOutlinedInput-root': {
@@ -69,6 +120,9 @@ export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
                                 padding: '12px 14px'
                             }
                         }),
+                        '&.MuiInputBase-adornedEnd': {
+                            paddingRight: '8px'
+                        },
                         '& textarea': {
                             ...baseTypography
                         },
