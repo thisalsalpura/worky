@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../Button';
 import { ThemeToggle } from '../ThemeToggle';
-import { useTheme } from 'next-themes';
 
 export function Index_Navbar() {
 

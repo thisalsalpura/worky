@@ -1,14 +1,15 @@
 'use client';
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { TextField, TextFieldProps, InputAdornment, IconButton } from "@mui/material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 type CustomTextFieldProps = TextFieldProps & {
     prefix?: string;
+    endIcon?: ReactNode;
 };
 
-export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
+export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldProps) {
 
     const isMultiline = props.multiline;
 
@@ -63,6 +64,31 @@ export function CustomTextField({ prefix, ...props }: CustomTextFieldProps) {
                 }}
             >
                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className='text-base text-on-primary' />
+            </IconButton>
+        </InputAdornment>
+    ) : endIcon ? (
+        <InputAdornment position="end">
+            <IconButton
+                edge="end"
+                aria-label="Text Field Action"
+                sx={{
+                    mr: '2px',
+                    width: '32px',
+                    height: '32px',
+                    fontSize: '14px',
+                    color: 'var(--color-primary)',
+                    backgroundColor: 'var(--color-on-primary)',
+                    border: '1px solid var(--color-on-primary)',
+                    borderRadius: '12px',
+                    transition: 'all 300ms ease',
+                    '&:hover': {
+                        color: 'var(--color-on-primary)',
+                        backgroundColor: 'var(--color-primary)',
+                        borderColor: 'var(--color-on-primary)'
+                    }
+                }}
+            >
+                {endIcon}
             </IconButton>
         </InputAdornment>
     ) : props.InputProps?.endAdornment;

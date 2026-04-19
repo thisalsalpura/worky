@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Index_Navbar } from "@/components/ui/navbar/Index_Navbar";
+import { Default_Navbar } from "@/components/ui/navbar/Default_Navbar";
 import { Footer } from "@/components/ui/Footer";
 import "@/libs/fontawesome";
 import "./globals.css";
@@ -47,7 +48,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen flex flex-col">
 
-            <Index_Navbar />
+            {/* <Index_Navbar /> */}
+            <Default_Navbar />
 
             <main className="mx-auto max-w-7xl w-full flex-1 p-5">
               {children}
