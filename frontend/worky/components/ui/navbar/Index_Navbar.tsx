@@ -28,7 +28,7 @@ export function Index_Navbar() {
     };
 
     return (
-        <nav className="top-0 left-0 right-0 sticky pt-2 px-2 z-50">
+        <nav className="top-0 left-0 right-0 sticky pt-2 px-2 overflow-x-clip z-50">
             <div className="relative mx-auto max-w-7xl">
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
                     <Link href="/">

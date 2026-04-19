@@ -35,7 +35,7 @@ export function Default_Navbar() {
     };
 
     return (
-        <nav className="top-0 left-0 right-0 sticky pt-2 px-2 z-50">
+        <nav className="top-0 left-0 right-0 sticky pt-2 px-2 overflow-x-clip z-50">
             <div className="relative mx-auto max-w-7xl">
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
                     <Link href="/">
@@ -67,13 +67,13 @@ export function Default_Navbar() {
                     </div>
                 </div>
 
-                <div className="mt-2 h-auto flex items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
-                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl shrink-0 whitespace-nowrap px-5 gap-5 cursor-pointer">
+                <div className="mt-2 h-auto flex flex-col md:flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
+                    <button className="w-full md:w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
                         <FontAwesomeIcon icon={faBars} className="text-lg" />
                         <span>All Categories</span>
                     </button>
 
-                    <div className="min-w-0 flex-1">
+                    <div className="w-full md:w-auto flex-1">
                         <CustomTextField
                             label="Search Here"
                             placeholder="Search Services, Freelancers or Projects"
@@ -91,7 +91,7 @@ export function Default_Navbar() {
                         />
                     </div>
 
-                    <div className="w-auto h-full flex flex-row items-center justify-center gap-4">
+                    <div className="w-full md:w-auto h-full flex flex-row items-center justify-center gap-4">
                         <button className="w-12 h-12 flex items-center justify-center bg-on-primary hover:bg-primary rounded-full transition-colors duration-300 cursor-pointer group">
                             <FontAwesomeIcon icon={faBell} className="text-lg text-primary group-hover:text-on-primary" />
                         </button>
