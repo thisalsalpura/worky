@@ -49,7 +49,7 @@ export function Index_Navbar() {
 
                         <ThemeToggle />
 
-                        <button onClick={toggleMenu} className="flex md:hidden transition-all duration-300 ease-in-out" type="button" aria-label="Toggle Menu">
+                        <button onClick={toggleMenu} className="flex md:hidden transition-all duration-300 ease-in-out cursor-pointer" type="button" aria-label="Toggle Menu">
                             <Image
                                 src={`/icons/${isOpen ? 'close' : 'menu'}.svg`}
                                 alt={`${isOpen ? 'close' : 'menu'}-icon`}

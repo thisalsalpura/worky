@@ -7,8 +7,7 @@ import { Button } from "../Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { CustomTextField } from "../CustomTextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
-import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMagnifyingGlass, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export function Default_Navbar() {
 
@@ -30,6 +29,39 @@ export function Default_Navbar() {
         return (
             <div className="w-full flex flex-col p-5 sm:p-10 gap-8">
                 <Button name="Switch to Selling" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+
+                <div className="w-full h-auto flex flex-row items-center justify-center gap-4">
+                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
+                        <FontAwesomeIcon icon={faBars} className="text-lg" />
+                        <span>All Categories</span>
+                    </button>
+
+                    <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                        <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
+                    </button>
+
+                    <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                        <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
+                    </button>
+                </div>
+
+                <div className="w-full flex-1">
+                    <CustomTextField
+                        label="Search Here"
+                        placeholder="Search Services, Freelancers or Projects"
+                        type="text"
+                        variant="outlined"
+                        fullWidth
+                        endIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
+                        value={searchText}
+                        onChange={(e) => {
+                            setSearchText(e.target.value);
+                            setErrors(prev => ({ ...prev, searchText: "" }));
+                        }}
+                        error={!!errors.searchText}
+                        helperText={errors.searchText}
+                    />
+                </div>
             </div>
         );
     };
@@ -55,7 +87,7 @@ export function Default_Navbar() {
 
                         <ThemeToggle />
 
-                        <button onClick={toggleMenu} className="flex md:hidden transition-all duration-300 ease-in-out" type="button" aria-label="Toggle Menu">
+                        <button onClick={toggleMenu} className="flex md:hidden transition-all duration-300 ease-in-out cursor-pointer" type="button" aria-label="Toggle Menu">
                             <Image
                                 src={`/icons/${isOpen ? 'close' : 'menu'}.svg`}
                                 alt={`${isOpen ? 'close' : 'menu'}-icon`}
@@ -67,13 +99,13 @@ export function Default_Navbar() {
                     </div>
                 </div>
 
-                <div className="mt-2 h-auto flex flex-col md:flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
-                    <button className="w-full md:w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
+                <div className="mt-2 h-auto hidden md:flex flex-col md:flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
+                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
                         <FontAwesomeIcon icon={faBars} className="text-lg" />
                         <span>All Categories</span>
                     </button>
 
-                    <div className="w-full md:w-auto flex-1">
+                    <div className="w-auto flex-1">
                         <CustomTextField
                             label="Search Here"
                             placeholder="Search Services, Freelancers or Projects"
@@ -91,13 +123,13 @@ export function Default_Navbar() {
                         />
                     </div>
 
-                    <div className="w-full md:w-auto h-full flex flex-row items-center justify-center gap-4">
-                        <button className="w-12 h-12 flex items-center justify-center bg-on-primary hover:bg-primary rounded-full transition-colors duration-300 cursor-pointer group">
-                            <FontAwesomeIcon icon={faBell} className="text-lg text-primary group-hover:text-on-primary" />
+                    <div className="w-auto h-full flex flex-row items-center justify-center gap-4">
+                        <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                            <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
                         </button>
 
-                        <button className="w-12 h-12 flex items-center justify-center bg-on-primary hover:bg-primary rounded-full transition-colors duration-300 cursor-pointer group">
-                            <FontAwesomeIcon icon={faUser} className="text-lg text-primary group-hover:text-on-primary" />
+                        <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                            <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
                         </button>
                     </div>
                 </div>
