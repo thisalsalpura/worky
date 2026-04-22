@@ -1,5 +1,8 @@
 'use client';
 import { Bubble } from "@/components/ui/Bubble";
+import { categories } from "@/constants/categories";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
     return (
@@ -67,12 +70,21 @@ const Home = () => {
 
             </section>
 
-            <section className="w-full h-auto grid grid-cols-12 p-4 gap-4">
-                <div className="col-span-3 p-5 sm:p-10 gap-8">
+            <section className="w-full h-auto grid grid-cols-12 p-4 gap-8">
+                <div className="sm:top-6 col-span-12 sm:col-span-3 h-auto sm:h-fit flex flex-col items-start justify-start sm:sticky bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
+                    <h2 className="text-xl text-on-background text-left font-heading">Categories</h2>
 
+                    <ul className="w-full text-on-background text-left font-base space-y-6">
+                        {categories.map((category) => (
+                            <li key={category.id} className="w-full flex flex-row items-center justify-between cursor-pointer group">
+                                <span className='opacity-75 group-hover:opacity-100 transition-all duration-300 ease-in-out'>{category.title}</span>
+                                <FontAwesomeIcon icon={faPlus} className="text-sm opacity-75 group-hover:opacity-100 transition-all duration-300 ease-in-out" />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                <div className="col-span-9 p-5 sm:p-10 gap-8">
+                <div className="col-span-9 h-200 bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
 
                 </div>
             </section>
