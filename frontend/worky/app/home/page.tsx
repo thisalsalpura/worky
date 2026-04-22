@@ -71,7 +71,7 @@ const Home = () => {
             </section>
 
             <section className="w-full h-auto grid grid-cols-12 p-4 gap-8">
-                <div className="sm:top-6 col-span-12 sm:col-span-3 h-auto sm:h-fit flex flex-col items-start justify-start sm:sticky bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
+                <div className="md:top-22 col-span-12 md:col-span-3 h-auto md:h-fit flex flex-col items-start justify-start md:sticky bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
                     <h2 className="text-xl text-on-background text-left font-heading">Categories</h2>
 
                     <ul className="w-full text-on-background text-left font-base space-y-6">
@@ -84,7 +84,7 @@ const Home = () => {
                     </ul>
                 </div>
 
-                <div className="col-span-9 h-200 bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
+                <div className="col-span-12 md:col-span-9 h-200 bg-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
 
                 </div>
             </section>

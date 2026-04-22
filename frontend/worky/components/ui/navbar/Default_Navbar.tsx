@@ -7,13 +7,15 @@ import { Button } from "../Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { CustomTextField } from "../CustomTextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMagnifyingGlass, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMagnifyingGlass, faBell, faUser, faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export function Default_Navbar() {
 
     const { resolvedTheme } = useTheme();
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const [isCaretOpen, setIsCaretOpen] = useState(false);
 
     const [searchText, setSearchText] = useState("");
 
@@ -25,15 +27,19 @@ export function Default_Navbar() {
         setIsOpen((previousOpen) => !previousOpen)
     };
 
+    const toggleCaret = () => {
+        setIsCaretOpen((previousCaret) => !previousCaret)
+    };
+
     const navItems = () => {
         return (
             <div className="w-full flex flex-col p-5 sm:p-10 gap-8">
                 <Button name="Switch to Selling" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                 <div className="w-full h-auto flex flex-row items-center justify-center gap-4">
-                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
-                        <FontAwesomeIcon icon={faBars} className="text-lg" />
-                        <span>All Categories</span>
+                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer group">
+                        <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
+                        <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>
 
                     <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
@@ -85,7 +91,13 @@ export function Default_Navbar() {
                             <Button name="Switch to Selling" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
-                        <ThemeToggle />
+                        <div className="w-auto h-full flex flex-row items-center justify-center gap-4">
+                            <ThemeToggle />
+
+                            <button onClick={toggleCaret} className="w-12 h-12 hidden md:flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                <FontAwesomeIcon icon={isCaretOpen ? faCircleChevronDown : faCircleChevronUp} className="text-lg text-on-primary group-hover:text-primary" />
+                            </button>
+                        </div>
 
                         <button onClick={toggleMenu} className="flex md:hidden transition-all duration-300 ease-in-out cursor-pointer" type="button" aria-label="Toggle Menu">
                             <Image
@@ -99,10 +111,13 @@ export function Default_Navbar() {
                     </div>
                 </div>
 
-                <div className="mt-2 h-auto hidden md:flex flex-col md:flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
-                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
-                        <FontAwesomeIcon icon={faBars} className="text-lg" />
-                        <span>All Categories</span>
+                <div
+                    className={`mt-2 absolute left-0 right-0 h-auto hidden md:flex flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8 transition-all duration-300 ease-in-out ${isCaretOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
+                    aria-hidden={!isCaretOpen}
+                >
+                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer group">
+                        <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
+                        <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>
 
                     <div className="w-auto flex-1">
@@ -135,7 +150,7 @@ export function Default_Navbar() {
                 </div>
 
                 <div
-                    className={`mt-2 absolute left-0 right-0 flex md:hidden items-center justify-center bg-blur border border-outline backdrop-blur-2xl rounded-2xl transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
+                    className={`mt-2 absolute left-0 right-0 flex md:hidden items-center justify-center bg-on-background border border-outline rounded-2xl transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
                     aria-hidden={!isOpen}
                 >
                     {navItems()}
