@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Index_Navbar } from "@/components/ui/navbar/Index_Navbar";
+// import { Index_Navbar } from "@/components/ui/navbar/Index_Navbar";
 import { Default_Navbar } from "@/components/ui/navbar/Default_Navbar";
 import { Footer } from "@/components/ui/Footer";
 import "@/libs/fontawesome";

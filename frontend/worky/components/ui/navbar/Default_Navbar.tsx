@@ -31,16 +31,16 @@ export function Default_Navbar() {
                 <Button name="Switch to Selling" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                 <div className="w-full h-auto flex flex-row items-center justify-center gap-4">
-                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
+                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
                         <FontAwesomeIcon icon={faBars} className="text-lg" />
                         <span>All Categories</span>
                     </button>
 
-                    <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                    <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                         <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
                     </button>
 
-                    <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                    <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                         <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
                     </button>
                 </div>
@@ -100,7 +100,7 @@ export function Default_Navbar() {
                 </div>
 
                 <div className="mt-2 h-auto hidden md:flex flex-col md:flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8">
-                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
+                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer">
                         <FontAwesomeIcon icon={faBars} className="text-lg" />
                         <span>All Categories</span>
                     </button>
@@ -124,11 +124,11 @@ export function Default_Navbar() {
                     </div>
 
                     <div className="w-auto h-full flex flex-row items-center justify-center gap-4">
-                        <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                        <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                             <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
                         </button>
 
-                        <button className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                        <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                             <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
                         </button>
                     </div>

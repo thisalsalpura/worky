@@ -103,7 +103,7 @@ const Login = () => {
                                     </div>
 
                                     <div className="flex items-center justify-center">
-                                        <span className="text-background font-base cursor-pointer border-b-2 border-b-background">Forgot Password?</span>
+                                        <span className="text-background font-base border-b-2 border-b-background cursor-pointer">Forgot Password?</span>
                                     </div>
                                 </div>
 

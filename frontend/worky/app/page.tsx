@@ -3,10 +3,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { categories } from '@/constants/categories';
+import { TiltCard } from '@/components/ui/TiltCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { TiltCard } from '@/components/ui/TiltCard';
-import { categories } from '@/constants/categories';
 import { Button } from '@/components/ui/Button';
 import { CustomTextField } from '@/components/ui/CustomTextField';
 
@@ -140,21 +140,21 @@ const Index = () => {
           <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
           <div className="flex flex-col md:flex-row gap-8">
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
-                <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">App Store</p>
+                <p className="text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Download on The</p>
+                <p className="text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">App Store</p>
               </div>
             </TiltCard>
 
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
-                <p className="text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Download on The</p>
-                <p className="text-lg text-on-primary group-hover:text-primary font-base font-semibold tilt-pop">Play Store</p>
+                <p className="text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Download on The</p>
+                <p className="text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Play Store</p>
               </div>
             </TiltCard>
           </div>

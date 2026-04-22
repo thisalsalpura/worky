@@ -67,6 +67,16 @@ const Home = () => {
 
             </section>
 
+            <section className="w-full h-auto grid grid-cols-12 p-4 gap-4">
+                <div className="col-span-3 p-5 sm:p-10 gap-8">
+
+                </div>
+
+                <div className="col-span-9 p-5 sm:p-10 gap-8">
+
+                </div>
+            </section>
+
         </div>
     );
 }
