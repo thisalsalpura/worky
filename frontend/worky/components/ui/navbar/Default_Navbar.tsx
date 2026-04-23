@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../Button";
 import { ThemeToggle } from "../ThemeToggle";
-import { CustomTextField } from "../CustomTextField";
+import { CustomTextField } from "../mui/CustomTextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMagnifyingGlass, faBell, faUser, faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 

@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { User } from '@/components/interfaces/User';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CustomTextField } from '@/components/ui/CustomTextField';
-import { CustomCheckbox } from '@/components/ui/CustomCheckbox';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { Button } from '@/components/ui/Button';
 
 const Login = () => {

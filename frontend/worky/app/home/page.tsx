@@ -3,6 +3,7 @@ import { Bubble } from "@/components/ui/Bubble";
 import { categories } from "@/constants/categories";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { GigCard } from "@/components/ui/GigCard";
 
 const Home = () => {
     return (
@@ -84,8 +85,12 @@ const Home = () => {
                     </ul>
                 </div>
 
-                <div className="col-span-12 md:col-span-9 h-200 bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
-
+                <div className="col-span-12 md:col-span-9 h-auto flex flex-wrap items-start justify-start gap-6">
+                    <GigCard />
+                    <GigCard />
+                    <GigCard />
+                    <GigCard />
+                    <GigCard />
                 </div>
             </section>
 

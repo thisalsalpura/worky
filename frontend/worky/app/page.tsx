@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@/components/ui/Button';
-import { CustomTextField } from '@/components/ui/CustomTextField';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 
 const Index = () => {
 
