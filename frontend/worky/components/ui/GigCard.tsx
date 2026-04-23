@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function GigCard() {
     return (
-        <div className="w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-4">
+        <div className="w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-4 cursor-pointer">
             <div className="w-full h-44 flex items-center justify-center border border-outline-variant rounded-lg overflow-hidden">
                 <Image
                     src="/images/empty-gig-img.svg"
@@ -16,7 +16,7 @@ export function GigCard() {
 
             <div className="flex flex-col items-start justify-start gap-2">
                 <div className="w-full h-auto flex flex-row items-center justify-start gap-4">
-                    <div className="w-10 h-10 flex items-center justify-center border border-outline rounded-full">
+                    <div className="w-10 h-10 flex items-center justify-center border border-outline rounded-full cursor-pointer z-10">
                         <div className="w-8 h-8 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
                             <Image
                                 src="/images/user-img.svg"

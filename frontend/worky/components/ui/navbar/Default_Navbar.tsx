@@ -37,7 +37,7 @@ export function Default_Navbar() {
                 <Button name="Switch to Selling" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                 <div className="w-full h-auto flex flex-row items-center justify-center gap-4">
-                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer group">
+                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-4 gap-4 cursor-pointer group">
                         <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
                         <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>
@@ -115,7 +115,7 @@ export function Default_Navbar() {
                     className={`mt-2 absolute left-0 right-0 h-auto hidden md:flex flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-8 transition-all duration-300 ease-in-out ${isCaretOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
                     aria-hidden={!isCaretOpen}
                 >
-                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-5 cursor-pointer group">
+                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-4 gap-4 cursor-pointer group">
                         <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
                         <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>
