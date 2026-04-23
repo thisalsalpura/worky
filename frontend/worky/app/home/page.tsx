@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { GigCard } from "@/components/ui/GigCard";
 import Image from "next/image";
+import { CustomPagination } from "@/components/ui/mui/CustomPagination";
 
 const Home = () => {
     return (
@@ -91,9 +92,9 @@ const Home = () => {
                     <div className="flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-6">
                         <h2 className="text-xl text-on-background dark:text-background text-left font-heading">Best Sellers</h2>
 
-                        <ul className="w-full space-y-2.5">
-                            <div className="w-full h-auto flex items-center justify-between border border-outline-variant rounded-lg shadow-lg p-2.5 gap-4 cursor-pointer">
-                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full">
+                        <ul className="w-full space-y-6">
+                            <div className="w-full h-auto flex items-center justify-between gap-4">
+                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer">
                                     <div className="w-10 h-10 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
                                         <Image
                                             src="/images/user-img.svg"
@@ -112,8 +113,8 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <div className="w-full h-auto flex items-center justify-between border border-outline-variant rounded-lg shadow-lg p-2.5 gap-4 cursor-pointer">
-                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full">
+                            <div className="w-full h-auto flex items-center justify-between gap-4">
+                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer">
                                     <div className="w-10 h-10 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
                                         <Image
                                             src="/images/user-img.svg"
@@ -135,12 +136,16 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="col-span-12 md:col-span-9 h-auto flex flex-wrap items-start justify-start gap-6">
-                    <GigCard />
-                    <GigCard />
-                    <GigCard />
-                    <GigCard />
-                    <GigCard />
+                <div className="col-span-12 md:col-span-9 h-auto flex flex-col items-center justify-start gap-12">
+                    <div className="w-full h-auto flex flex-wrap items-start justify-start gap-6">
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                    </div>
+
+                    <CustomPagination count={10} page={1} />
                 </div>
             </section>
 
