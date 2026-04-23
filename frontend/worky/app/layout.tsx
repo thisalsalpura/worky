@@ -1,38 +1,40 @@
 import type { Metadata } from "next";
 import { Londrina_Solid, Ropa_Sans } from "next/font/google";
-import Index_Navbar from "@/components/navbar/Index_Navbar";
-import "@/libs/fontawesome"
+import { ThemeProvider } from "@/components/ThemeProvider";
+// import { Index_Navbar } from "@/components/ui/navbar/Index_Navbar";
+import { Default_Navbar } from "@/components/ui/navbar/Default_Navbar";
+import { Footer } from "@/components/ui/Footer";
+import "@/libs/fontawesome";
 import "./globals.css";
 
 const londrinaSolid = Londrina_Solid({
   variable: "--font-londrina-solid",
   weight: ["100", "300", "400", "900"],
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 const ropaSans = Ropa_Sans({
   variable: "--font-ropa-sans",
   weight: ["400"],
   subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Worky - Freelance Marketplace Platform",
-    template: "%s | Worky",
+    template: "Worky",
+    default: "Worky - Freelance Marketplace Platform"
   },
-  description:
-    "Worky is a scalable freelance marketplace platform built with Next.js, connecting clients and freelancers efficiently.",
+  description: "Worky is a scalable Freelance Marketplace Platform, connecting Clients and Freelancers Efficiently.",
   keywords: [
     "freelance marketplace",
+    "freelance app",
     "hire freelancers",
     "remote jobs",
-    "nextjs freelance app",
-    "worky platform",
+    "worky platform"
   ],
-  authors: [{ name: "Worky Team" }],
+  authors: [{ name: "Thisal Senevirathne" }]
 };
 
 export default function RootLayout({
@@ -41,15 +43,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <div className="min-h-screen flex flex-col">
 
-        <Index_Navbar />
+            {/* <Index_Navbar /> */}
+            <Default_Navbar />
 
-        <div className="max-w-7xl mx-auto min-h-screen p-5">
-          {children}
-        </div>
+            <main className="mx-auto max-w-7xl w-full flex-1 p-5">
+              {children}
+            </main>
 
+            <Footer />
+
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
