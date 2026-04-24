@@ -39,7 +39,7 @@ export function CustomCheckbox({ label, containerClassName = '', labelClassName 
     ];
 
     return (
-        <label className={`${containerClassName} flex flex-row items-center gap-2 cursor-pointer select-none`}>
+        <label className={`${containerClassName} flex flex-row items-center gap-x-2 cursor-pointer select-none`}>
             <Checkbox
                 {...props}
                 disableRipple

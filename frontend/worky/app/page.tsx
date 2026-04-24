@@ -18,7 +18,7 @@ const Index = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-12">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-y-12">
 
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
@@ -49,7 +49,7 @@ const Index = () => {
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section className="w-full h-auto flex flex-col items-center justify-center gap-4">
+      <section className="w-full h-auto flex flex-col items-center justify-center gap-y-4">
         <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
           <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Categories</h2>
         </div>
@@ -71,7 +71,7 @@ const Index = () => {
           >
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6">
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6">
                   <FontAwesomeIcon icon={category.icon} className="text-9xl text-background text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
                     {category.title}
@@ -84,14 +84,14 @@ const Index = () => {
       </section>
 
       {/* WORK TOGETHER SECTION */}
-      <section className='w-full h-auto flex flex-col items-center justify-center gap-4'>
+      <section className='w-full h-auto flex flex-col items-center justify-center gap-y-4'>
         <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
           <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Let&apos;s work Together!</h2>
         </div>
 
         <div className="w-full h-auto grid grid-cols-12 grid-rows-12">
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pr-12">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -105,7 +105,7 @@ const Index = () => {
           </div>
 
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pl-12">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-6 lg:gap-8">
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -122,7 +122,7 @@ const Index = () => {
 
       {/* JOIN WORKY SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -133,15 +133,15 @@ const Index = () => {
 
       {/* DOWNLOAD APP SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
           <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
-          <div className="flex flex-col md:flex-row gap-8">
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+          <div className="flex flex-col md:flex-row gap-y-8 md:gap-x-8">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
@@ -150,7 +150,7 @@ const Index = () => {
               </div>
             </TiltCard>
 
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-4 transition-colors duration-300 cursor-pointer group">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
@@ -164,14 +164,14 @@ const Index = () => {
 
       {/* NEWSLETTER SECTION */}
       <section className="w-full h-auto p-4">
-        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8">
+        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
           <p className="text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
 
-          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4">
             <CustomTextField
               label="Email Address"
               type="email"

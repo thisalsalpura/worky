@@ -1,12 +1,13 @@
 'use client';
 import { Pagination, PaginationProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
+import { useTheme } from 'next-themes';
 
 const ITEM_SIZE = 36;
 const BORDER_RADIUS = 1000;
 
 const BASE_TYPOGRAPHY = {
-    fontSize: '16px',
+    fontSize: '14px',
     fontFamily: 'var(--font-ropa-sans), sans-serif',
     fontWeight: 600
 } as const;
@@ -17,29 +18,32 @@ type CustomPaginationProps = PaginationProps & {
 
 export function CustomPagination({ containerClassName = '', ...props }: CustomPaginationProps) {
 
+    const { resolvedTheme } = useTheme();
+
+    const isDark = resolvedTheme === 'dark';
+
     const sx: SxProps<Theme> = [
         {
             '& .MuiPaginationItem-root': {
                 ...BASE_TYPOGRAPHY,
-                margin: '0 3px',
+                margin: '4px',
                 width: `${ITEM_SIZE}px`,
                 height: `${ITEM_SIZE}px`,
                 minWidth: `${ITEM_SIZE}px`,
-                color: 'var(--color-on-primary)',
+                color: isDark ? 'var(--color-on-primary)' : 'var(--color-primary)',
                 backgroundColor: 'transparent',
                 border: '1px solid var(--color-outline)',
                 borderRadius: `${BORDER_RADIUS}px`,
                 opacity: 0.8,
                 transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
                 '&.Mui-selected': {
-                    color: 'var(--color-on-primary)',
-                    backgroundColor: 'var(--color-primary)',
-                    borderColor: 'var(--color-on-primary)',
+                    color: 'var(--color-primary)',
+                    backgroundColor: 'var(--color-on-primary)',
+                    borderColor: 'var(--color-primary)',
                     opacity: 1,
                     '&:hover': {
-                        color: 'var(--color-primary)',
-                        backgroundColor: 'var(--color-on-primary)',
-                        borderColor: 'var(--color-on-primary)'
+                        color: 'var(--color-on-primary)',
+                        backgroundColor: 'var(--color-primary)'
                     }
                 },
                 '&.Mui-disabled': {
@@ -59,8 +63,8 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                     }
                 },
                 '&:not(.MuiPaginationItem-ellipsis):hover': {
-                    color: 'var(--color-primary)',
-                    backgroundColor: 'var(--color-on-primary)',
+                    color: 'var(--color-on-primary)',
+                    backgroundColor: 'var(--color-primary)',
                     opacity: 1
                 }
             }
@@ -69,7 +73,7 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
     ];
 
     return (
-        <div className={`${containerClassName} w-fit flex items-center justify-center bg-primary border border-outline rounded-xl p-2.5`}>
+        <div suppressHydrationWarning className={`${containerClassName} w-full md:w-fit flex items-center justify-center bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-2.5`}>
             <Pagination
                 {...props}
                 sx={sx}

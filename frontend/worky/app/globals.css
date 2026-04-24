@@ -43,7 +43,7 @@
 
 @layer utilities {
   .cus-btn {
-    @apply h-12 font-base font-semibold flex items-center justify-center border border-outline rounded-xl px-5 gap-5 transition-colors duration-300 cursor-pointer;
+    @apply h-12 font-base font-semibold flex items-center justify-center border border-outline rounded-xl px-5 gap-x-5 transition-colors duration-300 cursor-pointer;
   }
 
   .cus-btn-ping {
