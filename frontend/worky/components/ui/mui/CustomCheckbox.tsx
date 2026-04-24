@@ -4,6 +4,8 @@ import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
+const BORDER_RADIUS = 12;
+
 type CustomCheckboxProps = CheckboxProps & {
     label?: string;
     containerClassName?: string;
@@ -23,7 +25,7 @@ export function CustomCheckbox({ label, containerClassName = '', labelClassName 
     const sx: SxProps<Theme> = [
         {
             color: 'var(--color-outline)',
-            borderRadius: '12px',
+            borderRadius: `${BORDER_RADIUS}px`,
             '&:hover': {
                 backgroundColor: 'transparent',
                 opacity: 0.8

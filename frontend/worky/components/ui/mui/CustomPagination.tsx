@@ -69,7 +69,7 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                 }
             }
         },
-        ...(Array.isArray(props.sx) ? props.sx : props.sx ? [props.sx] : [])
+        ...(props.sx ? (Array.isArray(props.sx) ? props.sx : [props.sx]) : [])
     ];
 
     return (

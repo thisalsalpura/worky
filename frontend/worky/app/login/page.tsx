@@ -1,31 +1,38 @@
 'use client';
 import { useState } from 'react';
-import { User } from '@/components/interfaces/User';
+import { Country, User } from '@/components/interfaces/User';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { Button } from '@/components/ui/Button';
+import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
+import { COUNTRIES } from '@/constants/countries';
 
 const Login = () => {
 
     const [isLogin, setIsLogin] = useState<boolean>(true);
+
+    const [checked, setChecked] = useState<boolean>(false);
 
     const [loginData, setLoginData] = useState<User>({
         email: "",
         password: ""
     });
 
+    const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
+
+    const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
+
     const [registerData, setRegisterData] = useState<User>({
         fname: "",
         lname: "",
         email: "",
         password: "",
+        country: country,
         mobile: "",
         role: ""
     });
-
-    const [checked, setChecked] = useState<boolean>(false);
 
     const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -187,20 +194,27 @@ const Login = () => {
                                         helperText={errors.password}
                                     />
 
-                                    <CustomTextField
-                                        prefix='+94'
-                                        label="Mobile Number"
-                                        type="number"
-                                        variant="outlined"
-                                        fullWidth
-                                        value={registerData.mobile}
-                                        onChange={(e) => {
-                                            setRegisterData(prev => ({ ...prev, mobile: e.target.value }));
-                                            setErrors(prev => ({ ...prev, mobile: "" }));
-                                        }}
-                                        error={!!errors.mobile}
-                                        helperText={errors.mobile}
-                                    />
+                                    <div className='w-full h-auto flex flex-row items-center gap-x-2'>
+                                        <CustomCountrySelector
+                                            value={country}
+                                            onChange={setCountry}
+                                        />
+
+                                        <CustomTextField
+                                            label="Mobile Number"
+                                            type="number"
+                                            variant="outlined"
+                                            fullWidth
+                                            value={registerData.mobile}
+                                            onChange={(e) => {
+                                                setRegisterData(prev => ({ ...prev, mobile: e.target.value }));
+                                                setErrors(prev => ({ ...prev, mobile: "" }));
+                                            }}
+                                            error={!!errors.mobile}
+                                            helperText={errors.mobile}
+                                            inputProps={{ min: 7, maxLength: 17 }}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div className='w-full h-auto flex flex-col gap-y-4'>
