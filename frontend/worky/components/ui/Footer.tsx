@@ -6,15 +6,15 @@ import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 export function Footer() {
     return (
         <footer className='mx-auto max-w-7xl w-full h-auto flex items-center justify-center p-5'>
-            <div className='w-full h-full flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-8'>
+            <div className='w-full h-full flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8'>
                 <Link href="/">
                     <h2 className="text-2xl md:text-3xl text-background text-left font-heading">Worky</h2>
                 </Link>
 
                 <div className="w-full h-0.5 bg-outline opacity-20" />
 
-                <div className="w-full h-auto grid grid-cols-12 items-start justify-center gap-4">
-                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
+                <div className="w-full h-auto grid grid-cols-12 items-start justify-center gap-y-4 sm:gap-x-4">
+                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-y-4">
                         <h2 className="text-lg text-background text-left font-base font-semibold">Company</h2>
 
                         <ul className="text-background text-left font-base space-y-1">
@@ -26,7 +26,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
+                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-y-4">
                         <h2 className="text-lg text-background text-left font-base font-semibold">Services</h2>
 
                         <ul className="text-background text-left font-base space-y-1">
@@ -38,7 +38,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
+                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-y-4">
                         <h2 className="text-lg text-background text-left font-base font-semibold">Resources</h2>
 
                         <ul className="text-background text-left font-base space-y-1">
@@ -50,7 +50,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-4">
+                    <div className="col-span-12 sm:col-span-3 flex flex-col items-start justify-center gap-y-4">
                         <h2 className="text-lg text-background text-left font-base font-semibold">Legal</h2>
 
                         <ul className="text-background text-left font-base space-y-1">
@@ -65,8 +65,8 @@ export function Footer() {
 
                 <div className="w-full h-0.5 bg-outline opacity-20" />
 
-                <div className="w-full h-auto grid grid-cols-12 items-start justify-center gap-4">
-                    <div className="col-span-12 sm:col-span-6 flex flex-col sm:flex-row items-start justify-center sm:justify-start gap-4">
+                <div className="w-full h-auto grid grid-cols-12 items-start justify-center gap-y-4 sm:gap-x-4">
+                    <div className="col-span-12 sm:col-span-6 flex flex-col sm:flex-row items-start justify-center sm:justify-start gap-y-4 sm:gap-x-4">
                         <p className="text-background text-left font-base font-semibold">Follow Us</p>
 
                         <div className="flex flex-wrap justify-start gap-4">
@@ -78,7 +78,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div className="mt-4 sm:mt-0 col-span-12 sm:col-span-6 flex flex-col sm:flex-row items-start sm:items-end justify-center sm:justify-end gap-4">
+                    <div className="mt-4 sm:mt-0 col-span-12 sm:col-span-6 flex flex-col sm:flex-row items-start sm:items-end justify-center sm:justify-end gap-y-4 sm:gap-x-4">
                         <p className="text-background text-left sm:text-right font-base font-semibold">Mobile App</p>
 
                         <div className="flex flex-wrap justify-start sm:justify-end gap-4">

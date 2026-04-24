@@ -20,7 +20,7 @@ export function Index_Navbar() {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col p-5 sm:p-10 gap-8">
+            <div className="w-full flex flex-col p-5 sm:p-10 gap-y-8">
                 <Button name="Register" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                 <Button name="Login" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
@@ -33,6 +33,7 @@ export function Index_Navbar() {
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
                     <Link href="/">
                         <Image
+                            suppressHydrationWarning
                             src={`/icons/logo-${isDark ? "white" : "black"}.svg`}
                             alt="worky-logo"
                             width={96}
@@ -41,8 +42,8 @@ export function Index_Navbar() {
                         />
                     </Link>
 
-                    <div className="flex items-center gap-8">
-                        <div className="hidden md:flex flex-row items-center gap-8">
+                    <div className="flex items-center gap-x-8">
+                        <div className="hidden md:flex flex-row items-center gap-x-8">
                             <Button name="Register" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                             <Button name="Login" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>

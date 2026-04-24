@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { User } from '@/components/interfaces/User';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CustomTextField } from '@/components/ui/CustomTextField';
-import { CustomCheckbox } from '@/components/ui/CustomCheckbox';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { Button } from '@/components/ui/Button';
 
 const Login = () => {
@@ -57,10 +57,10 @@ const Login = () => {
                         </div>
 
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-8">
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
                                 <h3 className="text-2xl text-background text-left font-heading">Login</h3>
 
-                                <div className='w-full h-auto flex flex-col gap-8'>
+                                <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
                                         label="Email Address"
                                         type="email"
@@ -90,7 +90,7 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-4 sm:gap-x-4">
                                     <div className="flex items-center justify-center">
                                         <CustomCheckbox
                                             checked={checked}
@@ -107,7 +107,7 @@ const Login = () => {
                                     </div>
                                 </div>
 
-                                <div className='w-full h-auto flex flex-col gap-4'>
+                                <div className='w-full h-auto flex flex-col gap-y-4'>
                                     <Button name="Login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                                     <p className="text-background text-left font-base">Not Registered?</p>
@@ -127,10 +127,10 @@ const Login = () => {
                         className="w-full h-full grid grid-cols-12"
                     >
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-8">
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
                                 <h3 className="text-2xl text-background text-left font-heading">Register</h3>
 
-                                <div className='w-full h-auto flex flex-col gap-8'>
+                                <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
                                         label="First Name"
                                         type="text"
@@ -203,7 +203,7 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <div className='w-full h-auto flex flex-col gap-4'>
+                                <div className='w-full h-auto flex flex-col gap-y-4'>
                                     <Button name="Register" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                                     <p className="text-background text-left font-base">Already Registered?</p>

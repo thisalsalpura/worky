@@ -33,8 +33,8 @@ function EndIconButton({ onClick, ariaLabel, children }: {
             disableRipple
             sx={{
                 width: `${ICON_SIZE}px`,
-                height: `${ICON_SIZE}px`,
                 minWidth: `${ICON_SIZE}px`,
+                height: `${ICON_SIZE}px`,
                 flexShrink: 0,
                 fontSize: '16px',
                 color: 'var(--color-on-primary)',
