@@ -9,20 +9,20 @@ import { Autoplay } from "swiper/modules";
 const Single_Gig = () => {
 
     const [gigImages, setGigImages] = useState<string[]>([
-        "/images/home-img.svg",
-        "/images/home-img.svg",
-        "/images/home-img.svg",
-        "/images/home-img.svg",
-        "/images/home-img.svg",
+        "/images/empty-gig-img.svg",
+        "/images/empty-gig-img.svg",
+        "/images/empty-gig-img.svg",
+        "/images/empty-gig-img.svg",
+        "/images/empty-gig-img.svg"
     ]);
 
-    const [activeImage, setActiveImage] = useState(gigImages[0]);
+    const [activeImage, setActiveImage] = useState<string>(gigImages[0]);
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState<number>(0);
 
-    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
-    const handleImageSelect = (src, index) => {
+    const handleImageSelect = (src: string, index: number) => {
         if (index === activeIndex) return;
         setIsTransitioning(true);
         setTimeout(() => {
@@ -36,13 +36,13 @@ const Single_Gig = () => {
         <div className="w-full h-full flex flex-col items-center justify-center gap-y-12">
             <div className="w-full h-auto flex items-center justify-between gap-x-4">
                 <p className="text-sm text-primary font-base">
-                    <span className="opacity-40">Home</span>
-                    <FontAwesomeIcon icon={faAngleRight} className="opacity-40" />
-                    <span className="opacity-40">SingleGig</span>
-                    <FontAwesomeIcon icon={faAngleRight} />
-                    <span>Programming & Tech</span>
-                    <FontAwesomeIcon icon={faAngleRight} />
-                    <span>Web Development</span>
+                    <span className="opacity-40 cursor-pointer">Home</span>
+                    <FontAwesomeIcon icon={faAngleRight} className="opacity-40 cursor-pointer" />
+                    <span className="opacity-40 cursor-pointer">SingleGig</span>
+                    <FontAwesomeIcon icon={faAngleRight} className="cursor-pointer" />
+                    <span className="cursor-pointer">Programming & Tech</span>
+                    <FontAwesomeIcon icon={faAngleRight} className="cursor-pointer" />
+                    <span className="cursor-pointer">Web Development</span>
                 </p>
 
                 <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2.5 transition-colors duration-300 cursor-pointer group">
@@ -75,7 +75,7 @@ const Single_Gig = () => {
                             </div>
                         </div>
 
-                        <div className="w-full h-96 bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
+                        <div className="w-full h-96 bg-surface-variant border-2 border-outline-variant rounded-lg overflow-hidden">
                             <Image
                                 src={activeImage}
                                 alt="gig-image"
@@ -86,7 +86,7 @@ const Single_Gig = () => {
                             />
                         </div>
 
-                        <div className="w-full h-auto">
+                        <div className="w-full h-auto p-4">
                             <Swiper
                                 spaceBetween={10}
                                 autoplay={{
@@ -100,13 +100,13 @@ const Single_Gig = () => {
                                     640: { slidesPerView: 3 },
                                     1024: { slidesPerView: 4 }
                                 }}
-                                className="w-full h-full p-2"
+                                className="w-full h-full"
                             >
                                 {gigImages.map((gigImage, index) => (
                                     <SwiperSlide key={index} className="h-full">
                                         <button
                                             onClick={() => handleImageSelect(gigImage, index)}
-                                            className={`h-28 border rounded-lg transition-all duration-300 focus:outline-none overflow-hidden ${activeIndex === index ? "border-primary" : "border-outline-variant"}`}
+                                            className={`w-full h-28 bg-surface-variant border-2 rounded-lg transition-all duration-300 focus:outline-none overflow-hidden ${activeIndex === index ? "border-primary opacity-100" : "border-outline-variant opacity-40"}`}
                                         >
                                             <Image
                                                 src={gigImage}
@@ -128,7 +128,7 @@ const Single_Gig = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

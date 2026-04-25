@@ -23,7 +23,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
 
     const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
 
-    const [searchCountry, setSearchCountry] = useState('');
+    const [searchCountry, setSearchCountry] = useState<string>('');
 
     const open = Boolean(anchor);
 

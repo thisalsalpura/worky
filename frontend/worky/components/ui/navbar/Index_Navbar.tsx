@@ -10,7 +10,7 @@ export function Index_Navbar() {
 
     const { resolvedTheme } = useTheme();
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const isDark = resolvedTheme === 'dark';
 

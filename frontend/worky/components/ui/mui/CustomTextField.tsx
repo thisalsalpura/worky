@@ -61,7 +61,7 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
 
     const hasEndAdornment = isPasswordField || !!endIcon || !!props.InputProps?.endAdornment;
 
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const inputType = isPasswordField && showPassword ? 'text' : props.type;
 

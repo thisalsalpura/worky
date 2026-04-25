@@ -13,11 +13,11 @@ export function Default_Navbar() {
 
     const { resolvedTheme } = useTheme();
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const [isCaretOpen, setIsCaretOpen] = useState(false);
+    const [isCaretOpen, setIsCaretOpen] = useState<boolean>(false);
 
-    const [searchText, setSearchText] = useState("");
+    const [searchText, setSearchText] = useState<string>('');
 
     const [errors, setErrors] = useState<Record<string, string>>({});
 
