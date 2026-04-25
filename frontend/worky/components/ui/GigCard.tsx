@@ -34,7 +34,7 @@ export function GigCard() {
 
                 <p className="w-full text-sm text-on-background dark:text-background font-base line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quasi esse ab quae eaque, tempore eius magnam ullam architecto debitis qui. Ex, eveniet modi numquam hic nemo vero dolorem necessitatibus.</p>
 
-                <p className="w-full text-lg text-on-background dark:text-background font-base font-semibold">From $9.99</p>
+                <p className="w-full text-lg text-on-background dark:text-background font-base font-semibold">From LKR 9.99</p>
             </div>
         </div>
     );
