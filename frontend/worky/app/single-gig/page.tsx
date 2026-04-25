@@ -1,4 +1,5 @@
 'use client';
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faShare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -6,6 +7,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 const Single_Gig = () => {
+
+    const [gigImages, setGigImages] = useState<string[]>([
+        "/images/home-img.svg",
+        "/images/home-img.svg",
+        "/images/home-img.svg",
+        "/images/home-img.svg",
+        "/images/home-img.svg",
+    ]);
+
+    const [activeImage, setActiveImage] = useState(gigImages[0]);
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const handleImageSelect = (src, index) => {
+        if (index === activeIndex) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setActiveImage(src);
+            setActiveIndex(index);
+            setIsTransitioning(false);
+        }, 180);
+    };
+
     return (
         <div className="w-full h-full flex flex-col items-center justify-center gap-y-12">
             <div className="w-full h-auto flex items-center justify-between gap-x-4">
@@ -49,82 +75,50 @@ const Single_Gig = () => {
                             </div>
                         </div>
 
-                        <div className="w-full h-96 border border-outline-variant rounded-lg overflow-hidden">
+                        <div className="w-full h-96 bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
                             <Image
-                                src="/images/empty-gig-img.svg"
-                                alt="user-image"
+                                src={activeImage}
+                                alt="gig-image"
                                 width={384}
                                 height={384}
-                                className='w-full h-full object-cover'
+                                className={`w-full h-full aspect-video object-cover transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
                                 priority
                             />
                         </div>
 
                         <div className="w-full h-auto">
                             <Swiper
-                                spaceBetween={16}
+                                spaceBetween={10}
                                 autoplay={{
                                     delay: 3000,
-                                    disableOnInteraction: false
+                                    disableOnInteraction: false,
+                                    pauseOnMouseEnter: true
                                 }}
                                 modules={[Autoplay]}
                                 breakpoints={{
-                                    320: { slidesPerView: 1 },
-                                    768: { slidesPerView: 2 },
-                                    1024: { slidesPerView: 3 }
+                                    0: { slidesPerView: 2 },
+                                    640: { slidesPerView: 3 },
+                                    1024: { slidesPerView: 4 }
                                 }}
-                                className="w-full h-full"
+                                className="w-full h-full p-2"
                             >
-                                <SwiperSlide className="h-28 border border-outline-variant rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/images/empty-gig-img.svg"
-                                        alt="user-image"
-                                        width={112}
-                                        height={112}
-                                        className='w-full h-full object-cover'
-                                        priority
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide className="h-28 border border-outline-variant rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/images/empty-gig-img.svg"
-                                        alt="user-image"
-                                        width={112}
-                                        height={112}
-                                        className='w-full h-full object-cover'
-                                        priority
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide className="h-28 border border-outline-variant rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/images/empty-gig-img.svg"
-                                        alt="user-image"
-                                        width={112}
-                                        height={112}
-                                        className='w-full h-full object-cover'
-                                        priority
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide className="h-28 border border-outline-variant rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/images/empty-gig-img.svg"
-                                        alt="user-image"
-                                        width={112}
-                                        height={112}
-                                        className='w-full h-full object-cover'
-                                        priority
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide className="h-28 border border-outline-variant rounded-lg overflow-hidden">
-                                    <Image
-                                        src="/images/empty-gig-img.svg"
-                                        alt="user-image"
-                                        width={112}
-                                        height={112}
-                                        className='w-full h-full object-cover'
-                                        priority
-                                    />
-                                </SwiperSlide>
+                                {gigImages.map((gigImage, index) => (
+                                    <SwiperSlide key={index} className="h-full">
+                                        <button
+                                            onClick={() => handleImageSelect(gigImage, index)}
+                                            className={`h-28 border rounded-lg transition-all duration-300 focus:outline-none overflow-hidden ${activeIndex === index ? "border-primary" : "border-outline-variant"}`}
+                                        >
+                                            <Image
+                                                src={gigImage}
+                                                alt="gig-image"
+                                                width={112}
+                                                height={112}
+                                                className='w-full h-full aspect-video object-cover'
+                                                priority
+                                            />
+                                        </button>
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
                         </div>
                     </div>

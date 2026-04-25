@@ -59,7 +59,8 @@ const Index = () => {
             spaceBetween={16}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
             }}
             modules={[Autoplay]}
             breakpoints={{
