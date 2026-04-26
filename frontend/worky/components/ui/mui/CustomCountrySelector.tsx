@@ -1,7 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import { Country } from '@/components/interfaces/User';
-import { Popover, InputAdornment, IconButton, List, ListItemButton, ListItemText } from '@mui/material';
+import { Popover, InputAdornment, IconButton, List, ListItemButton } from '@mui/material';
 import { CustomTextField } from './CustomTextField';
 import { COUNTRIES } from '@/constants/countries';
 
@@ -23,7 +23,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
 
     const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
 
-    const [searchCountry, setSearchCountry] = useState('');
+    const [searchCountry, setSearchCountry] = useState<string>('');
 
     const open = Boolean(anchor);
 
@@ -116,6 +116,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                 <List
                     disablePadding
                     sx={{
+                        mb: '10px',
                         flexGrow: 1,
                         display: 'flex',
                         flexDirection: 'column',
@@ -128,16 +129,21 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                     }}
                 >
                     {filtered.length === 0 ? (
-                        <ListItemText
-                            primary="No Results"
+                        <ListItemButton
                             sx={{
-                                p: '2px',
-                                '& .MuiListItemText-primary': {
-                                    ...BASE_TYPOGRAPHY,
-                                    color: 'var(--color-on-primary)'
+                                flexShrink: 0,
+                                color: 'var(--color-on-primary)',
+                                borderRadius: `${BORDER_RADIUS}px`,
+                                p: '10px',
+                                gap: '8px',
+                                transition: 'background-color 300ms ease',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.1)'
                                 }
                             }}
-                        />
+                        >
+                            <span style={{ ...BASE_TYPOGRAPHY }}>No Results</span>
+                        </ListItemButton>
                     ) : filtered.map(country => (
                         <ListItemButton
                             key={country.code}

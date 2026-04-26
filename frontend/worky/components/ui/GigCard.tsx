@@ -1,8 +1,12 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function GigCard() {
+
+    const router = useRouter();
+
     return (
-        <div className="w-full md:w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-4 cursor-pointer">
+        <div onClick={() => router.push("/single-gig")} className="w-full md:w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-4 cursor-pointer">
             <div className="w-full h-44 flex items-center justify-center border border-outline-variant rounded-lg overflow-hidden">
                 <Image
                     src="/images/empty-gig-img.svg"
@@ -34,7 +38,7 @@ export function GigCard() {
 
                 <p className="w-full text-sm text-on-background dark:text-background font-base line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quasi esse ab quae eaque, tempore eius magnam ullam architecto debitis qui. Ex, eveniet modi numquam hic nemo vero dolorem necessitatibus.</p>
 
-                <p className="w-full text-lg text-on-background dark:text-background font-base font-semibold">From $9.99</p>
+                <p className="w-full text-lg text-on-background dark:text-background font-base font-semibold">From LKR 9.99</p>
             </div>
         </div>
     );
