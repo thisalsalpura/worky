@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faShare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaqItem } from "@/components/interfaces/FaqItem";
+import { CustomAccordion } from "@/components/ui/mui/CustomAccordion";
 
 const Single_Gig = () => {
 
@@ -14,6 +16,19 @@ const Single_Gig = () => {
         "/images/empty-gig-img.svg",
         "/images/empty-gig-img.svg"
     ]);
+
+    const FAQS: FaqItem[] = [
+        {
+            id: 'panel-1',
+            question: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita labore deserunt excepturi magni, ratione dolorem adipisci ducimus minus quia tenetur! Quia sit laboriosam molestias, nam ducimus sint dolor architecto laudantium?',
+            answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, sit quia necessitatibus at vel, ut asperiores iste expedita voluptates facilis rerum architecto. Enim eligendi iure commodi beatae dignissimos placeat unde?'
+        },
+        {
+            id: 'panel-2',
+            question: 'Quia sit laboriosam molestias, nam ducimus sint dolor architecto laudantium? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            answer: 'Enim eligendi iure commodi beatae dignissimos placeat unde? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore necessitatibus at vel.'
+        }
+    ];
 
     const [activeImage, setActiveImage] = useState<string>(gigImages[0]);
 
@@ -120,7 +135,7 @@ const Single_Gig = () => {
                         </div>
 
                         <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
-                            <p className="text-2xl text-on-background font-base font-semibold">Description</p>
+                            <p className="text-2xl text-on-background font-heading font-semibold">Description</p>
 
                             <p className="text-on-background font-base">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti iusto quo voluptatum blanditiis eius sequi, maiores veritatis voluptatem cumque necessitatibus doloremque, vel neque ipsum beatae fuga magni asperiores saepe autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, mollitia! Unde vero dolorum asperiores numquam, ipsum reprehenderit distinctio possimus pariatur quasi eveniet voluptatum earum laudantium cupiditate suscipit ullam, alias vitae?
@@ -138,41 +153,40 @@ const Single_Gig = () => {
                         </div>
 
                         <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
-                            <p className="text-2xl text-on-background font-base font-semibold">Search Tags</p>
+                            <p className="text-2xl text-on-background font-heading font-semibold">Search Tags</p>
 
                             <div className="w-full h-auto flex flex-wrap items-start justify-start gap-4">
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">HTML</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">JavaScript</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">React</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">Next.js</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">Tailwind CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
                                     <p className="text-on-background font-base group-hover:text-background">Figma</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
-                            <p className="text-2xl text-on-background font-base font-semibold">FAQs</p>
+                            <p className="text-2xl text-on-background font-heading font-semibold">FAQs</p>
 
                             <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
-                                <div className="w-full h-auto flex flex-col items-start justify-start cus-animated-bg border border-outline-variant rounded-lg px-5 py-2 gap-y-2 group">
-                                    <p className="text-on-background font-base group-hover:text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur error rem? Quaerat mollitia in eius consectetur! Corrupti sapiente itaque vero sequi, repudiandae suscipit a similique tempore quam magnam vitae?</p>
-                                    <p className="text-on-background font-base group-hover:text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium sit saepe temporibus magnam esse illo aspernatur? Harum id beatae ab animi velit voluptas. Soluta accusantium incidunt fuga non atque!</p>
-                                </div>
+                                {FAQS.map(faq => (
+                                    <CustomAccordion key={faq.id} item={faq} />
+                                ))}
                             </div>
                         </div>
                     </div>
