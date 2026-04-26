@@ -51,12 +51,12 @@ const Single_Gig = () => {
 
             <div className="w-full h-auto p-4">
                 <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
-                    <div className="col-span-12 md:col-span-7 h-auto flex flex-col items-center justify-start gap-y-6">
+                    <div className="col-span-12 md:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8">
                         <h2 className="w-full h-auto text-2xl text-on-background font-heading font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, tenetur incidunt quis veniam quasi eos velit repellendus animi aperiam placeat voluptatibus tempore dignissimos eveniet magnam tempora facere explicabo, repellat provident?</h2>
 
                         <div className="w-full h-auto flex items-center justify-start gap-x-4">
                             <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer">
-                                <div className="w-10 h-10 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
+                                <div className="w-10 h-10 flex items-center justify-center bg-surface-variant rounded-full overflow-hidden">
                                     <Image
                                         src="/images/user-img.svg"
                                         alt="user-image"
@@ -69,8 +69,8 @@ const Single_Gig = () => {
                             </div>
 
                             <div className="w-full h-auto flex flex-col items-start justify-center gap-y-2">
-                                <p className="w-auto flex-1 text-on-background dark:text-background font-base font-semibold line-clamp-1">Ben Stokes</p>
-                                <p className="w-auto flex-1 text-xs text-on-background dark:text-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
+                                <p className="w-auto flex-1 text-on-background font-base font-semibold line-clamp-1">Ben Stokes</p>
+                                <p className="w-auto flex-1 text-xs text-on-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
                             </div>
                         </div>
 
@@ -118,9 +118,66 @@ const Single_Gig = () => {
                                 ))}
                             </Swiper>
                         </div>
+
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                            <p className="text-2xl text-on-background font-base font-semibold">Description</p>
+
+                            <p className="text-on-background font-base">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti iusto quo voluptatum blanditiis eius sequi, maiores veritatis voluptatem cumque necessitatibus doloremque, vel neque ipsum beatae fuga magni asperiores saepe autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, mollitia! Unde vero dolorum asperiores numquam, ipsum reprehenderit distinctio possimus pariatur quasi eveniet voluptatum earum laudantium cupiditate suscipit ullam, alias vitae?
+                            </p>
+
+                            <div className="w-auto h-auto flex flex-row items-center justify-start gap-x-2">
+                                <p className="text-on-background font-base font-semibold">Category :</p>
+                                <p className="text-on-background font-base">Programming & Tech</p>
+                            </div>
+
+                            <div className="w-auto h-auto flex flex-row items-center justify-start gap-x-2">
+                                <p className="text-on-background font-base font-semibold">Sub Category :</p>
+                                <p className="text-on-background font-base">Web Development</p>
+                            </div>
+                        </div>
+
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                            <p className="text-2xl text-on-background font-base font-semibold">Search Tags</p>
+
+                            <div className="w-full h-auto flex flex-wrap items-start justify-start gap-4">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">HTML</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">CSS</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">JavaScript</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">React</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">Next.js</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">Tailwind CSS</p>
+                                </div>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-full px-5 py-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">Figma</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                            <p className="text-2xl text-on-background font-base font-semibold">FAQs</p>
+
+                            <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
+                                <div className="w-full h-auto flex flex-col items-start justify-start cus-animated-bg border border-outline-variant rounded-lg px-5 py-2 gap-y-2 group">
+                                    <p className="text-on-background font-base group-hover:text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur error rem? Quaerat mollitia in eius consectetur! Corrupti sapiente itaque vero sequi, repudiandae suscipit a similique tempore quam magnam vitae?</p>
+                                    <p className="text-on-background font-base group-hover:text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laudantium sit saepe temporibus magnam esse illo aspernatur? Harum id beatae ab animi velit voluptas. Soluta accusantium incidunt fuga non atque!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-start md:sticky border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
+                    <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-start md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
 
                     </div>
                 </div>

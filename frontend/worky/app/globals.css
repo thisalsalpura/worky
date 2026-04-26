@@ -53,6 +53,18 @@
   .cus-btn-ping-dot {
     @apply relative w-4 h-4 flex flex-row rounded-full;
   }
+
+  .cus-animated-bg {
+    @apply relative bg-transparent transition-all duration-300 ease-linear overflow-hidden cursor-pointer z-20;
+  }
+
+  .cus-animated-bg::after {
+    @apply absolute left-0 -bottom-full content-[''] w-full h-full bg-on-background rounded-full transition-all duration-300 ease-in-out z-[-1];
+  }
+
+  .cus-animated-bg:hover::after {
+    @apply bottom-0;
+  }
 }
 
 * {
