@@ -72,7 +72,7 @@ const Index = () => {
           >
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6">
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 cursor-pointer">
                   <FontAwesomeIcon icon={category.icon} className="text-9xl text-background text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
                     {category.title}

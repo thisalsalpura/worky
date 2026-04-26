@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faShare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 
 const Single_Gig = () => {
 
@@ -75,26 +74,22 @@ const Single_Gig = () => {
                             </div>
                         </div>
 
-                        <div className="w-full h-96 bg-surface-variant border-2 border-outline-variant rounded-lg overflow-hidden">
-                            <Image
-                                src={activeImage}
-                                alt="gig-image"
-                                width={384}
-                                height={384}
-                                className={`w-full h-full aspect-video object-cover transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
-                                priority
-                            />
+                        <div className="w-full h-96 flex items-center justify-center border border-outline-variant rounded-lg p-2">
+                            <div className="w-full h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
+                                <Image
+                                    src={activeImage}
+                                    alt="gig-image"
+                                    width={366}
+                                    height={366}
+                                    className={`w-full h-full aspect-video object-cover transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+                                    priority
+                                />
+                            </div>
                         </div>
 
-                        <div className="w-full h-auto p-4">
+                        <div className="w-full h-auto px-2">
                             <Swiper
-                                spaceBetween={10}
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                    pauseOnMouseEnter: true
-                                }}
-                                modules={[Autoplay]}
+                                spaceBetween={8}
                                 breakpoints={{
                                     0: { slidesPerView: 2 },
                                     640: { slidesPerView: 3 },
@@ -103,20 +98,22 @@ const Single_Gig = () => {
                                 className="w-full h-full"
                             >
                                 {gigImages.map((gigImage, index) => (
-                                    <SwiperSlide key={index} className="h-full">
-                                        <button
+                                    <SwiperSlide key={index} className="h-full flex justify-center px-2">
+                                        <div
                                             onClick={() => handleImageSelect(gigImage, index)}
-                                            className={`w-full h-28 bg-surface-variant border-2 rounded-lg transition-all duration-300 focus:outline-none overflow-hidden ${activeIndex === index ? "border-primary opacity-100" : "border-outline-variant opacity-40"}`}
+                                            className={`h-28 flex items-center justify-center border rounded-lg p-2 transition-all duration-300 cursor-pointer ${activeIndex === index ? "border-primary opacity-100" : "border-outline-variant opacity-40"}`}
                                         >
-                                            <Image
-                                                src={gigImage}
-                                                alt="gig-image"
-                                                width={112}
-                                                height={112}
-                                                className='w-full h-full aspect-video object-cover'
-                                                priority
-                                            />
-                                        </button>
+                                            <div className="h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
+                                                <Image
+                                                    src={gigImage}
+                                                    alt="gig-image"
+                                                    width={94}
+                                                    height={94}
+                                                    className='w-full h-full aspect-video object-cover'
+                                                    priority
+                                                />
+                                            </div>
+                                        </div>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
