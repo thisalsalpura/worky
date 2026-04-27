@@ -96,7 +96,7 @@ export function Default_Navbar() {
                             <ThemeToggle />
 
                             <button onClick={toggleCaret} className="w-12 h-12 hidden md:flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
-                                <FontAwesomeIcon icon={isCaretOpen ? faCircleChevronDown : faCircleChevronUp} className="text-lg text-on-primary group-hover:text-primary" />
+                                <FontAwesomeIcon icon={isCaretOpen ? faCircleChevronUp : faCircleChevronDown} className="text-lg text-on-primary group-hover:text-primary" />
                             </button>
                         </div>
 

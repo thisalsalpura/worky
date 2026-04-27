@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaqItem } from "@/components/interfaces/FaqItem";
 import { Accordion, AccordionSummary, AccordionDetails, AccordionSlots, Fade, accordionClasses, accordionDetailsClasses } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleChevronDown, faCircleChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const BORDER_RADIUS = 12;
 
@@ -29,6 +29,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                     boxShadow: 'none',
                     overflow: 'hidden',
                     '& .MuiAccordionSummary-root': {
+                        alignItems: 'center',
                         backgroundColor: 'var(--color-surface-variant)',
                         padding: '16px',
                         gap: '16px'
@@ -59,7 +60,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                     <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group">
                         <FontAwesomeIcon
                             icon={expanded ? faCircleChevronUp : faCircleChevronDown}
-                            className="text-base text-background group-hover:text-on-background transition-transform duration-300"
+                            className="text-base text-background group-hover:text-on-background"
                         />
                     </div>
                 }
