@@ -1,7 +1,9 @@
 'use client';
-import { Pagination, PaginationProps } from '@mui/material';
-import { SxProps, Theme } from '@mui/material/styles';
 import { useTheme } from 'next-themes';
+import { Pagination, PaginationItem, PaginationProps } from '@mui/material';
+import { SxProps, Theme } from '@mui/material/styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const ITEM_SIZE = 36;
 const BORDER_RADIUS = 1000;
@@ -36,6 +38,7 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                 borderRadius: `${BORDER_RADIUS}px`,
                 opacity: 0.8,
                 transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
+                overflow: 'hidden',
                 '&.Mui-selected': {
                     color: 'var(--color-primary)',
                     backgroundColor: 'var(--color-on-primary)',
@@ -76,6 +79,19 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
         <div suppressHydrationWarning className={`${containerClassName} w-full md:w-fit flex items-center justify-center bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-2.5`}>
             <Pagination
                 {...props}
+                renderItem={(item) => (
+                    <PaginationItem
+                        {...item}
+                        slots={{
+                            previous: () => (
+                                <FontAwesomeIcon icon={faCircleChevronLeft} style={{ fontSize: '16px', display: 'block' }} />
+                            ),
+                            next: () => (
+                                <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
+                            )
+                        }}
+                    />
+                )}
                 sx={sx}
             />
         </div>

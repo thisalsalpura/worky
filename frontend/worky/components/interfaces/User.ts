@@ -6,11 +6,11 @@ export interface User {
     country?: Country;
     mobile?: string;
     role?: string;
-}
+};
 
 export interface Country {
     code: string;
     name: string;
     dial: string;
     flagCode: string;
-}
+};
