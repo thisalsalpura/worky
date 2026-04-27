@@ -87,7 +87,6 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                 slotProps={{
                     paper: {
                         sx: {
-                            mt: '6px',
                             width: '360px',
                             maxHeight: '360px',
                             display: 'flex',
@@ -95,7 +94,8 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                             border: '1px solid var(--color-outline)',
                             backgroundColor: 'var(--color-primary)',
                             borderRadius: `${BORDER_RADIUS}px`,
-                            p: '10px',
+                            px: '20px',
+                            py: '10px',
                             gap: '8px',
                             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.24)',
                             overflow: 'hidden'

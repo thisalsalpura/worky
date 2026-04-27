@@ -121,6 +121,22 @@ const Login = () => {
 
                                     <Button name="Register" onClick={() => setIsLogin(false)} btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                                 </div>
+
+                                <div className="flex flex-col items-center justify-center gap-y-4">
+                                    <p className="text-background text-center font-base">Or Login Google</p>
+                                    <div className='w-full h-auto flex items-center justify-center'>
+                                        <button className='w-10 h-10 flex items-center justify-center bg-on-background hover:bg-background border border-outline rounded-full p-2 transition-colors duration-300 cursor-pointer'>
+                                            <Image
+                                                src="/icons/google-icon.svg"
+                                                alt="google-icon"
+                                                width={24}
+                                                height={24}
+                                                className='object-cover'
+                                                priority
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
