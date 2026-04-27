@@ -57,7 +57,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
         >
             <AccordionSummary
                 expandIcon={
-                    <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group">
+                    <div className="w-9 h-9 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group">
                         <FontAwesomeIcon
                             icon={expanded ? faCircleChevronUp : faCircleChevronDown}
                             className="text-base text-background group-hover:text-on-background"

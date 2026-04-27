@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaqItem } from "@/components/interfaces/FaqItem";
 import { CustomAccordion } from "@/components/ui/mui/CustomAccordion";
+import { CustomTabs } from "@/components/ui/mui/CustomTabs";
 
 const Single_Gig = () => {
 
@@ -192,7 +193,17 @@ const Single_Gig = () => {
                     </div>
 
                     <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-start md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
-
+                        <CustomTabs
+                            tabs={[
+                                { label: 'Overview', content: <p>Overview content</p> },
+                                { label: 'Reviews', content: <p>Reviews content</p> },
+                                { label: 'Orders', content: <p>Orders content</p> },
+                                { label: 'Packages', content: <p>Packages content</p> },
+                                { label: 'Portfolio', content: <p>Portfolio content</p> },
+                                { label: 'About', content: <p>About content</p> },
+                                { label: 'Contact', content: <p>Contact content</p> }
+                            ]}
+                        />
                     </div>
                 </div>
             </div>
