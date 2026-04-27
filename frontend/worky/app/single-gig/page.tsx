@@ -1,12 +1,76 @@
 'use client';
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faShare } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faClock, faShare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaqItem } from "@/components/interfaces/FaqItem";
 import { CustomAccordion } from "@/components/ui/mui/CustomAccordion";
 import { CustomTabs } from "@/components/ui/mui/CustomTabs";
+import { Button } from "@/components/ui/Button";
+
+function Bronze_Package() {
+    return (
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Bronze Package</h2>
+
+            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+
+            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
+                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
+                <p className="text-on-background dark:text-background font-base font-semibold">3 Days Delivery</p>
+            </div>
+
+            <div className="w-full h-auto flex items-center justify-end">
+                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 99.99</p>
+            </div>
+
+            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+        </div>
+    );
+}
+
+function Silver_Package() {
+    return (
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Silver Package</h2>
+
+            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+
+            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
+                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
+                <p className="text-on-background dark:text-background font-base font-semibold">2 Days Delivery</p>
+            </div>
+
+            <div className="w-full h-auto flex items-center justify-end">
+                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 199.99</p>
+            </div>
+
+            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+        </div>
+    );
+}
+
+function Gold_Package() {
+    return (
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Gold Package</h2>
+
+            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+
+            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
+                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
+                <p className="text-on-background dark:text-background font-base font-semibold">1 Days Delivery</p>
+            </div>
+
+            <div className="w-full h-auto flex items-center justify-end">
+                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 299.99</p>
+            </div>
+
+            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+        </div>
+    );
+}
 
 const Single_Gig = () => {
 
@@ -195,13 +259,9 @@ const Single_Gig = () => {
                     <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-start md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
                         <CustomTabs
                             tabs={[
-                                { label: 'Overview', content: <p>Overview content</p> },
-                                { label: 'Reviews', content: <p>Reviews content</p> },
-                                { label: 'Orders', content: <p>Orders content</p> },
-                                { label: 'Packages', content: <p>Packages content</p> },
-                                { label: 'Portfolio', content: <p>Portfolio content</p> },
-                                { label: 'About', content: <p>About content</p> },
-                                { label: 'Contact', content: <p>Contact content</p> }
+                                { label: 'Bronze', content: <Bronze_Package /> },
+                                { label: 'Silver', content: <Silver_Package /> },
+                                { label: 'Gold', content: <Gold_Package /> }
                             ]}
                         />
                     </div>
