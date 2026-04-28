@@ -59,11 +59,12 @@
   }
 
   .cus-animated-bg::after {
-    @apply absolute left-0 -bottom-full content-[''] w-full h-full bg-on-background rounded-full transition-all duration-300 ease-in-out z-[-1];
+    @apply absolute left-0 -bottom-full content-[''] w-full h-full rounded-full transition-all duration-300 ease-in-out z-[-1];
+    background-color: var(--animated-bg-color);
   }
 
   .cus-animated-bg:hover::after {
-    @apply bottom-0;
+    @apply bottom-0 rounded-none;
   }
 }
 

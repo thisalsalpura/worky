@@ -125,7 +125,7 @@ const Login = () => {
                                 <div className="flex flex-col items-center justify-center gap-y-4">
                                     <p className="text-background text-center font-base">Or Login Google</p>
                                     <div className='w-full h-auto flex items-center justify-center'>
-                                        <button className='w-10 h-10 flex items-center justify-center bg-on-background hover:bg-background border border-outline rounded-full p-2 transition-colors duration-300 cursor-pointer'>
+                                        <button className='w-10 h-10 flex items-center justify-center cus-animated-bg border border-outline rounded-full p-2 cursor-pointer' style={{ '--animated-bg-color': 'var(--color-on-primary)' } as React.CSSProperties}>
                                             <Image
                                                 src="/icons/google-icon.svg"
                                                 alt="google-icon"

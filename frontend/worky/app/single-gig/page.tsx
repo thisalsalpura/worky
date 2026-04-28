@@ -221,25 +221,25 @@ const Single_Gig = () => {
                             <p className="text-2xl text-on-background font-heading font-semibold">Search Tags</p>
 
                             <div className="w-full h-auto flex flex-wrap items-start justify-start gap-4">
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">HTML</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">JavaScript</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">React</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Next.js</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Tailwind CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group">
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Figma</p>
                                 </div>
                             </div>
