@@ -116,11 +116,11 @@ const Single_Gig = () => {
             <div className="w-full h-auto flex items-center justify-between gap-x-4">
                 <p className="text-sm text-primary font-base">
                     <span className="opacity-40 cursor-pointer">Home</span>
-                    <FontAwesomeIcon icon={faAngleRight} className="opacity-40 cursor-pointer" />
+                    <FontAwesomeIcon icon={faAngleRight} className="opacity-40" />
                     <span className="opacity-40 cursor-pointer">SingleGig</span>
-                    <FontAwesomeIcon icon={faAngleRight} className="cursor-pointer" />
+                    <FontAwesomeIcon icon={faAngleRight} />
                     <span className="cursor-pointer">Programming & Tech</span>
-                    <FontAwesomeIcon icon={faAngleRight} className="cursor-pointer" />
+                    <FontAwesomeIcon icon={faAngleRight} />
                     <span className="cursor-pointer">Web Development</span>
                 </p>
 

@@ -29,7 +29,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                     boxShadow: 'none',
                     overflow: 'hidden',
                     '& .MuiAccordionSummary-root': {
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         backgroundColor: 'var(--color-surface-variant)',
                         padding: '16px',
                         gap: '16px'
