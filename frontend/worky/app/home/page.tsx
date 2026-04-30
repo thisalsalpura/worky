@@ -136,7 +136,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="col-span-12 md:col-span-5 lg:col-span-9 h-auto flex flex-col items-center justify-start gap-y-8">
+                <div className="col-span-12 md:col-span-5 lg:col-span-9 h-auto flex flex-col items-center justify-start gap-y-6">
                     <div className="w-full h-auto flex flex-wrap items-start justify-start gap-6">
                         <GigCard />
                         <GigCard />
