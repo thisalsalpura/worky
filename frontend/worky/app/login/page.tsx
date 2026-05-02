@@ -63,7 +63,7 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
+                        <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center p-4'>
                             <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
                                 <h3 className="text-2xl text-background text-left font-heading">Login</h3>
 
