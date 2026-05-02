@@ -6,6 +6,7 @@ export interface User {
     password: string;
     country?: Country;
     mobile?: string;
+    dob?: Date;
     role?: string;
 };
 

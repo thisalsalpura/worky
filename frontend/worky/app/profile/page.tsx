@@ -90,11 +90,10 @@ const Profile = () => {
                         </div>
 
                         <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                            <h3 className="text-2xl text-background text-left font-heading">Address Informations</h3>
 
-                        </div>
-
-                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
-
+                            <div className='w-full h-auto flex flex-col gap-y-8'>
+                            </div>
                         </div>
                     </div>
                 </div>
