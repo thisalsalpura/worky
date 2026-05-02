@@ -29,64 +29,64 @@ const Advanced_Search = () => {
                 </p>
             </div>
 
-            <div className="w-full h-auto p-4">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-8 gap-y-12">
-                    <div className="w-full h-auto grid grid-cols-12 gap-8">
-                        <div className="col-span-12">
-                            <CustomTextField
-                                label="Gig Title"
-                                type="text"
-                                variant="outlined"
-                                fullWidth
-                                value={searchData.title}
-                                onChange={(e) => {
-                                    setSearchData(prev => ({ ...prev, title: e.target.value }));
-                                    setErrors(prev => ({ ...prev, title: "" }));
-                                }}
-                                error={!!errors.title}
-                                helperText={errors.title}
-                            />
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-                            <Button name="Clear" btnContainer="w-full text-primary-container bg-on-primary-container" btnPing="bg-primary-container" btnPingDot="bg-primary-container" />
-                        </div>
-
-                        <div className="col-span-12 md:col-span-6">
-                            <Button name="Search" btnContainer="w-full text-on-primary bg-primary" btnPing="bg-on-primary" btnPingDot="bg-on-primary" />
-                        </div>
+            <div className="w-full h-auto flex flex-col items-start justify-center p-4 gap-y-8">
+                <div className="w-full h-auto grid grid-cols-12 bg-on-background border-2 border-on-background rounded-lg p-10 gap-8">
+                    <div className="col-span-12 flex items-center justify-start">
+                        <h2 className="w-full h-auto text-2xl md:text-3xl text-background font-heading font-semibold">Advanced Search</h2>
                     </div>
 
-                    <div className="w-full h-0.5 bg-outline opacity-20" />
-
-                    <div className="w-full h-auto flex flex-col items-center justify-center gap-y-6">
-                        <div className="w-full h-auto flex flex-wrap items-start justify-center gap-6">
-                            <GigCard />
-                            <GigCard />
-                            <GigCard />
-                            <GigCard />
-                            <GigCard />
-                            <GigCard />
-                        </div>
-
-                        <CustomPagination count={6} page={1} />
+                    <div className="col-span-12">
+                        <CustomTextField
+                            label="Gig Title"
+                            type="text"
+                            variant="outlined"
+                            fullWidth
+                            value={searchData.title}
+                            onChange={(e) => {
+                                setSearchData(prev => ({ ...prev, title: e.target.value }));
+                                setErrors(prev => ({ ...prev, title: "" }));
+                            }}
+                            error={!!errors.title}
+                            helperText={errors.title}
+                        />
                     </div>
+
+                    <div className="col-span-12 md:col-span-6">
+
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6">
+
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6">
+
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6">
+
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6">
+                        <Button name="Clear" btnContainer="w-full text-primary bg-on-primary" btnPing="bg-primary" btnPingDot="bg-primary" />
+                    </div>
+
+                    <div className="col-span-12 md:col-span-6">
+                        <Button name="Search" btnContainer="w-full text-on-primary bg-primary" btnPing="bg-on-primary" btnPingDot="bg-on-primary" />
+                    </div>
+                </div>
+
+                <div className="w-full h-auto flex flex-col items-center justify-center gap-y-6">
+                    <div className="w-full h-auto flex flex-wrap items-start justify-center gap-6">
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                        <GigCard />
+                    </div>
+
+                    <CustomPagination count={6} page={1} />
                 </div>
             </div>
         </div>
