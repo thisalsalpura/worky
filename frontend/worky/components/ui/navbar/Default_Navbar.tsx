@@ -1,17 +1,20 @@
 'use client';
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { CustomTextField } from "../mui/CustomTextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMagnifyingGlass, faBell, faUser, faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMagnifyingGlass, faBell, faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export function Default_Navbar() {
 
     const { resolvedTheme } = useTheme();
+
+    const router = useRouter();
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -31,6 +34,12 @@ export function Default_Navbar() {
         setIsCaretOpen((previousCaret) => !previousCaret)
     };
 
+    const handleProfileClick = () => {
+        router.push("/profile");
+        setIsOpen(false);
+        setIsCaretOpen(false);
+    };
+
     const navItems = () => {
         return (
             <div className="w-full flex flex-col p-5 sm:p-10 gap-y-8">
@@ -46,8 +55,17 @@ export function Default_Navbar() {
                         <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
                     </button>
 
-                    <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
-                        <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
+                    <button onClick={handleProfileClick} className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                        <div className="w-10 h-10 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
+                            <Image
+                                src="/images/user-img.svg"
+                                alt="user-image"
+                                width={40}
+                                height={40}
+                                className='object-cover'
+                                priority
+                            />
+                        </div>
                     </button>
                 </div>
 
@@ -144,8 +162,17 @@ export function Default_Navbar() {
                             <FontAwesomeIcon icon={faBell} className="text-lg text-on-primary group-hover:text-primary" />
                         </button>
 
-                        <button className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
-                            <FontAwesomeIcon icon={faUser} className="text-lg text-on-primary group-hover:text-primary" />
+                        <button onClick={handleProfileClick} className="w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                            <div className="w-10 h-10 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
+                                <Image
+                                    src="/images/user-img.svg"
+                                    alt="user-image"
+                                    width={40}
+                                    height={40}
+                                    className='object-cover'
+                                    priority
+                                />
+                            </div>
                         </button>
                     </div>
                 </div>

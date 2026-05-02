@@ -75,7 +75,7 @@ const Home = () => {
 
             {/* DETAILS SECTION */}
             <section className="w-full h-auto grid grid-cols-12 p-4 gap-y-8 md:gap-x-8">
-                <div className="md:top-22 col-span-12 md:col-span-7 lg:col-span-3 h-auto md:h-fit flex flex-col md:sticky gap-y-6">
+                <div className="md:top-22 col-span-12 md:col-span-7 lg:col-span-3 h-auto md:h-fit flex flex-col items-center justify-center md:sticky gap-y-6">
                     <div className="w-full h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
                         <h2 className="text-xl text-on-background dark:text-background text-left font-heading">Categories</h2>
 
@@ -136,7 +136,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="col-span-12 md:col-span-5 lg:col-span-9 h-auto flex flex-col items-center justify-start gap-y-6">
+                <div className="col-span-12 md:col-span-5 lg:col-span-9 h-auto flex flex-col items-center justify-center gap-y-6">
                     <div className="w-full h-auto flex flex-wrap items-start justify-start gap-6">
                         <GigCard />
                         <GigCard />
