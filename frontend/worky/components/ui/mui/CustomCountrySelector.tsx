@@ -28,9 +28,9 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
     const open = Boolean(anchor);
 
     const filtered = useMemo(() =>
-        COUNTRIES.filter(c =>
-            c.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
-            c.dial.includes(searchCountry)
+        COUNTRIES.filter((c: Country) =>
+            c.name?.toLowerCase().includes(searchCountry.toLowerCase()) ||
+            c.dial?.includes(searchCountry)
         ),
         [searchCountry]
     );

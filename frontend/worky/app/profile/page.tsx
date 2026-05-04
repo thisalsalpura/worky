@@ -1,24 +1,41 @@
 'use client';
 import { useState } from "react";
-import { COUNTRIES } from "@/constants/countries";
-import { Country, User } from "@/components/interfaces/User";
+import { User } from "@/components/interfaces/User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 
 const Profile = () => {
 
-    const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
-
-    const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
-
     const [profileData, setProfileData] = useState<User>({
         fname: "",
         lname: "",
         email: "",
         password: "",
-        country: country,
-        mobile: "",
+        mobileCountryCode: {
+            code: "",
+            name: "",
+            dial: "",
+            flagCode: ""
+        },
+        mobileNum: "",
+        dob: undefined,
+        createdAt: undefined,
+        updatedAt: undefined,
+        isEmailVerified: undefined,
+        status: "",
+        address: {
+            addressLine1: "",
+            addressLine2: "",
+            city: "",
+            postalCode: "",
+            country: {
+                code: "",
+                name: "",
+                dial: "",
+                flagCode: ""
+            }
+        },
         role: ""
     });
 

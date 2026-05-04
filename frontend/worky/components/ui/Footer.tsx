@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { social_medias } from '@/constants/social_medias';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
