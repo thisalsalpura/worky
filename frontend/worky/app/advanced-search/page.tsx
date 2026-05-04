@@ -7,6 +7,7 @@ import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { Button } from "@/components/ui/Button";
 import { GigCard } from "@/components/ui/GigCard";
 import { CustomPagination } from "@/components/ui/mui/CustomPagination";
+import { CustomSelect } from "@/components/ui/mui/CustomSelect";
 
 const Advanced_Search = () => {
 
@@ -52,7 +53,28 @@ const Advanced_Search = () => {
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
-
+                        <CustomSelect
+                            label="Category"
+                            options={[
+                                { value: 'select', label: 'Select Category' },
+                                { value: 'web', label: 'Web' },
+                                { value: 'app', label: 'App' },
+                                { value: 'game', label: 'Game' },
+                                { value: 'design', label: 'Design' },
+                                { value: 'marketing', label: 'Marketing' },
+                                { value: 'writing', label: 'Writing' },
+                                { value: 'video', label: 'Video' },
+                                { value: 'other', label: 'Other' }
+                            ]}
+                            value={searchData.category}
+                            onChange={(e) => {
+                                setSearchData(prev => ({ ...prev, category: e.target.value as string }));
+                                setErrors(prev => ({ ...prev, category: "" }));
+                            }}
+                            error={!!errors.category}
+                            helperText={errors.category}
+                            fullWidth
+                        />
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
