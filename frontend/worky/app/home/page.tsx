@@ -107,9 +107,9 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="w-full h-auto flex flex-col items-start justify-center gap-y-2">
-                                    <p className="w-auto flex-1 text-on-background dark:text-background font-base font-semibold line-clamp-1">Ben Stokes</p>
-                                    <p className="w-auto flex-1 text-xs text-on-background dark:text-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
+                                <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center gap-y-2">
+                                    <p className="w-auto text-on-background dark:text-background font-base font-semibold line-clamp-1">Ben Stokes</p>
+                                    <p className="w-auto text-xs text-on-background dark:text-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
                                 </div>
                             </div>
 
@@ -127,9 +127,9 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="w-full h-auto flex flex-col items-start justify-center gap-y-2">
-                                    <p className="w-auto flex-1 text-on-background dark:text-background font-base font-semibold line-clamp-1">Ben Stokes</p>
-                                    <p className="w-auto flex-1 text-xs text-on-background dark:text-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
+                                <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center gap-y-2">
+                                    <p className="w-auto text-on-background dark:text-background font-base font-semibold line-clamp-1">Ben Stokes</p>
+                                    <p className="w-auto text-xs text-on-background dark:text-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
                                 </div>
                             </div>
                         </ul>

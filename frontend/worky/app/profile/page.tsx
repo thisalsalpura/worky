@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Country, User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
 import Image from "next/image";
@@ -230,18 +230,48 @@ const Profile = () => {
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
                                 <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
-                                    <div className="w-full h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
-                                        <div className="shrink-0 w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                        <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                                             <FontAwesomeIcon icon={faEnvelopeCircleCheck} className="text-lg text-on-primary group-hover:text-primary" />
                                         </div>
 
-                                        <div className="w-full h-auto flex-1 flex flex-col items-start justify-center">
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
                                             <p className="text-on-surface-variant font-base font-semibold">Email Verification Status</p>
-                                            <p className="text-on-surface-variant font-base">If you haven&apos;t verified your email yet, click the button below to send a verification email.</p>
+                                            <p className="text-on-surface-variant font-base">If you haven&apos;t verified your Email Address yet, click the Verify button and verify your Email Address.</p>
                                         </div>
                                     </div>
 
                                     <Button name="Verified" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                </div>
+
+                                <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
+                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                        <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                            <FontAwesomeIcon icon={faPersonCircleCheck} className="text-lg text-on-primary group-hover:text-primary" />
+                                        </div>
+
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
+                                            <p className="text-on-surface-variant font-base font-semibold">Account Status</p>
+                                            <p className="text-on-surface-variant font-base">If your account is currently Inactive, contact the Worky Team.</p>
+                                        </div>
+                                    </div>
+
+                                    <Button name="Active" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                </div>
+
+                                <div className="w-full h-auto flex items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-x-4">
+                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                        <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-error border border-outline hover:bg-on-error rounded-full transition-colors duration-300 cursor-pointer group">
+                                            <FontAwesomeIcon icon={faPlugCircleCheck} className="text-lg text-on-error group-hover:text-error" />
+                                        </div>
+
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
+                                            <p className="text-on-error-container font-base font-semibold">Authenticator App</p>
+                                            <p className="text-on-error-container font-base">For more secutity, we recommend you to use a Google Authenticator App.</p>
+                                        </div>
+                                    </div>
+
+                                    <Button name="Authenticate" btnContainer="w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
                                 </div>
                             </div>
                         </div>

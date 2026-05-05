@@ -69,7 +69,7 @@ export function Default_Navbar() {
                     </button>
                 </div>
 
-                <div className="w-full flex-1">
+                <div className="w-full">
                     <CustomTextField
                         label="Search Here"
                         placeholder="Search Services, Freelancers or Projects"
