@@ -21,7 +21,7 @@ export function GigCard() {
 
             <div className="flex flex-col items-start justify-start gap-y-2">
                 <div className="w-full h-auto flex flex-row items-center justify-start gap-x-4">
-                    <div className="w-10 h-10 flex items-center justify-center border border-outline rounded-full cursor-pointer z-10">
+                    <div className="w-10 h-10 flex items-center justify-center border border-outline rounded-full cursor-pointer">
                         <div className="w-8 h-8 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
                             <Image
                                 src="/images/user-img.svg"

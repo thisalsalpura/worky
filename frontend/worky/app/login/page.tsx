@@ -51,7 +51,7 @@ const Login = () => {
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center z-10">
+                            <div className="w-auto h-auto flex items-center justify-center">
                                 <Image
                                     src="/images/login-img.svg"
                                     alt="login-image"
@@ -246,7 +246,7 @@ const Login = () => {
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center z-10">
+                            <div className="w-auto h-auto flex items-center justify-center">
                                 <Image
                                     src="/images/register-img.svg"
                                     alt="register-image"
