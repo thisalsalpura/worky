@@ -3,10 +3,11 @@ import { useState } from "react";
 import { Country, User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 
 const Profile = () => {
 
@@ -148,6 +149,8 @@ const Profile = () => {
                                     />
                                 </div>
                             </div>
+
+                            <Button name="Update Profile Informations" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
                         <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
@@ -182,6 +185,8 @@ const Profile = () => {
                                     helperText={errors.addressLine2}
                                 />
                             </div>
+
+                            <Button name="Update Address Informations" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
                         <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
@@ -216,13 +221,28 @@ const Profile = () => {
                                     helperText={errors.confirmNewPassword}
                                 />
                             </div>
+
+                            <Button name="Change Password" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
                         <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Security Details</h3>
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
+                                <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
+                                    <div className="w-full h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                        <div className="shrink-0 w-12 h-12 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                            <FontAwesomeIcon icon={faEnvelopeCircleCheck} className="text-lg text-on-primary group-hover:text-primary" />
+                                        </div>
 
+                                        <div className="w-full h-auto flex-1 flex flex-col items-start justify-center">
+                                            <p className="text-on-surface-variant font-base font-semibold">Email Verification Status</p>
+                                            <p className="text-on-surface-variant font-base">If you haven&apos;t verified your email yet, click the button below to send a verification email.</p>
+                                        </div>
+                                    </div>
+
+                                    <Button name="Verified" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                </div>
                             </div>
                         </div>
                     </div>
