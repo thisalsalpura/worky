@@ -6,8 +6,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { Button } from '@/components/ui/Button';
-import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
 import { COUNTRIES } from '@/constants/countries';
+import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
 
 const Login = () => {
 
@@ -29,8 +29,8 @@ const Login = () => {
         lname: "",
         email: "",
         password: "",
-        country: country,
-        mobile: "",
+        mobileCountryCode: country,
+        mobileNum: "",
         role: ""
     });
 
@@ -51,7 +51,7 @@ const Login = () => {
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center z-10">
+                            <div className="w-auto h-auto flex items-center justify-center">
                                 <Image
                                     src="/images/login-img.svg"
                                     alt="login-image"
@@ -221,13 +221,13 @@ const Login = () => {
                                             type="number"
                                             variant="outlined"
                                             fullWidth
-                                            value={registerData.mobile}
+                                            value={registerData.mobileNum}
                                             onChange={(e) => {
-                                                setRegisterData(prev => ({ ...prev, mobile: e.target.value }));
-                                                setErrors(prev => ({ ...prev, mobile: "" }));
+                                                setRegisterData(prev => ({ ...prev, mobileNum: e.target.value }));
+                                                setErrors(prev => ({ ...prev, mobileNum: "" }));
                                             }}
-                                            error={!!errors.mobile}
-                                            helperText={errors.mobile}
+                                            error={!!errors.mobileNum}
+                                            helperText={errors.mobileNum}
                                             inputProps={{ min: 7, maxLength: 17 }}
                                         />
                                     </div>
@@ -246,7 +246,7 @@ const Login = () => {
                         <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center z-10">
+                            <div className="w-auto h-auto flex items-center justify-center">
                                 <Image
                                     src="/images/register-img.svg"
                                     alt="register-image"

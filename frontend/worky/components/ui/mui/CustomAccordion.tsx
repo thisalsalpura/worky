@@ -38,6 +38,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                         margin: 0
                     },
                     '& .MuiAccordionSummary-expandIconWrapper': {
+                        marginTop: '2px',
                         transform: 'none',
                         transition: 'none'
                     },
