@@ -12,10 +12,10 @@ export interface Gig {
 }
 
 export interface GigPackage {
-    title: string;
-    desc: string;
-    features: string[];
-    deliveryTime: number;
-    revisions: number;
-    price: number;
+    title?: string;
+    desc?: string;
+    features?: string[];
+    deliveryTime?: number;
+    revisions?: number;
+    price?: number;
 }
