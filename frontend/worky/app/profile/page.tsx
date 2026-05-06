@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Country, User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
 import Image from "next/image";
@@ -262,7 +262,7 @@ const Profile = () => {
                                 <div className="w-full h-auto flex items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-x-4">
                                     <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
                                         <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-error border border-outline hover:bg-on-error rounded-full transition-colors duration-300 cursor-pointer group">
-                                            <FontAwesomeIcon icon={faPlugCircleCheck} className="text-lg text-on-error group-hover:text-error" />
+                                            <FontAwesomeIcon icon={faPlugCircleXmark} className="text-lg text-on-error group-hover:text-error" />
                                         </div>
 
                                         <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">

@@ -51,7 +51,7 @@ export default function RootLayout({
             {/* <Index_Navbar /> */}
             <Default_Navbar />
 
-            <main className="mx-auto max-w-7xl w-auto flex-1 p-5">
+            <main className="mx-auto max-w-7xl w-full flex-1 p-5">
               {children}
             </main>
 
