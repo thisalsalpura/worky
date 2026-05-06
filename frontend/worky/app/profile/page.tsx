@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Country, User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faLocationDot, faShare, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faLocationDot, faShare, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark, faEnvelope, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faSquareLinkedin, faSquareGithub } from "@fortawesome/free-brands-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
@@ -70,7 +70,7 @@ const Profile = () => {
                 </p>
             </div>
 
-            <div className="w-full h-auto p-4">
+            <div className="w-full h-auto flex flex-col items-start justify-center p-4 gap-y-8">
                 <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
                     <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-center md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-10 gap-y-8">
                         <div className="w-full h-auto flex items-center justify-end">
@@ -98,7 +98,9 @@ const Profile = () => {
                             <h2 className="text-on-primary font-base font-semibold">Social Accounts</h2>
 
                             <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
-                                <FontAwesomeIcon icon={faSquareLinkedin} className="shrink-0 text-3xl text-on-primary hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer" />
+                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-on-primary rounded-xl cursor-pointer group">
+                                    <FontAwesomeIcon icon={faSquareLinkedin} className="text-2xl text-on-primary group-hover:-rotate-12 group-hover:scale-105 transition-all duration-300 ease-in-out" />
+                                </div>
 
                                 <div className="flex-1">
                                     <CustomTextField
@@ -113,7 +115,9 @@ const Profile = () => {
                             </div>
 
                             <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
-                                <FontAwesomeIcon icon={faSquareGithub} className="shrink-0 text-3xl text-on-primary hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer" />
+                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-on-primary rounded-xl cursor-pointer group">
+                                    <FontAwesomeIcon icon={faSquareGithub} className="text-2xl text-on-primary group-hover:-rotate-12 group-hover:scale-105 transition-all duration-300 ease-in-out" />
+                                </div>
 
                                 <div className="flex-1">
                                     <CustomTextField
@@ -337,6 +341,38 @@ const Profile = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="w-full h-auto flex flex-col items-center justify-start bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                    <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
+                        <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                            <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                <FontAwesomeIcon icon={faEnvelope} className="text-lg text-on-primary group-hover:text-primary" />
+                            </div>
+
+                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
+                                <p className="text-on-surface-variant font-base font-semibold">Subscribe the Newsletter</p>
+                                <p className="text-on-surface-variant font-base">By subscribing to our newsletter, you&apos;ll receive the latest updates and news from Worky.</p>
+                            </div>
+                        </div>
+
+                        <Button name="Subscribe" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                    </div>
+
+                    <div className="w-full h-auto flex items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-x-4">
+                        <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                            <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-error border border-outline hover:bg-on-error rounded-full transition-colors duration-300 cursor-pointer group">
+                                <FontAwesomeIcon icon={faTrash} className="text-lg text-on-error group-hover:text-error" />
+                            </div>
+
+                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
+                                <p className="text-on-error-container font-base font-semibold">Disconnect Account</p>
+                                <p className="text-on-error-container font-base">By disconnecting your account, you&apos;ll temporarily delete your Worky Account.</p>
+                            </div>
+                        </div>
+
+                        <Button name="Disconnect" btnContainer="w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
                     </div>
                 </div>
             </div>
