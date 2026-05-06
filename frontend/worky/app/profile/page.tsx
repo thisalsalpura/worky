@@ -3,13 +3,20 @@ import { useState } from "react";
 import { Country, User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faLocationDot, faShare, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faSquareLinkedin, faSquareGithub } from "@fortawesome/free-brands-svg-icons";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 const Profile = () => {
+
+    const [profileURL, setProfileURL] = useState<string>("");
+
+    const [linkedInURL, setLinkedInURL] = useState<string>("");
+
+    const [gitHubURL, setGitHubURL] = useState<string>("");
 
     const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
 
@@ -66,6 +73,12 @@ const Profile = () => {
             <div className="w-full h-auto p-4">
                 <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
                     <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-center md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-10 gap-y-8">
+                        <div className="w-full h-auto flex items-center justify-end">
+                            <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2.5 transition-colors duration-300 cursor-pointer group">
+                                <FontAwesomeIcon icon={faShare} className="text-sm text-primary group-hover:text-on-primary" />
+                            </div>
+                        </div>
+
                         <div className="w-32 h-32 flex items-center justify-center border border-outline rounded-full cursor-pointer">
                             <div className="w-30 h-30 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">
                                 <Image
@@ -78,6 +91,55 @@ const Profile = () => {
                                 />
                             </div>
                         </div>
+
+                        <div className="w-full h-0.5 bg-outline opacity-20" />
+
+                        <div className="w-full h-auto flex flex-col items-start justify-start bg-primary border border-outline rounded-xl p-5 gap-y-4">
+                            <h2 className="text-on-primary font-base font-semibold">Social Accounts</h2>
+
+                            <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
+                                <FontAwesomeIcon icon={faSquareLinkedin} className="shrink-0 text-3xl text-on-primary hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer" />
+
+                                <div className="flex-1">
+                                    <CustomTextField
+                                        label="LinkedIn URL"
+                                        type="text"
+                                        variant="outlined"
+                                        fullWidth
+                                        value={linkedInURL}
+                                        onChange={(e) => setLinkedInURL(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
+                                <FontAwesomeIcon icon={faSquareGithub} className="shrink-0 text-3xl text-on-primary hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer" />
+
+                                <div className="flex-1">
+                                    <CustomTextField
+                                        label="GitHub URL"
+                                        type="text"
+                                        variant="outlined"
+                                        fullWidth
+                                        value={gitHubURL}
+                                        onChange={(e) => setGitHubURL(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="w-full h-auto flex flex-row items-center justify-start gap-x-4">
+                            <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
+                                <FontAwesomeIcon icon={faLocationDot} className="text-lg text-on-primary group-hover:text-primary" />
+                            </div>
+
+                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
+                                <p className="text-on-background dark:text-background font-base font-semibold">Colombo, Sri Lanka</p>
+                                <p className="text-on-background dark:text-background font-base">If you want to update your location, click Location icon and then click update Location.</p>
+                            </div>
+                        </div>
+
+                        <Button name="Save" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
                     </div>
 
                     <div className="col-span-12 md:col-span-7 h-auto flex flex-col items-center justify-center gap-y-8">
