@@ -63,7 +63,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                     backgroundColor: 'var(--color-primary)',
                     border: '1px solid var(--color-outline)',
                     borderRadius: `${BORDER_RADIUS}px`,
-                    px: '10px',
+                    paddingX: '10px',
                     gap: '8px',
                     opacity: 0.8,
                     transition: 'background-color 300ms ease, opacity 300ms ease',
@@ -87,15 +87,15 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                 slotProps={{
                     paper: {
                         sx: {
+                            marginTop: '6px',
                             width: '360px',
                             maxHeight: '360px',
                             display: 'flex',
                             flexDirection: 'column',
-                            border: '1px solid var(--color-outline)',
                             backgroundColor: 'var(--color-primary)',
+                            border: '1px solid var(--color-outline)',
                             borderRadius: `${BORDER_RADIUS}px`,
-                            px: '20px',
-                            py: '10px',
+                            padding: '20px',
                             gap: '8px',
                             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.24)',
                             overflow: 'hidden'
@@ -110,13 +110,11 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                     fullWidth
                     value={searchCountry}
                     onChange={e => setSearchCountry(e.target.value)}
-                    sx={{ mt: '10px' }}
                 />
 
                 <List
                     disablePadding
                     sx={{
-                        mb: '10px',
                         flexGrow: 1,
                         display: 'flex',
                         flexDirection: 'column',
@@ -134,7 +132,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                                 flexShrink: 0,
                                 color: 'var(--color-on-primary)',
                                 borderRadius: `${BORDER_RADIUS}px`,
-                                p: '10px',
+                                padding: '10px',
                                 gap: '8px',
                                 transition: 'background-color 300ms ease',
                                 '&:hover': {
@@ -153,7 +151,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                                 flexShrink: 0,
                                 color: 'var(--color-on-primary)',
                                 borderRadius: `${BORDER_RADIUS}px`,
-                                p: '10px',
+                                padding: '10px',
                                 gap: '8px',
                                 transition: 'background-color 300ms ease',
                                 '&:hover': {
@@ -173,9 +171,9 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                             <span style={{
                                 ...BASE_TYPOGRAPHY,
                                 flexGrow: 1,
-                                overflow: 'hidden',
                                 textOverflow: 'ellipsis',
-                                whiteSpace: 'nowrap'
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden'
                             }}>
                                 {country.name}
                             </span>

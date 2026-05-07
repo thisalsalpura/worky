@@ -1,13 +1,13 @@
 'use client';
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Gig } from "@/components/interfaces/Gig";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
+import { CustomSelect } from "@/components/ui/mui/CustomSelect";
 import { Button } from "@/components/ui/Button";
 import { GigCard } from "@/components/ui/GigCard";
 import { CustomPagination } from "@/components/ui/mui/CustomPagination";
-import { CustomSelect } from "@/components/ui/mui/CustomSelect";
 
 const Advanced_Search = () => {
 
@@ -17,6 +17,8 @@ const Advanced_Search = () => {
         subCategory: "",
         searchTags: []
     });
+
+    const [sortOption, setSortOption] = useState<string>('');
 
     const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -42,6 +44,7 @@ const Advanced_Search = () => {
                             type="text"
                             variant="outlined"
                             fullWidth
+                            endIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
                             value={searchData.title}
                             onChange={(e) => {
                                 setSearchData(prev => ({ ...prev, title: e.target.value }));
@@ -55,6 +58,7 @@ const Advanced_Search = () => {
                     <div className="col-span-12 md:col-span-6">
                         <CustomSelect
                             label="Category"
+                            fullWidth
                             options={[
                                 { value: 'select', label: 'Select Category' },
                                 { value: 'web', label: 'Web' },
@@ -63,8 +67,7 @@ const Advanced_Search = () => {
                                 { value: 'design', label: 'Design' },
                                 { value: 'marketing', label: 'Marketing' },
                                 { value: 'writing', label: 'Writing' },
-                                { value: 'video', label: 'Video' },
-                                { value: 'other', label: 'Other' }
+                                { value: 'video', label: 'Video' }
                             ]}
                             value={searchData.category}
                             onChange={(e) => {
@@ -73,16 +76,53 @@ const Advanced_Search = () => {
                             }}
                             error={!!errors.category}
                             helperText={errors.category}
-                            fullWidth
                         />
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
-
+                        <CustomSelect
+                            label="Sub Category"
+                            fullWidth
+                            options={[
+                                { value: 'select', label: 'Select Sub Category' },
+                                { value: 'web_design', label: 'Web Design' },
+                                { value: 'web_development', label: 'Web Development' },
+                                { value: 'app_development', label: 'App Development' },
+                                { value: 'game_development', label: 'Game Development' },
+                                { value: 'content_writing', label: 'Content Writing' },
+                                { value: 'copywriting', label: 'Copywriting' },
+                                { value: 'video_editing', label: 'Video Editing' }
+                            ]}
+                            value={searchData.subCategory}
+                            onChange={(e) => {
+                                setSearchData(prev => ({ ...prev, subCategory: e.target.value as string }));
+                                setErrors(prev => ({ ...prev, subCategory: "" }));
+                            }}
+                            error={!!errors.subCategory}
+                            helperText={errors.subCategory}
+                        />
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
-
+                        <CustomSelect
+                            label="Sort By"
+                            fullWidth
+                            options={[
+                                { value: 'select', label: 'Select Sort Option' },
+                                { value: 'relevance', label: 'Relevance' },
+                                { value: 'newest', label: 'Newest' },
+                                { value: 'price_low', label: 'Price: Low to High' },
+                                { value: 'price_high', label: 'Price: High to Low' },
+                                { value: 'rating', label: 'Top Rated' }
+                            ]}
+                            value={sortOption}
+                            onChange={(e) => {
+                                setSortOption(e.target.value as string);
+                                setErrors(prev => ({ ...prev, sortOption: "" }));
+                            }}
+                            error={!!errors.sortOption}
+                            helperText={errors.sortOption}
+                        />
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
