@@ -160,8 +160,8 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
                 }
             },
             '& .MuiFormHelperText-root': {
-                marginLeft: 0,
                 ...BASE_TYPOGRAPHY,
+                marginLeft: 0,
                 color: 'var(--color-on-primary)',
                 '&.Mui-error': {
                     color: 'var(--color-on-error)'

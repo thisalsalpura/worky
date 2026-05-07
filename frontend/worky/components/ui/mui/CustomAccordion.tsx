@@ -22,8 +22,8 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
             sx={[
                 {
                     width: '100%',
-                    backgroundColor: 'transparent',
                     backgroundImage: 'none',
+                    backgroundColor: 'transparent',
                     border: '1px solid var(--color-outline-variant)',
                     borderRadius: `${BORDER_RADIUS}px !important`,
                     boxShadow: 'none',
