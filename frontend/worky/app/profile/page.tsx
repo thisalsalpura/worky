@@ -5,6 +5,7 @@ import { COUNTRIES } from "@/constants/countries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faLocationDot, faShare, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark, faEnvelope, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faSquareLinkedin, faSquareGithub } from "@fortawesome/free-brands-svg-icons";
+import { CustomSelect } from "@/components/ui/mui/CustomSelect";
 import { CustomTextField } from "@/components/ui/mui/CustomTextField";
 import { CustomCountrySelector } from "@/components/ui/mui/CustomCountrySelector";
 import { Button } from "@/components/ui/Button";
@@ -14,13 +15,15 @@ const Profile = () => {
 
     const [profileURL, setProfileURL] = useState<string>("");
 
+    const [pronouns, setPronouns] = useState<string>("");
+
     const [linkedInURL, setLinkedInURL] = useState<string>("");
 
     const [gitHubURL, setGitHubURL] = useState<string>("");
 
     const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
 
-    const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
+    const [countryCode, setCountryCode] = useState<Country>(DEFAULT_COUNTRY);
 
     const [profileData, setProfileData] = useState<User>({
         fname: "",
@@ -94,42 +97,44 @@ const Profile = () => {
 
                         <div className="w-full h-0.5 bg-outline opacity-20" />
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start bg-primary border border-outline rounded-xl p-5 gap-y-4">
-                            <h2 className="text-on-primary font-base font-semibold">Social Accounts</h2>
+                        <div className="w-full h-auto flex flex-col bg-on-background border border-outline rounded-xl p-5 gap-y-4">
+                            <CustomSelect
+                                label="Pronouns"
+                                fullWidth
+                                options={[
+                                    { value: 'select', label: 'Select Pronouns' },
+                                    { value: 'he/him', label: 'He/Him' },
+                                    { value: 'she/her', label: 'She/Her' },
+                                    { value: 'they/them', label: 'They/Them' }
+                                ]}
+                                value={pronouns}
+                                onChange={(e) => {
+                                    setPronouns(e.target.value as string);
+                                    setErrors(prev => ({ ...prev, pronouns: "" }));
+                                }}
+                                error={!!errors.pronouns}
+                                helperText={errors.pronouns}
+                            />
 
-                            <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
-                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-on-primary rounded-xl cursor-pointer group">
-                                    <FontAwesomeIcon icon={faSquareLinkedin} className="text-2xl text-on-primary group-hover:-rotate-12 group-hover:scale-105 transition-all duration-300 ease-in-out" />
-                                </div>
+                            <CustomTextField
+                                label="LinkedIn URL"
+                                type="text"
+                                variant="outlined"
+                                fullWidth
+                                endIcon={<FontAwesomeIcon icon={faSquareLinkedin} />}
+                                value={linkedInURL}
+                                onChange={(e) => setLinkedInURL(e.target.value)}
+                            />
 
-                                <div className="flex-1">
-                                    <CustomTextField
-                                        label="LinkedIn URL"
-                                        type="text"
-                                        variant="outlined"
-                                        fullWidth
-                                        value={linkedInURL}
-                                        onChange={(e) => setLinkedInURL(e.target.value)}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="w-full h-auto flex flex-row items-center justify-between gap-x-2.5">
-                                <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-on-primary rounded-xl cursor-pointer group">
-                                    <FontAwesomeIcon icon={faSquareGithub} className="text-2xl text-on-primary group-hover:-rotate-12 group-hover:scale-105 transition-all duration-300 ease-in-out" />
-                                </div>
-
-                                <div className="flex-1">
-                                    <CustomTextField
-                                        label="GitHub URL"
-                                        type="text"
-                                        variant="outlined"
-                                        fullWidth
-                                        value={gitHubURL}
-                                        onChange={(e) => setGitHubURL(e.target.value)}
-                                    />
-                                </div>
-                            </div>
+                            <CustomTextField
+                                label="GitHub URL"
+                                type="text"
+                                variant="outlined"
+                                fullWidth
+                                endIcon={<FontAwesomeIcon icon={faSquareGithub} />}
+                                value={gitHubURL}
+                                onChange={(e) => setGitHubURL(e.target.value)}
+                            />
                         </div>
 
                         <div className="w-full h-auto flex flex-row items-center justify-start gap-x-4">
@@ -195,8 +200,8 @@ const Profile = () => {
 
                                 <div className='w-full h-auto flex flex-row items-center gap-x-2'>
                                     <CustomCountrySelector
-                                        value={country}
-                                        onChange={setCountry}
+                                        value={countryCode}
+                                        onChange={setCountryCode}
                                     />
 
                                     <CustomTextField
@@ -214,6 +219,20 @@ const Profile = () => {
                                         inputProps={{ min: 7, maxLength: 17 }}
                                     />
                                 </div>
+
+                                <CustomTextField
+                                    label="Role"
+                                    type="text"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={profileData.role}
+                                    onChange={(e) => {
+                                        setProfileData(prev => ({ ...prev, role: e.target.value }));
+                                        setErrors(prev => ({ ...prev, role: "" }));
+                                    }}
+                                    error={!!errors.role}
+                                    helperText={errors.role}
+                                />
                             </div>
 
                             <Button name="Update Profile Informations" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
@@ -249,6 +268,53 @@ const Profile = () => {
                                     }}
                                     error={!!errors.addressLine2}
                                     helperText={errors.addressLine2}
+                                />
+
+                                <CustomTextField
+                                    label="City"
+                                    type="text"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={profileData.address?.city}
+                                    onChange={(e) => {
+                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, city: e.target.value } }));
+                                        setErrors(prev => ({ ...prev, city: "" }));
+                                    }}
+                                    error={!!errors.city}
+                                    helperText={errors.city}
+                                />
+
+                                <CustomTextField
+                                    label="Postal Code"
+                                    type="number"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={profileData.address?.postalCode}
+                                    onChange={(e) => {
+                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, postalCode: e.target.value } }));
+                                        setErrors(prev => ({ ...prev, postalCode: "" }));
+                                    }}
+                                    error={!!errors.postalCode}
+                                    helperText={errors.postalCode}
+                                />
+
+                                <CustomSelect
+                                    label="Country"
+                                    fullWidth
+                                    options={[
+                                        { value: 'select', label: 'Select Country' },
+                                        ...COUNTRIES.map(country => ({
+                                            value: country.name ?? "",
+                                            label: country.name ?? ""
+                                        }))
+                                    ]}
+                                    value={profileData.address?.country?.name}
+                                    onChange={(e) => {
+                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, country: { name: e.target.value as string } } }));
+                                        setErrors(prev => ({ ...prev, country: "" }));
+                                    }}
+                                    error={!!errors.country}
+                                    helperText={errors.country}
                                 />
                             </div>
 

@@ -11,8 +11,8 @@ export interface User {
     updatedAt?: Date;
     isEmailVerified?: boolean;
     status?: string;
-    role?: string;
     address?: Address;
+    role?: string;
 };
 
 export interface Address {
