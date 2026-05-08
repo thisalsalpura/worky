@@ -30,7 +30,7 @@ const Login = () => {
         email: "",
         password: "",
         mobileCountryCode: country,
-        mobileNum: "",
+        mobileNum: undefined,
         role: ""
     });
 
@@ -104,7 +104,7 @@ const Login = () => {
                                             onChange={(e) => setChecked(e.target.checked)}
                                             label="Remember Me"
                                             slotProps={{
-                                                input: { 'aria-label': 'controlled' },
+                                                input: { 'aria-label': 'Controlled' },
                                             }}
                                         />
                                     </div>
@@ -223,7 +223,7 @@ const Login = () => {
                                             fullWidth
                                             value={registerData.mobileNum}
                                             onChange={(e) => {
-                                                setRegisterData(prev => ({ ...prev, mobileNum: e.target.value }));
+                                                setRegisterData(prev => ({ ...prev, mobileNum: Number(e.target.value) }));
                                                 setErrors(prev => ({ ...prev, mobileNum: "" }));
                                             }}
                                             error={!!errors.mobileNum}

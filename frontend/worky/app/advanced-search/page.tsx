@@ -71,7 +71,7 @@ const Advanced_Search = () => {
                             ]}
                             value={searchData.category}
                             onChange={(e) => {
-                                setSearchData(prev => ({ ...prev, category: e.target.value as string }));
+                                setSearchData(prev => ({ ...prev, category: String(e.target.value) }));
                                 setErrors(prev => ({ ...prev, category: "" }));
                             }}
                             error={!!errors.category}
@@ -95,7 +95,7 @@ const Advanced_Search = () => {
                             ]}
                             value={searchData.subCategory}
                             onChange={(e) => {
-                                setSearchData(prev => ({ ...prev, subCategory: e.target.value as string }));
+                                setSearchData(prev => ({ ...prev, subCategory: String(e.target.value) }));
                                 setErrors(prev => ({ ...prev, subCategory: "" }));
                             }}
                             error={!!errors.subCategory}
@@ -117,7 +117,7 @@ const Advanced_Search = () => {
                             ]}
                             value={sortOption}
                             onChange={(e) => {
-                                setSortOption(e.target.value as string);
+                                setSortOption(String(e.target.value));
                                 setErrors(prev => ({ ...prev, sortOption: "" }));
                             }}
                             error={!!errors.sortOption}

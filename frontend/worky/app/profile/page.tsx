@@ -36,7 +36,7 @@ const Profile = () => {
             dial: "",
             flagCode: ""
         },
-        mobileNum: "",
+        mobileNum: undefined,
         dob: undefined,
         createdAt: undefined,
         updatedAt: undefined,
@@ -46,7 +46,7 @@ const Profile = () => {
             addressLine1: "",
             addressLine2: "",
             city: "",
-            postalCode: "",
+            postalCode: undefined,
             country: {
                 code: "",
                 name: "",
@@ -75,7 +75,7 @@ const Profile = () => {
 
             <div className="w-full h-auto flex flex-col items-start justify-center p-4 gap-y-8">
                 <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
-                    <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-center md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-10 gap-y-8">
+                    <div className="md:top-22 col-span-12 lg:col-span-5 h-auto md:h-fit flex flex-col items-center justify-center md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-10 gap-y-8">
                         <div className="w-full h-auto flex items-center justify-end">
                             <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2.5 transition-colors duration-300 cursor-pointer group">
                                 <FontAwesomeIcon icon={faShare} className="text-sm text-primary group-hover:text-on-primary" />
@@ -109,7 +109,7 @@ const Profile = () => {
                                 ]}
                                 value={pronouns}
                                 onChange={(e) => {
-                                    setPronouns(e.target.value as string);
+                                    setPronouns(String(e.target.value));
                                     setErrors(prev => ({ ...prev, pronouns: "" }));
                                 }}
                                 error={!!errors.pronouns}
@@ -151,7 +151,7 @@ const Profile = () => {
                         <Button name="Save" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
                     </div>
 
-                    <div className="col-span-12 md:col-span-7 h-auto flex flex-col items-center justify-center gap-y-8">
+                    <div className="col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-center gap-y-8">
                         <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Personal Informations</h3>
 
@@ -211,7 +211,7 @@ const Profile = () => {
                                         fullWidth
                                         value={profileData.mobileNum}
                                         onChange={(e) => {
-                                            setProfileData(prev => ({ ...prev, mobileNum: e.target.value }));
+                                            setProfileData(prev => ({ ...prev, mobileNum: Number(e.target.value) }));
                                             setErrors(prev => ({ ...prev, mobileNum: "" }));
                                         }}
                                         error={!!errors.mobileNum}
@@ -291,7 +291,7 @@ const Profile = () => {
                                     fullWidth
                                     value={profileData.address?.postalCode}
                                     onChange={(e) => {
-                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, postalCode: e.target.value } }));
+                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, postalCode: Number(e.target.value) } }));
                                         setErrors(prev => ({ ...prev, postalCode: "" }));
                                     }}
                                     error={!!errors.postalCode}
@@ -310,7 +310,23 @@ const Profile = () => {
                                     ]}
                                     value={profileData.address?.country?.name}
                                     onChange={(e) => {
-                                        setProfileData(prev => ({ ...prev, address: { ...prev.address, country: { name: e.target.value as string } } }));
+                                        const selectedCountryName = String(e.target.value);
+                                        const selectedCountry = COUNTRIES.find(
+                                            (country) => country.name === selectedCountryName
+                                        ) ?? {
+                                            code: "",
+                                            name: "",
+                                            dial: "",
+                                            flagCode: ""
+                                        };
+
+                                        setProfileData(prev => ({
+                                            ...prev,
+                                            address: {
+                                                ...prev.address,
+                                                country: selectedCountry
+                                            }
+                                        }));
                                         setErrors(prev => ({ ...prev, country: "" }));
                                     }}
                                     error={!!errors.country}
