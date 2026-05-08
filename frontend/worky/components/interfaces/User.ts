@@ -2,6 +2,7 @@ export interface User {
     id?: string;
     fname?: string;
     lname?: string;
+    pronoun?: string;
     email?: string;
     password?: string;
     mobileCountryCode?: Country;
@@ -12,6 +13,9 @@ export interface User {
     isEmailVerified?: boolean;
     status?: string;
     address?: Address;
+    profileURL?: string;
+    linkedInURL?: string;
+    gitHubURL?: string;
     role?: string;
 };
 

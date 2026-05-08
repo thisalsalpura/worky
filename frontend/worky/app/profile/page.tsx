@@ -13,21 +13,14 @@ import Image from "next/image";
 
 const Profile = () => {
 
-    const [profileURL, setProfileURL] = useState<string>("");
-
-    const [pronouns, setPronouns] = useState<string>("");
-
-    const [linkedInURL, setLinkedInURL] = useState<string>("");
-
-    const [gitHubURL, setGitHubURL] = useState<string>("");
-
     const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
 
-    const [countryCode, setCountryCode] = useState<Country>(DEFAULT_COUNTRY);
+    const [mobileCountryCode, setMobileCountryCode] = useState<Country>(DEFAULT_COUNTRY);
 
     const [profileData, setProfileData] = useState<User>({
         fname: "",
         lname: "",
+        pronoun: "",
         email: "",
         password: "",
         mobileCountryCode: {
@@ -54,6 +47,9 @@ const Profile = () => {
                 flagCode: ""
             }
         },
+        profileURL: "",
+        linkedInURL: "",
+        gitHubURL: "",
         role: ""
     });
 
@@ -73,9 +69,9 @@ const Profile = () => {
                 </p>
             </div>
 
-            <div className="w-full h-auto flex flex-col items-start justify-center p-4 gap-y-8">
-                <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
-                    <div className="md:top-22 col-span-12 lg:col-span-5 h-auto md:h-fit flex flex-col items-center justify-center md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-10 gap-y-8">
+            <div className="w-full h-auto flex flex-col items-start justify-center md:p-4 gap-y-8">
+                <div className="w-full h-auto grid grid-cols-12 gap-y-8 lg:gap-x-8">
+                    <div className="lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-center lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 md:p-10 gap-y-8">
                         <div className="w-full h-auto flex items-center justify-end">
                             <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2.5 transition-colors duration-300 cursor-pointer group">
                                 <FontAwesomeIcon icon={faShare} className="text-sm text-primary group-hover:text-on-primary" />
@@ -107,12 +103,12 @@ const Profile = () => {
                                     { value: 'she/her', label: 'She/Her' },
                                     { value: 'they/them', label: 'They/Them' }
                                 ]}
-                                value={pronouns}
+                                value={profileData.pronoun}
                                 onChange={(e) => {
-                                    setPronouns(String(e.target.value));
-                                    setErrors(prev => ({ ...prev, pronouns: "" }));
+                                    setProfileData(prev => ({ ...prev, pronoun: String(e.target.value) }));
+                                    setErrors(prev => ({ ...prev, pronoun: "" }));
                                 }}
-                                error={!!errors.pronouns}
+                                error={!!errors.pronoun}
                                 helperText={errors.pronouns}
                             />
 
@@ -122,8 +118,8 @@ const Profile = () => {
                                 variant="outlined"
                                 fullWidth
                                 endIcon={<FontAwesomeIcon icon={faSquareLinkedin} />}
-                                value={linkedInURL}
-                                onChange={(e) => setLinkedInURL(e.target.value)}
+                                value={profileData.linkedInURL}
+                                onChange={(e) => setProfileData(prev => ({ ...prev, linkedInURL: e.target.value }))}
                             />
 
                             <CustomTextField
@@ -132,19 +128,19 @@ const Profile = () => {
                                 variant="outlined"
                                 fullWidth
                                 endIcon={<FontAwesomeIcon icon={faSquareGithub} />}
-                                value={gitHubURL}
-                                onChange={(e) => setGitHubURL(e.target.value)}
+                                value={profileData.gitHubURL}
+                                onChange={(e) => setProfileData(prev => ({ ...prev, gitHubURL: e.target.value }))}
                             />
                         </div>
 
-                        <div className="w-full h-auto flex flex-row items-center justify-start gap-x-4">
+                        <div className="w-full h-auto flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                             <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                                 <FontAwesomeIcon icon={faLocationDot} className="text-lg text-on-primary group-hover:text-primary" />
                             </div>
 
-                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                <p className="text-on-background dark:text-background font-base font-semibold">Colombo, Sri Lanka</p>
-                                <p className="text-on-background dark:text-background font-base">If you want to update your location, click Location icon and then click update Location.</p>
+                            <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                <p className="text-on-background dark:text-background text-center md:text-left font-base font-semibold">Colombo, Sri Lanka</p>
+                                <p className="text-on-background dark:text-background text-center md:text-left font-base">If you want to update your location, click Location icon and then click update Location.</p>
                             </div>
                         </div>
 
@@ -152,7 +148,7 @@ const Profile = () => {
                     </div>
 
                     <div className="col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-center gap-y-8">
-                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Personal Informations</h3>
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
@@ -200,8 +196,8 @@ const Profile = () => {
 
                                 <div className='w-full h-auto flex flex-row items-center gap-x-2'>
                                     <CustomCountrySelector
-                                        value={countryCode}
-                                        onChange={setCountryCode}
+                                        value={mobileCountryCode}
+                                        onChange={setMobileCountryCode}
                                     />
 
                                     <CustomTextField
@@ -235,10 +231,10 @@ const Profile = () => {
                                 />
                             </div>
 
-                            <Button name="Update Profile Informations" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                            <Button name="Update" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
-                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Address Informations</h3>
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
@@ -334,10 +330,10 @@ const Profile = () => {
                                 />
                             </div>
 
-                            <Button name="Update Address Informations" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                            <Button name="Update" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
-                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Change Password</h3>
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
@@ -373,88 +369,88 @@ const Profile = () => {
                             <Button name="Change Password" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
-                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                             <h3 className="text-2xl text-background text-left font-heading">Security Details</h3>
 
                             <div className='w-full h-auto flex flex-col gap-y-8'>
-                                <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
-                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                <div className="w-full h-auto flex flex-col md:flex-row items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-y-4 md:gap-x-4">
+                                    <div className="w-auto h-auto flex-1 flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                                         <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                                             <FontAwesomeIcon icon={faEnvelopeCircleCheck} className="text-lg text-on-primary group-hover:text-primary" />
                                         </div>
 
-                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                            <p className="text-on-surface-variant font-base font-semibold">Email Verification Status</p>
-                                            <p className="text-on-surface-variant font-base">If you haven&apos;t verified your Email Address yet, click the Verify button and verify your Email Address.</p>
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                            <p className="text-on-surface-variant text-center md:text-left font-base font-semibold">Email Verification Status</p>
+                                            <p className="text-on-surface-variant text-center md:text-left font-base">If you haven&apos;t verified your Email Address yet, click the Verify button and verify your Email Address.</p>
                                         </div>
                                     </div>
 
-                                    <Button name="Verified" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Verified" btnContainer="w-full md:w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                                 </div>
 
-                                <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
-                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                <div className="w-full h-auto flex flex-col md:flex-row items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-y-4 md:gap-x-4">
+                                    <div className="w-auto h-auto flex-1 flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                                         <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                                             <FontAwesomeIcon icon={faPersonCircleCheck} className="text-lg text-on-primary group-hover:text-primary" />
                                         </div>
 
-                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                            <p className="text-on-surface-variant font-base font-semibold">Account Status</p>
-                                            <p className="text-on-surface-variant font-base">If your account is currently Inactive, contact the Worky Team.</p>
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                            <p className="text-on-surface-variant text-center md:text-left font-base font-semibold">Account Status</p>
+                                            <p className="text-on-surface-variant text-center md:text-left font-base">If your account is currently Inactive, contact the Worky Team.</p>
                                         </div>
                                     </div>
 
-                                    <Button name="Active" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Active" btnContainer="w-full md:w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                                 </div>
 
-                                <div className="w-full h-auto flex items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-x-4">
-                                    <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                                <div className="w-full h-auto flex flex-col md:flex-row items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-y-4 md:gap-x-4">
+                                    <div className="w-auto h-auto flex-1 flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                                         <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-error border border-outline hover:bg-on-error rounded-full transition-colors duration-300 cursor-pointer group">
                                             <FontAwesomeIcon icon={faPlugCircleXmark} className="text-lg text-on-error group-hover:text-error" />
                                         </div>
 
-                                        <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                            <p className="text-on-error-container font-base font-semibold">Authenticator App</p>
-                                            <p className="text-on-error-container font-base">For more secutity, we recommend you to use a Google Authenticator App.</p>
+                                        <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                            <p className="text-on-error-container text-center md:text-left font-base font-semibold">Authenticator App</p>
+                                            <p className="text-on-error-container text-center md:text-left font-base">For more secutity, we recommend you to use a Google Authenticator App.</p>
                                         </div>
                                     </div>
 
-                                    <Button name="Authenticate" btnContainer="w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
+                                    <Button name="Authenticate" btnContainer="w-full md:w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="w-full h-auto flex flex-col items-center justify-start bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
-                    <div className="w-full h-auto flex items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-x-4">
-                        <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                <div className="w-full h-auto flex flex-col items-center justify-start bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
+                    <div className="w-full h-auto flex flex-col md:flex-row items-center justify-between bg-surface-variant border border-outline-variant rounded-xl p-5 gap-y-4 md:gap-x-4">
+                        <div className="w-auto h-auto flex-1 flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                             <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-full transition-colors duration-300 cursor-pointer group">
                                 <FontAwesomeIcon icon={faEnvelope} className="text-lg text-on-primary group-hover:text-primary" />
                             </div>
 
-                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                <p className="text-on-surface-variant font-base font-semibold">Subscribe the Newsletter</p>
-                                <p className="text-on-surface-variant font-base">By subscribing to our newsletter, you&apos;ll receive the latest updates and news from Worky.</p>
+                            <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                <p className="text-on-surface-variant text-center md:text-left font-base font-semibold">Subscribe the Newsletter</p>
+                                <p className="text-on-surface-variant text-center md:text-left font-base">By subscribing to our newsletter, you&apos;ll receive the latest updates and news from Worky.</p>
                             </div>
                         </div>
 
-                        <Button name="Subscribe" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                        <Button name="Subscribe" btnContainer="w-full md:w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                     </div>
 
-                    <div className="w-full h-auto flex items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-x-4">
-                        <div className="w-auto h-auto flex-1 flex flex-row items-center justify-start gap-x-4">
+                    <div className="w-full h-auto flex flex-col md:flex-row items-center justify-between bg-error-container border border-outline-variant rounded-xl p-5 gap-y-4 md:gap-x-4">
+                        <div className="w-auto h-auto flex-1 flex flex-col md:flex-row items-center justify-start gap-y-4 md:gap-x-4">
                             <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-error border border-outline hover:bg-on-error rounded-full transition-colors duration-300 cursor-pointer group">
                                 <FontAwesomeIcon icon={faTrash} className="text-lg text-on-error group-hover:text-error" />
                             </div>
 
-                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center">
-                                <p className="text-on-error-container font-base font-semibold">Disconnect Account</p>
-                                <p className="text-on-error-container font-base">By disconnecting your account, you&apos;ll temporarily delete your Worky Account.</p>
+                            <div className="w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center">
+                                <p className="text-on-error-container text-center md:text-left font-base font-semibold">Disconnect Account</p>
+                                <p className="text-on-error-container text-center md:text-left font-base">By disconnecting your account, you&apos;ll temporarily delete your Worky Account.</p>
                             </div>
                         </div>
 
-                        <Button name="Disconnect" btnContainer="w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
+                        <Button name="Disconnect" btnContainer="w-full md:w-auto text-on-error bg-error hover:text-error hover:bg-on-error group" btnPing="bg-on-error group-hover:bg-error" btnPingDot="bg-on-error group-hover:bg-error" />
                     </div>
                 </div>
             </div>
