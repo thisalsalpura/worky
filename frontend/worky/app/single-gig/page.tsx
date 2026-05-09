@@ -129,9 +129,9 @@ const Single_Gig = () => {
                 </div>
             </div>
 
-            <div className="w-full h-auto p-4">
-                <div className="w-full h-auto grid grid-cols-12 gap-y-8 md:gap-x-8">
-                    <div className="col-span-12 md:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8">
+            <div className="w-full h-auto md:p-4">
+                <div className="w-full h-auto grid grid-cols-12 gap-y-8 lg:gap-x-8">
+                    <div className="col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8">
                         <h2 className="w-full h-auto text-2xl text-on-background font-heading font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, tenetur incidunt quis veniam quasi eos velit repellendus animi aperiam placeat voluptatibus tempore dignissimos eveniet magnam tempora facere explicabo, repellat provident?</h2>
 
                         <div className="w-full h-auto flex items-center justify-start gap-x-4">
@@ -256,7 +256,7 @@ const Single_Gig = () => {
                         </div>
                     </div>
 
-                    <div className="md:top-22 col-span-12 md:col-span-5 h-auto md:h-fit flex flex-col items-center justify-start md:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
+                    <div className="lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-start lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
                         <CustomTabs
                             tabs={[
                                 { label: 'Bronze', content: <Bronze_Package /> },
