@@ -50,7 +50,7 @@ const Index = () => {
 
       {/* CATEGORIES SECTION */}
       <section className="w-full h-auto flex flex-col items-center justify-center gap-y-4">
-        <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
+        <div className="w-full h-auto flex items-center justify-center md:justify-start md:p-4">
           <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Categories</h2>
         </div>
 
@@ -71,7 +71,7 @@ const Index = () => {
             className="w-full h-full"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="h-full flex justify-center p-4">
+              <SwiperSlide key={category.id} className="h-full flex justify-center md:p-4">
                 <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 cursor-pointer">
                   <FontAwesomeIcon icon={category.icon} className="text-9xl text-background text-center aspect-square tilt-pop" />
                   <p className="text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
@@ -86,12 +86,12 @@ const Index = () => {
 
       {/* WORK TOGETHER SECTION */}
       <section className='w-full h-auto flex flex-col items-center justify-center gap-y-4'>
-        <div className="w-full h-auto flex items-center justify-center md:justify-start p-4">
+        <div className="w-full h-auto flex items-center justify-center md:justify-start md:p-4">
           <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Let&apos;s work Together!</h2>
         </div>
 
-        <div className="w-full h-auto grid grid-cols-12 grid-rows-12">
-          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pr-12">
+        <div className="w-full h-auto grid grid-cols-12 grid-rows-12 gap-y-4 md:gap-x-4">
+          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
             <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
 
@@ -105,7 +105,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center p-4 md:pl-12">
+          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
             <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
 
@@ -122,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* JOIN WORKY SECTION */}
-      <section className="w-full h-auto p-4">
+      <section className="w-full h-auto md:p-4">
         <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
 
@@ -133,7 +133,7 @@ const Index = () => {
       </section>
 
       {/* DOWNLOAD APP SECTION */}
-      <section className="w-full h-auto p-4">
+      <section className="w-full h-auto md:p-4">
         <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
 
@@ -164,7 +164,7 @@ const Index = () => {
       </section>
 
       {/* NEWSLETTER SECTION */}
-      <section className="w-full h-auto p-4">
+      <section className="w-full h-auto md:p-4">
         <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
 

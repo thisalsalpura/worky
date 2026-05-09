@@ -30,7 +30,7 @@ const Login = () => {
         email: "",
         password: "",
         mobileCountryCode: country,
-        mobileNum: "",
+        mobileNum: undefined,
         role: ""
     });
 
@@ -48,7 +48,7 @@ const Login = () => {
                         transition={{ duration: 0.5 }}
                         className="w-full h-full grid grid-cols-12"
                     >
-                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
+                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center md:p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
                             <div className="w-auto h-auto flex items-center justify-center">
@@ -63,8 +63,8 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center md:p-4'>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                                 <h3 className="text-2xl text-background text-left font-heading">Login</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
@@ -104,7 +104,7 @@ const Login = () => {
                                             onChange={(e) => setChecked(e.target.checked)}
                                             label="Remember Me"
                                             slotProps={{
-                                                input: { 'aria-label': 'controlled' },
+                                                input: { 'aria-label': 'Controlled' },
                                             }}
                                         />
                                     </div>
@@ -149,8 +149,8 @@ const Login = () => {
                         transition={{ duration: 0.5 }}
                         className="w-full h-full grid grid-cols-12"
                     >
-                        <div className='h-full col-span-12 lg:col-span-6 items-center justify-center p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-10 gap-y-8">
+                        <div className='h-full col-span-12 lg:col-span-6 items-center justify-center md:p-4'>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                                 <h3 className="text-2xl text-background text-left font-heading">Register</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
@@ -223,7 +223,7 @@ const Login = () => {
                                             fullWidth
                                             value={registerData.mobileNum}
                                             onChange={(e) => {
-                                                setRegisterData(prev => ({ ...prev, mobileNum: e.target.value }));
+                                                setRegisterData(prev => ({ ...prev, mobileNum: Number(e.target.value) }));
                                                 setErrors(prev => ({ ...prev, mobileNum: "" }));
                                             }}
                                             error={!!errors.mobileNum}
@@ -243,7 +243,7 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center p-4">
+                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center md:p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
                             <div className="w-auto h-auto flex items-center justify-center">

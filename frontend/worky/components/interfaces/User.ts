@@ -2,24 +2,28 @@ export interface User {
     id?: string;
     fname?: string;
     lname?: string;
+    pronoun?: string;
     email?: string;
     password?: string;
     mobileCountryCode?: Country;
-    mobileNum?: string;
+    mobileNum?: number;
     dob?: Date;
     createdAt?: Date;
     updatedAt?: Date;
     isEmailVerified?: boolean;
     status?: string;
-    role?: string;
     address?: Address;
+    profileURL?: string;
+    linkedInURL?: string;
+    gitHubURL?: string;
+    role?: string;
 };
 
 export interface Address {
     addressLine1?: string;
     addressLine2?: string;
     city?: string;
-    postalCode?: string;
+    postalCode?: number;
     country?: Country;
 };
 

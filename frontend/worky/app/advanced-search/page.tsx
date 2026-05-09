@@ -32,8 +32,8 @@ const Advanced_Search = () => {
                 </p>
             </div>
 
-            <div className="w-full h-auto flex flex-col items-start justify-center p-4 gap-y-8">
-                <div className="w-full h-auto grid grid-cols-12 bg-on-background border-2 border-on-background rounded-lg p-10 gap-8">
+            <div className="w-full h-auto flex flex-col items-start justify-center md:p-4 gap-y-8">
+                <div className="w-full h-auto grid grid-cols-12 bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
                     <div className="col-span-12 flex items-center justify-start">
                         <h2 className="w-full h-auto text-2xl md:text-3xl text-background font-heading font-semibold">Advanced Search</h2>
                     </div>
@@ -55,7 +55,7 @@ const Advanced_Search = () => {
                         />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pr-4">
                         <CustomSelect
                             label="Category"
                             fullWidth
@@ -71,7 +71,7 @@ const Advanced_Search = () => {
                             ]}
                             value={searchData.category}
                             onChange={(e) => {
-                                setSearchData(prev => ({ ...prev, category: e.target.value as string }));
+                                setSearchData(prev => ({ ...prev, category: String(e.target.value) }));
                                 setErrors(prev => ({ ...prev, category: "" }));
                             }}
                             error={!!errors.category}
@@ -79,7 +79,7 @@ const Advanced_Search = () => {
                         />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pl-4">
                         <CustomSelect
                             label="Sub Category"
                             fullWidth
@@ -95,7 +95,7 @@ const Advanced_Search = () => {
                             ]}
                             value={searchData.subCategory}
                             onChange={(e) => {
-                                setSearchData(prev => ({ ...prev, subCategory: e.target.value as string }));
+                                setSearchData(prev => ({ ...prev, subCategory: String(e.target.value) }));
                                 setErrors(prev => ({ ...prev, subCategory: "" }));
                             }}
                             error={!!errors.subCategory}
@@ -103,7 +103,7 @@ const Advanced_Search = () => {
                         />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pr-4">
                         <CustomSelect
                             label="Sort By"
                             fullWidth
@@ -117,7 +117,7 @@ const Advanced_Search = () => {
                             ]}
                             value={sortOption}
                             onChange={(e) => {
-                                setSortOption(e.target.value as string);
+                                setSortOption(String(e.target.value));
                                 setErrors(prev => ({ ...prev, sortOption: "" }));
                             }}
                             error={!!errors.sortOption}
@@ -125,15 +125,15 @@ const Advanced_Search = () => {
                         />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pl-4">
 
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pr-4">
                         <Button name="Clear" btnContainer="w-full text-primary bg-on-primary" btnPing="bg-primary" btnPingDot="bg-primary" />
                     </div>
 
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-12 md:col-span-6 md:pl-4">
                         <Button name="Search" btnContainer="w-full text-on-primary bg-primary" btnPing="bg-on-primary" btnPingDot="bg-on-primary" />
                     </div>
                 </div>

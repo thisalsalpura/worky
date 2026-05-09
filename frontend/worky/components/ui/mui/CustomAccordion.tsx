@@ -29,7 +29,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                     boxShadow: 'none',
                     overflow: 'hidden',
                     '& .MuiAccordionSummary-root': {
-                        alignItems: 'flex-start',
+                        alignItems: 'center',
                         backgroundColor: 'var(--color-surface-variant)',
                         padding: '16px',
                         gap: '16px'
@@ -38,7 +38,6 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                         margin: 0
                     },
                     '& .MuiAccordionSummary-expandIconWrapper': {
-                        marginTop: '2px',
                         transform: 'none',
                         transition: 'none'
                     },
