@@ -20,7 +20,7 @@ export function Index_Navbar() {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col p-5 sm:p-10 gap-y-8">
+            <div className="w-full flex flex-col p-4 md:p-8 gap-y-8">
                 <Button name="Register" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                 <Button name="Login" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
@@ -30,7 +30,7 @@ export function Index_Navbar() {
     return (
         <nav className="top-0 left-0 right-0 sticky pt-2 px-2 overflow-x-clip z-50">
             <div className="relative mx-auto max-w-7xl">
-                <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
+                <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-4 py-2">
                     <Link href="/">
                         <Image
                             suppressHydrationWarning

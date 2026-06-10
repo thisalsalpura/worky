@@ -42,11 +42,11 @@ export function Default_Navbar() {
 
     const navItems = () => {
         return (
-            <div className="w-full flex flex-col p-5 sm:p-10 gap-y-8">
+            <div className="w-full flex flex-col p-4 md:p-8 gap-y-8">
                 <Button name="Switch to Selling" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                 <div className="w-full h-auto flex flex-row items-center justify-center gap-x-4">
-                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-2 md:px-5 gap-x-2 md:gap-x-5 cursor-pointer group">
+                    <button className="w-auto h-12 flex-1 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-2 md:px-4 gap-x-2 md:gap-x-4 cursor-pointer group">
                         <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
                         <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>
@@ -93,10 +93,9 @@ export function Default_Navbar() {
     return (
         <nav className="top-0 left-0 right-0 sticky pt-2 px-2 overflow-x-clip z-50">
             <div className="relative mx-auto max-w-7xl">
-                <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-5 py-2.5">
+                <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-4 py-2">
                     <Link href="/">
                         <Image
-                            suppressHydrationWarning
                             src={`/icons/logo-${isDark ? "white" : "black"}.svg`}
                             alt="worky-logo"
                             width={96}
@@ -106,7 +105,7 @@ export function Default_Navbar() {
                     </Link>
 
                     <div className="flex items-center gap-x-8">
-                        <div className="hidden md:flex flex-row items-center gap-x-8">
+                        <div className="hidden md:flex">
                             <Button name="Switch to Selling" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                         </div>
 
@@ -131,10 +130,10 @@ export function Default_Navbar() {
                 </div>
 
                 <div
-                    className={`mt-2 absolute left-0 right-0 h-auto hidden md:flex flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-5 gap-x-8 transition-all duration-300 ease-in-out ${isCaretOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
+                    className={`mt-2 absolute left-0 right-0 h-auto hidden md:flex flex-row items-center justify-between bg-on-background border border-outline rounded-2xl p-4 gap-x-8 transition-all duration-300 ease-in-out ${isCaretOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
                     aria-hidden={!isCaretOpen}
                 >
-                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-5 gap-x-5 cursor-pointer group">
+                    <button className="w-auto h-12 flex flex-row items-center justify-center text-on-primary font-base font-semibold bg-primary border border-outline hover:text-primary hover:bg-on-primary rounded-xl px-4 gap-x-4 cursor-pointer group">
                         <FontAwesomeIcon icon={faBars} className="text-lg text-on-primary group-hover:text-primary" />
                         <span className="text-on-primary group-hover:text-primary">All Categories</span>
                     </button>

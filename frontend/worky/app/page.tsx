@@ -23,13 +23,13 @@ const Index = () => {
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
         <div className="grid grid-cols-12 grid-rows-12 h-full">
-          <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-5">
-            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+          <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-4">
+            <h3 className="text-2xl md:text-3xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
               Find skilled freelancers ready to bring your ideas to Life. <span className="text-primary-container">Post your project, connect with talent and get quality work done—on your Terms.</span>
             </h3>
           </div>
 
-          <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center overflow-hidden p-5">
+          <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center p-4 overflow-hidden">
             <Image
               src="/images/home-img.svg"
               alt="home-image"
@@ -40,8 +40,8 @@ const Index = () => {
             />
           </div>
 
-          <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-5">
-            <h3 className="text-2xl md:text-xl lg:text-3xl text-center md:text-right font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+          <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-4">
+            <h3 className="text-2xl md:text-3xl text-center md:text-right font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
               <span className="text-primary-container">Turn your skills into Income.</span> Create your profile, showcase your expertise and start getting hired by clients who value what you Do.
             </h3>
           </div>
@@ -72,9 +72,9 @@ const Index = () => {
           >
             {categories.map((category) => (
               <SwiperSlide key={category.id} className="h-full flex justify-center md:p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 cursor-pointer">
-                  <FontAwesomeIcon icon={category.icon} className="text-9xl text-background text-center aspect-square tilt-pop" />
-                  <p className="text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8 cursor-pointer">
+                  <FontAwesomeIcon icon={category.icon} className="text-8xl text-background text-center aspect-square tilt-pop" />
+                  <p className="text-2xl md:text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
                     {category.title}
                   </p>
                 </TiltCard>
@@ -92,7 +92,7 @@ const Index = () => {
 
         <div className="w-full h-auto grid grid-cols-12 grid-rows-12 gap-y-4 md:gap-x-4">
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -101,12 +101,12 @@ const Index = () => {
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <Button name="Become a Seller" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <Button name="Become a Seller" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
 
           <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-6 lg:gap-y-8">
+            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
               <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -115,7 +115,7 @@ const Index = () => {
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <Button name="Hire Freelancers" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <Button name="Hire Freelancers" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
         </div>
@@ -123,25 +123,25 @@ const Index = () => {
 
       {/* JOIN WORKY SECTION */}
       <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
-          <Button name="Join Worky" href="/login" btnContainer="w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+          <Button name="Join Worky" href="/login" btnContainer="w-full md:w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
         </div>
       </section>
 
       {/* DOWNLOAD APP SECTION */}
       <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
           <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
-          <div className="flex flex-col md:flex-row gap-y-8 md:gap-x-8">
+          <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
             <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
@@ -165,7 +165,7 @@ const Index = () => {
 
       {/* NEWSLETTER SECTION */}
       <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-5 sm:p-10 gap-y-8">
+        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
           <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
@@ -188,7 +188,7 @@ const Index = () => {
               helperText={errors.email}
             />
 
-            <Button name="Subscribe" btnContainer="w-full sm:w-40 text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+            <Button name="Subscribe" btnContainer="w-full md:w-40 text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
           </div>
 
           <p className="text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
