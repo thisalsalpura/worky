@@ -64,8 +64,8 @@ const Login = () => {
                         </div>
 
                         <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
-                                <h3 className="text-2xl text-background text-left font-heading">Login</h3>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
+                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Login</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
@@ -124,6 +124,7 @@ const Login = () => {
 
                                 <div className="flex flex-col items-center justify-center gap-y-4">
                                     <p className="text-background text-center font-base">Or Login Google</p>
+
                                     <div className='w-full h-auto flex items-center justify-center'>
                                         <button className='w-10 h-10 flex items-center justify-center cus-animated-bg border border-outline rounded-full p-2 cursor-pointer' style={{ '--animated-bg-color': 'var(--color-on-primary)' } as React.CSSProperties}>
                                             <Image
@@ -150,8 +151,8 @@ const Login = () => {
                         className="w-full h-full grid grid-cols-12"
                     >
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
-                                <h3 className="text-2xl text-background text-left font-heading">Register</h3>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
+                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Register</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
