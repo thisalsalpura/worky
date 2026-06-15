@@ -33,7 +33,6 @@ export function Index_Navbar() {
                 <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-4 py-2">
                     <Link href="/">
                         <Image
-                            suppressHydrationWarning
                             src={`/icons/logo-${isDark ? "white" : "black"}.svg`}
                             alt="worky-logo"
                             width={96}

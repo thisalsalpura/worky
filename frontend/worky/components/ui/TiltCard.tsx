@@ -13,6 +13,7 @@ export function TiltCard({ children, className }: TiltCardProps) {
 
     useEffect(() => {
         const tiltNode = tiltRef.current;
+
         if (!tiltNode) return;
 
         VanillaTilt.init(tiltNode, {
