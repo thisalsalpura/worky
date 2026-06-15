@@ -8,6 +8,8 @@ import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { Button } from '@/components/ui/Button';
 import { COUNTRIES } from '@/constants/countries';
 import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
 
@@ -73,6 +75,7 @@ const Login = () => {
                                         type="email"
                                         variant="outlined"
                                         fullWidth
+                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={loginData.email}
                                         onChange={(e) => {
                                             setLoginData(prev => ({ ...prev, email: e.target.value }));
@@ -97,7 +100,7 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-4 sm:gap-x-4">
+                                <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:gap-x-4">
                                     <div className="flex items-center justify-center">
                                         <CustomCheckbox
                                             checked={checked}
@@ -188,6 +191,7 @@ const Login = () => {
                                         type="email"
                                         variant="outlined"
                                         fullWidth
+                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={registerData.email}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, email: e.target.value }));
