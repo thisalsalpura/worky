@@ -1,4 +1,4 @@
-import { FaqItem } from "./FaqItem";
+import { FaqItem } from './FaqItem';
 
 export interface Gig {
     id?: string;

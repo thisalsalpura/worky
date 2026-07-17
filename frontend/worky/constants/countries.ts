@@ -1,4 +1,4 @@
-import { Country } from "@/components/interfaces/User";
+import { Country } from '@/components/interfaces/User';
 
 export const COUNTRIES: Country[] = [
     { code: 'AF', name: 'Afghanistan', dial: '+93', flagCode: 'af' },
@@ -67,7 +67,6 @@ export const COUNTRIES: Country[] = [
 
     { code: 'KZ', name: 'Kazakhstan', dial: '+7', flagCode: 'kz' },
     { code: 'KE', name: 'Kenya', dial: '+254', flagCode: 'ke' },
-    { code: 'KR', name: 'South Korea', dial: '+82', flagCode: 'kr' },
     { code: 'KW', name: 'Kuwait', dial: '+965', flagCode: 'kw' },
 
     { code: 'LA', name: 'Laos', dial: '+856', flagCode: 'la' },
@@ -95,6 +94,7 @@ export const COUNTRIES: Country[] = [
     { code: 'PT', name: 'Portugal', dial: '+351', flagCode: 'pt' },
 
     { code: 'QA', name: 'Qatar', dial: '+974', flagCode: 'qa' },
+
     { code: 'RO', name: 'Romania', dial: '+40', flagCode: 'ro' },
     { code: 'RU', name: 'Russia', dial: '+7', flagCode: 'ru' },
 
@@ -103,6 +103,7 @@ export const COUNTRIES: Country[] = [
     { code: 'SK', name: 'Slovakia', dial: '+421', flagCode: 'sk' },
     { code: 'SI', name: 'Slovenia', dial: '+386', flagCode: 'si' },
     { code: 'ZA', name: 'South Africa', dial: '+27', flagCode: 'za' },
+    { code: 'KR', name: 'South Korea', dial: '+82', flagCode: 'kr' },
     { code: 'ES', name: 'Spain', dial: '+34', flagCode: 'es' },
     { code: 'LK', name: 'Sri Lanka', dial: '+94', flagCode: 'lk' },
     { code: 'SE', name: 'Sweden', dial: '+46', flagCode: 'se' },
@@ -122,6 +123,7 @@ export const COUNTRIES: Country[] = [
     { code: 'VN', name: 'Vietnam', dial: '+84', flagCode: 'vn' },
 
     { code: 'YE', name: 'Yemen', dial: '+967', flagCode: 'ye' },
+
     { code: 'ZM', name: 'Zambia', dial: '+260', flagCode: 'zm' },
     { code: 'ZW', name: 'Zimbabwe', dial: '+263', flagCode: 'zw' }
 ];

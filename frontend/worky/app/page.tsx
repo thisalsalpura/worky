@@ -13,7 +13,7 @@ import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 
 const Index = () => {
 
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState<string>('');
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -22,7 +22,7 @@ const Index = () => {
 
       {/* HERO SECTION */}
       <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
-        <div className="grid grid-cols-12 grid-rows-12 h-full">
+        <div className="h-auto grid grid-cols-12 grid-rows-12">
           <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-4">
             <h3 className="text-2xl md:text-3xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
               Find skilled freelancers ready to bring your ideas to Life. <span className="text-primary-container">Post your project, connect with talent and get quality work done—on your Terms.</span>
@@ -101,7 +101,7 @@ const Index = () => {
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <Button name="Become a Seller" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <Button name="Become a Seller" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
 
@@ -115,7 +115,7 @@ const Index = () => {
 
               <div className="w-full h-0.5 bg-outline opacity-20" />
 
-              <Button name="Hire Freelancers" href="/login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <Button name="Hire Freelancers" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const Index = () => {
 
           <div className="w-full h-0.5 bg-outline opacity-20" />
 
-          <Button name="Join Worky" href="/login" btnContainer="w-full md:w-auto text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+          <Button name="Join Worky" href="/login" btnContainer="w-full md:w-auto bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
         </div>
       </section>
 
@@ -142,7 +142,7 @@ const Index = () => {
           <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
           <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
@@ -151,7 +151,7 @@ const Index = () => {
               </div>
             </TiltCard>
 
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary border border-outline hover:bg-on-primary rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
+            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
               <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
 
               <div className="flex flex-col">
@@ -188,7 +188,7 @@ const Index = () => {
               helperText={errors.email}
             />
 
-            <Button name="Subscribe" btnContainer="w-full md:w-40 text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+            <Button name="Subscribe" btnContainer="w-full md:w-40 bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
           </div>
 
           <p className="text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
