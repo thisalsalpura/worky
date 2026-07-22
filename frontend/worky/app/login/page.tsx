@@ -233,7 +233,6 @@ const Login = () => {
                                             }}
                                             error={!!errors.mobileNum}
                                             helperText={errors.mobileNum}
-                                            inputProps={{ min: 7, maxLength: 17 }}
                                         />
                                     </div>
                                 </div>
