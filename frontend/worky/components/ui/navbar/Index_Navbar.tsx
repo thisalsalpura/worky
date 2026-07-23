@@ -30,7 +30,7 @@ export function Index_Navbar() {
     return (
         <nav className="top-0 left-0 right-0 sticky pt-2 px-2 overflow-x-clip z-50">
             <div className="relative mx-auto max-w-7xl">
-                <div className="h-auto flex items-center justify-between bg-blur border border-outline backdrop-blur-2xl rounded-2xl px-4 py-2">
+                <div className="h-auto flex items-center justify-between bg-blur backdrop-blur-2xl border border-outline rounded-2xl px-4 py-2">
                     <Link href="/">
                         <Image
                             src={`/icons/logo-${isDark ? "white" : "black"}.svg`}
@@ -62,7 +62,7 @@ export function Index_Navbar() {
                 </div>
 
                 <div
-                    className={`mt-2 absolute left-0 right-0 flex md:hidden items-center justify-center bg-blur border border-outline backdrop-blur-2xl rounded-2xl transition-all duration-300 ease-in-out ${isMenuOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
+                    className={`mt-2 absolute left-0 right-0 flex md:hidden items-center justify-center bg-blur backdrop-blur-2xl border border-outline rounded-2xl transition-all duration-300 ease-in-out ${isMenuOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"} overflow-hidden z-50`}
                     aria-hidden={!isMenuOpen}
                 >
                     {navItems()}

@@ -19,7 +19,7 @@ export function Bubble({ className, x, y, scale, duration = 30, style }: BubbleP
                 duration,
                 repeat: Infinity,
                 repeatType: 'mirror',
-                ease: 'easeInOut',
+                ease: 'easeInOut'
             }}
             style={style}
         />
