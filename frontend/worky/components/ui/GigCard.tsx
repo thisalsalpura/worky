@@ -1,6 +1,6 @@
 'use client';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export function GigCard() {
 
@@ -19,7 +19,7 @@ export function GigCard() {
                 />
             </div>
 
-            <div className="flex flex-col items-start justify-start gap-y-2">
+            <div className="w-full h-auto flex flex-col items-start justify-start gap-y-2">
                 <div className="w-full h-auto flex flex-row items-center justify-start gap-x-4">
                     <div className="w-10 h-10 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer">
                         <div className="w-8 h-8 flex items-center justify-center bg-surface-variant dark:bg-on-surface-variant rounded-full overflow-hidden">

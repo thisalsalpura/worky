@@ -41,7 +41,7 @@ export function Index_Navbar() {
                         />
                     </Link>
 
-                    <div className="flex items-center gap-x-8">
+                    <div className="flex flex-row items-center justify-center gap-x-8">
                         <div className="hidden md:flex flex-row items-center gap-x-8">
                             <Button name="Register" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                             <Button name="Login" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />

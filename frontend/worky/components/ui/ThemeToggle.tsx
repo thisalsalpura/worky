@@ -13,7 +13,6 @@ export function ThemeToggle() {
         <button
             onClick={() => setTheme(isDark ? "light" : "dark")}
             className="w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group"
-            aria-label="Toggle Theme"
         >
             <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="text-lg text-on-primary group-hover:text-primary" />
         </button>
