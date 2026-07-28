@@ -126,4 +126,4 @@ export const COUNTRIES: Country[] = [
 
     { code: 'ZM', name: 'Zambia', dial: '+260', flagCode: 'zm' },
     { code: 'ZW', name: 'Zimbabwe', dial: '+263', flagCode: 'zw' }
-];
+] as const;
