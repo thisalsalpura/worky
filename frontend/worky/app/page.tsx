@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@/components/ui/Button';
+import { HorizontalRule } from '@/components/ui/HorizontalRule';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 
 const Index = () => {
@@ -18,21 +19,22 @@ const Index = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-y-12">
+    <div className='w-full h-full flex flex-col items-center justify-center gap-y-12'>
 
       {/* HERO SECTION */}
-      <section className="w-full h-auto bg-on-background border-2 border-on-background rounded-lg">
-        <div className="h-auto grid grid-cols-12 grid-rows-12">
-          <div className="col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-3 md:row-span-9 flex items-center md:items-start p-4">
-            <h3 className="text-2xl md:text-3xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
-              Find skilled freelancers ready to bring your ideas to Life. <span className="text-primary-container">Post your project, connect with talent and get quality work done—on your Terms.</span>
+      <section className='w-full h-auto bg-on-background rounded-lg'>
+        <div className='w-full h-auto grid grid-cols-12 grid-rows-12'>
+
+          <div className='col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-4 flex items-center md:items-start p-4'>
+            <h3 className='text-2xl md:text-3xl text-center md:text-left font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+              Find skilled freelancers ready to bring your ideas to Life. <span className='text-primary-container'>Post your project, connect with talent and get quality work done—on your Terms.</span>
             </h3>
           </div>
 
-          <div className="col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-4 md:row-start-3 row-span-6 md:row-span-8 flex items-center justify-center p-4 overflow-hidden">
+          <div className='col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-5 md:row-start-4 row-span-4 md:row-span-6 flex items-center justify-center p-4 overflow-hidden'>
             <Image
-              src="/images/home-img.svg"
-              alt="home-image"
+              src='/images/home-img.svg'
+              alt='home-img'
               width={250}
               height={250}
               className='object-cover aspect-square'
@@ -40,21 +42,22 @@ const Index = () => {
             />
           </div>
 
-          <div className="col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-10 md:row-start-4 row-span-3 md:row-span-9 flex items-center md:items-end p-4">
-            <h3 className="text-2xl md:text-3xl text-center md:text-right font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
-              <span className="text-primary-container">Turn your skills into Income.</span> Create your profile, showcase your expertise and start getting hired by clients who value what you Do.
+          <div className='col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-9 row-span-4 flex items-center md:items-end p-4'>
+            <h3 className='text-2xl md:text-3xl text-center md:text-right font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-background)' }}>
+              <span className='text-primary-container'>Turn your skills into Income.</span> Create your profile, showcase your expertise and start getting hired by clients who value what you Do.
             </h3>
           </div>
+
         </div>
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section className="w-full h-auto flex flex-col items-center justify-center gap-y-4">
-        <div className="w-full h-auto flex items-center justify-center md:justify-start md:p-4">
-          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Categories</h2>
+      <section className='w-full h-auto flex flex-col items-center justify-center gap-y-4'>
+        <div className='w-full h-auto flex items-center justify-center md:justify-start md:p-4'>
+          <h2 className='text-4xl text-center md:text-left font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Categories</h2>
         </div>
 
-        <div className="w-full h-auto">
+        <div className='w-full h-auto'>
           <Swiper
             spaceBetween={16}
             autoplay={{
@@ -68,15 +71,13 @@ const Index = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 }
             }}
-            className="w-full h-full"
+            className='w-full h-full'
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id} className="h-full flex justify-center md:p-4">
-                <TiltCard className="h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8 cursor-pointer">
-                  <FontAwesomeIcon icon={category.icon} className="text-8xl text-background text-center aspect-square tilt-pop" />
-                  <p className="text-2xl md:text-3xl text-center font-heading custom-text-style tilt-pop" style={{ WebkitTextStroke: '1px var(--color-background)' }}>
-                    {category.title}
-                  </p>
+              <SwiperSlide key={category.id} className='h-full flex items-center justify-center md:p-4'>
+                <TiltCard className='h-full flex flex-col items-center justify-center bg-on-background rounded-lg p-4 md:p-8 gap-y-8 cursor-pointer'>
+                  <FontAwesomeIcon icon={category.icon} className='text-8xl text-background text-center aspect-square tilt-pop' />
+                  <h3 className='text-2xl md:text-3xl text-center font-heading custom-text-style tilt-pop' style={{ WebkitTextStroke: '1px var(--color-background)' }}>{category.title}</h3>
                 </TiltCard>
               </SwiperSlide>
             ))}
@@ -86,112 +87,116 @@ const Index = () => {
 
       {/* WORK TOGETHER SECTION */}
       <section className='w-full h-auto flex flex-col items-center justify-center gap-y-4'>
-        <div className="w-full h-auto flex items-center justify-center md:justify-start md:p-4">
-          <h2 className="text-4xl text-center md:text-left font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Let&apos;s work Together!</h2>
+        <div className='w-full h-auto flex items-center justify-center md:justify-start md:p-4'>
+          <h2 className='text-4xl text-center md:text-left font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Let's Work Together</h2>
         </div>
 
-        <div className="w-full h-auto grid grid-cols-12 grid-rows-12 gap-y-4 md:gap-x-4">
-          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-              <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Seller</h3>
+        <div className='w-full h-auto grid grid-cols-12 grid-rows-12 gap-y-4 md:gap-x-4'>
 
-              <div className="w-full h-0.5 bg-outline opacity-20" />
+          <div className='h-auto col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4'>
+            <div className='w-full h-full flex flex-col items-center justify-between bg-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+              <h3 className='text-2xl md:text-3xl text-background text-center font-heading'>Seller</h3>
 
-              <p className="text-background text-center font-base">Turn your skills into Income. Create your profile, showcase your expertise and start getting hired by clients who value what you Do.</p>
+              <HorizontalRule />
 
-              <div className="w-full h-0.5 bg-outline opacity-20" />
+              <p className='text-background text-center font-base'>Turn your skills into Income. Create your profile, showcase your expertise and start getting hired by clients who value what you Do.</p>
 
-              <Button name="Become a Seller" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <HorizontalRule />
+
+              <Button name='Become a Seller' href='/login' btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
             </div>
           </div>
 
-          <div className="h-full col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4">
-            <div className="w-full h-full flex flex-col justify-between bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-              <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Buyer</h3>
+          <div className='h-auto col-span-12 md:col-span-6 row-span-6 md:row-span-12 flex items-center justify-center md:p-4'>
+            <div className='w-full h-full flex flex-col items-center justify-between bg-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+              <h3 className='text-2xl md:text-3xl text-background text-center font-heading'>Buyer</h3>
 
-              <div className="w-full h-0.5 bg-outline opacity-20" />
+              <HorizontalRule />
 
-              <p className="text-background text-center font-base">Find skilled freelancers ready to bring your ideas to Life. Post your project, connect with talent and get quality work done—on your Terms.</p>
+              <p className='text-background text-center font-base'>Find skilled freelancers ready to bring your ideas to Life. Post your project, connect with talent and get quality work done—on your Terms.</p>
 
-              <div className="w-full h-0.5 bg-outline opacity-20" />
+              <HorizontalRule />
 
-              <Button name="Hire Freelancers" href="/login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+              <Button name='Hire Freelancers' href='/login' btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* JOIN WORKY SECTION */}
-      <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-          <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Freelance services at your Fingertips</h3>
+      {/* JOIN TO WORKY SECTION */}
+      <section className='w-full h-auto md:p-4'>
+        <div className='w-full h-full flex flex-col items-center justify-center bg-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+          <h3 className='text-2xl md:text-3xl text-background text-center font-heading'>Freelance services at your Fingertips</h3>
 
-          <div className="w-full h-0.5 bg-outline opacity-20" />
+          <HorizontalRule />
 
-          <Button name="Join Worky" href="/login" btnContainer="w-full md:w-auto bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+          <Button name='Join Worky' href='/login' btnContainer='w-full md:w-auto bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
         </div>
       </section>
 
-      {/* DOWNLOAD APP SECTION */}
-      <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-center justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-          <h3 className="text-2xl md:text-3xl text-background text-center font-heading">Work fast from Anywhere</h3>
+      {/* DOWNLOAD WORKY APP SECTION */}
+      <section className='w-full h-auto md:p-4'>
+        <div className='w-full h-full flex flex-col items-center justify-center bg-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+          <h3 className='text-2xl md:text-3xl text-background text-center font-heading'>Work fast from Anywhere</h3>
 
-          <div className="w-full h-0.5 bg-outline opacity-20" />
+          <HorizontalRule />
 
-          <p className="text-background text-center font-base">Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
+          <p className='text-background text-center font-base'>Stay up to date and move work forward with Worky on IOS & Android. Download the app Today.</p>
 
-          <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
-              <FontAwesomeIcon icon={faApple} className="text-4xl text-on-primary group-hover:text-primary" />
+          <div className='flex flex-col md:flex-row gap-y-4 md:gap-x-4'>
 
-              <div className="flex flex-col">
-                <p className="text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Download on The</p>
-                <p className="text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">App Store</p>
+            <TiltCard className='w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group'>
+              <FontAwesomeIcon icon={faApple} className='text-4xl text-on-primary group-hover:text-primary' />
+
+              <div className='flex flex-col'>
+                <p className='text-on-primary font-base font-semibold tilt-pop group-hover:text-primary'>Download on The</p>
+                <p className='text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary'>App Store</p>
               </div>
             </TiltCard>
 
-            <TiltCard className="w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group">
-              <FontAwesomeIcon icon={faGooglePlay} className="text-4xl text-on-primary group-hover:text-primary" />
+            <TiltCard className='w-auto flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-2xl p-4 gap-x-4 transition-colors duration-300 cursor-pointer group'>
+              <FontAwesomeIcon icon={faGooglePlay} className='text-4xl text-on-primary group-hover:text-primary' />
 
-              <div className="flex flex-col">
-                <p className="text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Download on The</p>
-                <p className="text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary">Play Store</p>
+              <div className='flex flex-col'>
+                <p className='text-on-primary font-base font-semibold tilt-pop group-hover:text-primary'>Download on The</p>
+                <p className='text-lg text-on-primary font-base font-semibold tilt-pop group-hover:text-primary'>Play Store</p>
               </div>
             </TiltCard>
+
           </div>
         </div>
       </section>
 
       {/* NEWSLETTER SECTION */}
-      <section className="w-full h-auto md:p-4">
-        <div className="w-full h-full flex flex-col items-start justify-center bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-          <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Get more Updates</h3>
+      <section className='w-full h-auto md:p-4'>
+        <div className='w-full h-full flex flex-col items-center justify-center bg-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+          <h3 className='text-2xl md:text-3xl text-background text-center font-heading'>Get more Updates</h3>
 
-          <div className="w-full h-0.5 bg-outline opacity-20" />
+          <HorizontalRule />
 
-          <p className="text-background text-left font-base">Subscribe to our Newsletter and never miss an opportunity—whether you&apos;re hiring or offering your Skills.</p>
+          <p className='text-background text-center font-base'>Subscribe to our Newsletter and never miss an opportunity—whether you're hiring or offering your Skills.</p>
 
-          <div className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4">
+          <div className='w-full h-auto flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4'>
             <CustomTextField
-              label="Email Address"
-              type="email"
-              variant="outlined"
+              label='Email Address'
+              type='email'
+              variant='outlined'
               fullWidth
               endIcon={<FontAwesomeIcon icon={faEnvelope} />}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-                setErrors(prev => ({ ...prev, email: "" }));
+                setErrors(prev => ({ ...prev, email: '' }));
               }}
               error={!!errors.email}
               helperText={errors.email}
             />
 
-            <Button name="Subscribe" btnContainer="w-full md:w-40 bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+            <Button name='Subscribe' btnContainer='w-full md:w-auto bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
           </div>
 
-          <p className="text-background text-left font-base">By Subscribing, you agree to our <span className="text-primary-container cursor-pointer">Terms of Service</span> and <span className="text-primary-container cursor-pointer">Privacy Policy</span>.</p>
+          <p className='text-background text-left font-base'>By Subscribing, you agree to our <span className='text-primary-container cursor-pointer'>Terms & Conditions</span> and <span className='text-primary-container cursor-pointer'>Privacy Policy</span>.</p>
         </div>
       </section>
 
