@@ -4,15 +4,8 @@ import { Pagination, PaginationItem, PaginationProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-
-const ITEM_SIZE = 36;
-const BORDER_RADIUS = 1000;
-
-const BASE_TYPOGRAPHY = {
-    fontSize: '14px',
-    fontFamily: 'var(--font-ropa-sans), sans-serif',
-    fontWeight: 600
-} as const;
+import { getPillItemSx } from '@/libs/mui-styles';
+import { SIZES } from '@/libs/design-tokens';
 
 type CustomPaginationProps = PaginationProps & {
     containerClassName?: string;
@@ -27,31 +20,8 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
     const sx: SxProps<Theme> = [
         {
             '& .MuiPaginationItem-root': {
-                ...BASE_TYPOGRAPHY,
-                margin: '4px',
-                width: `${ITEM_SIZE}px`,
-                minWidth: `${ITEM_SIZE}px`,
-                height: `${ITEM_SIZE}px`,
+                ...getPillItemSx(SIZES.itemSize),
                 color: isDark ? 'var(--color-on-primary)' : 'var(--color-primary)',
-                backgroundColor: 'transparent',
-                border: '1px solid var(--color-outline)',
-                borderRadius: `${BORDER_RADIUS}px`,
-                opacity: 0.8,
-                transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
-                overflow: 'hidden',
-                '&.Mui-selected': {
-                    color: 'var(--color-primary)',
-                    backgroundColor: 'var(--color-on-primary)',
-                    borderColor: 'var(--color-primary)',
-                    opacity: 1,
-                    '&:hover': {
-                        color: 'var(--color-on-primary)',
-                        backgroundColor: 'var(--color-primary)'
-                    }
-                },
-                '&.Mui-disabled': {
-                    opacity: 0.4
-                },
                 '&.MuiPaginationItem-ellipsis': {
                     display: 'flex',
                     alignItems: 'center',
@@ -64,11 +34,6 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                         backgroundColor: 'transparent',
                         opacity: 0.6
                     }
-                },
-                '&:not(.MuiPaginationItem-ellipsis):hover': {
-                    color: 'var(--color-on-primary)',
-                    backgroundColor: 'var(--color-primary)',
-                    opacity: 1
                 }
             }
         },
