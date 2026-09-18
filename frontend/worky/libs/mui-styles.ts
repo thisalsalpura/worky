@@ -1,4 +1,3 @@
-import { SxProps, Theme } from '@mui/material/styles';
 import { RADIUS, SIZES } from './design-tokens';
 
 export const baseTypography = {
@@ -12,7 +11,7 @@ export const baseTypographySm = {
     fontSize: '14px'
 } as const;
 
-export const hideScrollbarSx: SxProps<Theme> = {
+export const hideScrollbarSx = {
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
     '&::-webkit-scrollbar': {
@@ -20,7 +19,7 @@ export const hideScrollbarSx: SxProps<Theme> = {
     }
 };
 
-export function getFieldLabelSx(fieldHeight: number = SIZES.fieldHeight): SxProps<Theme> {
+export function getFieldLabelSx(fieldHeight: number = SIZES.fieldHeight) {
 
     const idleOffsetY = Math.round((fieldHeight - 24) / 2);
 
@@ -32,7 +31,7 @@ export function getFieldLabelSx(fieldHeight: number = SIZES.fieldHeight): SxProp
     };
 }
 
-export function getOutlinedFieldSx(): SxProps<Theme> {
+export function getOutlinedFieldSx() {
     return {
         '& .MuiOutlinedInput-root': {
             ...baseTypography,
@@ -102,7 +101,7 @@ export function getOutlinedFieldSx(): SxProps<Theme> {
     };
 }
 
-export function getPillItemSx(itemSize: number = SIZES.itemSize): SxProps<Theme> {
+export function getPillItemSx(itemSize: number = SIZES.itemSize) {
     return {
         ...baseTypographySm,
         margin: '4px',
@@ -135,7 +134,7 @@ export function getPillItemSx(itemSize: number = SIZES.itemSize): SxProps<Theme>
     };
 }
 
-export function getPopoverPaperSx(): SxProps<Theme> {
+export function getPopoverPaperSx() {
     return {
         marginTop: '6px',
         backgroundColor: 'var(--color-primary)',
@@ -146,7 +145,7 @@ export function getPopoverPaperSx(): SxProps<Theme> {
     };
 }
 
-export function getMenuItemSx(radius: number = RADIUS.lg): SxProps<Theme> {
+export function getMenuItemSx(radius: number = RADIUS.lg) {
     return {
         ...baseTypography,
         color: 'var(--color-on-primary)',

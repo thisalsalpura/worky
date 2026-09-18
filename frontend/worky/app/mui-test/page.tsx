@@ -124,7 +124,7 @@ const MuiTest = () => {
                             { value: 'design', label: 'Design' }
                         ]}
                         value={selectValue}
-                        onChange={(e) => setSelectValue(e.target.value)}
+                        onChange={(e) => setSelectValue(e.target.value as string)}
                     />
 
                     <CustomSelect

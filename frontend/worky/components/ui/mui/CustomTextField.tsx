@@ -65,7 +65,10 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
 
     const isPasswordField = props.type === 'password';
 
-    const hasEndAdornment = isPasswordField || !!endIcon || !!props.InputProps?.endAdornment;
+    const inputSlotProps = (typeof props.slotProps?.input === 'object' ? props.slotProps.input : undefined) as
+        { startAdornment?: ReactNode; endAdornment?: ReactNode } | undefined;
+
+    const hasEndAdornment = isPasswordField || !!endIcon || !!inputSlotProps?.endAdornment;
 
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -73,7 +76,7 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
 
     const startAdornment = prefix ? (
         <InputAdornment position='start'>{prefix}</InputAdornment>
-    ) : props.InputProps?.startAdornment;
+    ) : inputSlotProps?.startAdornment;
 
     const endAdornment = isPasswordField ? (
         <InputAdornment position='end'>
@@ -91,7 +94,7 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
                 {endIcon}
             </EndIconButton>
         </InputAdornment>
-    ) : props.InputProps?.endAdornment;
+    ) : inputSlotProps?.endAdornment;
 
     const sx: SxProps<Theme> = [
         getOutlinedFieldSx(),
@@ -141,10 +144,13 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
         <TextField
             {...props}
             type={inputType}
-            InputProps={{
-                ...props.InputProps,
-                startAdornment,
-                endAdornment
+            slotProps={{
+                ...props.slotProps,
+                input: {
+                    ...(typeof props.slotProps?.input === 'object' ? props.slotProps.input : {}),
+                    startAdornment,
+                    endAdornment
+                }
             }}
             sx={sx}
         />

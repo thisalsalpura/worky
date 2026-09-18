@@ -1,4 +1,4 @@
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 @import './style/theme.css';
 @import 'tailwindcss';
 @import 'swiper/css';
