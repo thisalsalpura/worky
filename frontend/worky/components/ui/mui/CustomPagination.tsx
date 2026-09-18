@@ -4,8 +4,8 @@ import { Pagination, PaginationItem, PaginationProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { getPillItemSx } from '@/libs/mui-styles';
 import { SIZES } from '@/libs/design-tokens';
+import { getPillItemSx } from '@/libs/mui-styles';
 
 type CustomPaginationProps = PaginationProps & {
     containerClassName?: string;

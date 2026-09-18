@@ -2,13 +2,13 @@
 import { ReactNode, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { CustomSelect } from '@/components/ui/mui/CustomSelect';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
-import { CustomPagination } from '@/components/ui/mui/CustomPagination';
-import { CustomSelect } from '@/components/ui/mui/CustomSelect';
 import { CustomTabs } from '@/components/ui/mui/CustomTabs';
-import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { CustomPagination } from '@/components/ui/mui/CustomPagination';
+import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
 import { Heading, Text } from '@/components/ui/Typography';
 import { FaqItem } from '@/components/interfaces/FaqItem';
 import { Country } from '@/components/interfaces/User';
@@ -17,13 +17,13 @@ import { COUNTRIES } from '@/constants/countries';
 const FAQS: FaqItem[] = [
     {
         id: 'panel-1',
-        question: 'What is this test page for?',
-        answer: 'This page renders every Custom MUI wrapper component in isolation so visual and behavioral regressions are easy to spot after a refactor.'
+        question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ducimus, accusamus error enim veniam repudiandae? Illo vel itaque maiores adipisci magni placeat quas, soluta optio, rerum cupiditate, deleniti esse delectus?',
+        answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor assumenda placeat sit, veniam iure quia! Odio ex assumenda hic tempore! Id, maxime cumque. Similique numquam asperiores praesentium tempore accusamus distinctio?'
     },
     {
         id: 'panel-2',
-        question: 'Is this page shipped to production?',
-        answer: 'No — this is a development-only reference page and should not be linked from the public navigation.'
+        question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum incidunt laborum, omnis veniam vero nulla ratione excepturi quibusdam sequi doloribus iure eius iusto accusantium fugiat id eos itaque minus doloremque.',
+        answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum in sint provident, optio distinctio recusandae quidem. Laboriosam eveniet harum atque assumenda, quaerat necessitatibus corrupti, id quidem sapiente reprehenderit vel exercitationem?'
     }
 ];
 
@@ -98,7 +98,7 @@ const MuiTest = () => {
                         variant='outlined'
                         fullWidth
                         error
-                        helperText='This field is required'
+                        helperText='This field is Required!'
                     />
 
                     <CustomTextField
@@ -131,7 +131,7 @@ const MuiTest = () => {
                         label='Error State'
                         fullWidth
                         error
-                        helperText='Please select an option'
+                        helperText='Please select an Option!'
                         options={[{ value: 'select', label: 'Select Option' }]}
                         value='select'
                         onChange={() => { }}
@@ -170,9 +170,9 @@ const MuiTest = () => {
             <Section title='CustomTabs'>
                 <CustomTabs
                     tabs={[
-                        { label: 'Bronze', content: <Text variant='body' className='text-on-background'>Bronze package content goes here.</Text> },
-                        { label: 'Silver', content: <Text variant='body' className='text-on-background'>Silver package content goes here.</Text> },
-                        { label: 'Gold', content: <Text variant='body' className='text-on-background'>Gold package content goes here.</Text> },
+                        { label: 'Bronze', content: <Text variant='body' className='text-on-background'>Bronze package content goes Here.</Text> },
+                        { label: 'Silver', content: <Text variant='body' className='text-on-background'>Silver package content goes Here.</Text> },
+                        { label: 'Gold', content: <Text variant='body' className='text-on-background'>Gold package content goes Here.</Text> },
                         { label: 'Disabled', content: null, disabled: true }
                     ]}
                 />

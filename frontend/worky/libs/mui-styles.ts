@@ -12,6 +12,26 @@ export const baseTypographySm = {
     fontSize: '14px'
 } as const;
 
+export const hideScrollbarSx: SxProps<Theme> = {
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+    '&::-webkit-scrollbar': {
+        display: 'none'
+    }
+};
+
+export function getFieldLabelSx(fieldHeight: number = SIZES.fieldHeight): SxProps<Theme> {
+
+    const idleOffsetY = Math.round((fieldHeight - 24) / 2);
+
+    return {
+        transform: `translate(14px, ${idleOffsetY}px) scale(1)`,
+        '&.MuiInputLabel-shrink': {
+            transform: 'translate(14px, -9px) scale(0.75)'
+        }
+    };
+}
+
 export function getOutlinedFieldSx(): SxProps<Theme> {
     return {
         '& .MuiOutlinedInput-root': {
@@ -37,6 +57,20 @@ export function getOutlinedFieldSx(): SxProps<Theme> {
             },
             '&.Mui-error': {
                 color: 'var(--color-on-error)'
+            },
+            '&.Mui-disabled': {
+                color: 'var(--color-on-primary)',
+                opacity: 0.5,
+                '& fieldset': {
+                    borderColor: 'var(--color-on-primary)',
+                    opacity: 0.5
+                }
+            }
+        },
+        '& .MuiOutlinedInput-input': {
+            WebkitTextFillColor: 'currentColor',
+            '&.Mui-disabled': {
+                WebkitTextFillColor: 'currentColor'
             }
         },
         '& .MuiInputLabel-root': {
@@ -50,10 +84,15 @@ export function getOutlinedFieldSx(): SxProps<Theme> {
             '&.Mui-error': {
                 color: 'var(--color-on-error)',
                 opacity: 1
+            },
+            '&.Mui-disabled': {
+                color: 'var(--color-on-primary)',
+                opacity: 0.5
             }
         },
         '& .MuiFormHelperText-root': {
-            ...baseTypography,
+            ...baseTypographySm,
+            marginTop: '6px',
             marginLeft: 0,
             color: 'var(--color-on-primary)',
             '&.Mui-error': {
@@ -102,15 +141,16 @@ export function getPopoverPaperSx(): SxProps<Theme> {
         backgroundColor: 'var(--color-primary)',
         border: '1px solid var(--color-outline)',
         borderRadius: `${RADIUS.xl}px`,
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.24)'
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.24)',
+        maxWidth: 'calc(100vw - 32px)'
     };
 }
 
-export function getMenuItemSx(): SxProps<Theme> {
+export function getMenuItemSx(radius: number = RADIUS.lg): SxProps<Theme> {
     return {
         ...baseTypography,
         color: 'var(--color-on-primary)',
-        borderRadius: `${RADIUS.lg}px`,
+        borderRadius: `${radius}px`,
         padding: '10px',
         gap: '8px',
         transition: 'background-color 300ms ease',

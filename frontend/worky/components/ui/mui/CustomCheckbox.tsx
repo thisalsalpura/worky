@@ -13,7 +13,7 @@ type CustomCheckboxProps = CheckboxProps & {
 
 function CheckboxIcon({ checked = false }: { checked?: boolean }) {
     return (
-        <span className={`w-5 h-5 flex items-center justify-center border-2 rounded-lg transition-all duration-300 ${checked ? 'bg-on-primary border-on-primary' : 'bg-transparent border-outline'}`}>
+        <span className={`w-5 h-5 flex items-center justify-center border-2 rounded-md transition-all duration-300 ${checked ? 'bg-on-primary border-on-primary' : 'bg-transparent border-outline'}`}>
             {checked && <FontAwesomeIcon icon={faCheck} className='text-xs text-primary' />}
         </span>
     );
@@ -24,13 +24,17 @@ export function CustomCheckbox({ label, containerClassName = '', labelClassName 
     const sx: SxProps<Theme> = [
         {
             color: 'var(--color-outline)',
-            borderRadius: `${RADIUS.lg}px`,
+            borderRadius: `${RADIUS.md}px`,
+            padding: '6px',
             '&:hover': {
                 backgroundColor: 'transparent',
                 opacity: 0.8
             },
             '&.Mui-checked': {
                 color: 'var(--color-on-primary)'
+            },
+            '&.Mui-disabled': {
+                opacity: 0.5
             },
             '& .MuiSvgIcon-root': {
                 display: 'none'
@@ -40,7 +44,7 @@ export function CustomCheckbox({ label, containerClassName = '', labelClassName 
     ];
 
     return (
-        <label className={`${containerClassName} flex flex-row items-center gap-x-2 cursor-pointer select-none`}>
+        <label className={`${containerClassName} flex flex-row items-center gap-x-2 ${props.disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} select-none`}>
             <Checkbox
                 {...props}
                 disableRipple

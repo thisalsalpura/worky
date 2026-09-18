@@ -4,8 +4,8 @@ import { IconButton, InputAdornment, TextField, TextFieldProps } from '@mui/mate
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { getOutlinedFieldSx } from '@/libs/mui-styles';
 import { RADIUS, SIZES } from '@/libs/design-tokens';
+import { getFieldLabelSx, getOutlinedFieldSx } from '@/libs/mui-styles';
 
 const ICON_INSET = (SIZES.fieldHeight - SIZES.iconButtonSize) / 2;
 
@@ -14,15 +14,17 @@ type CustomTextFieldProps = TextFieldProps & {
     endIcon?: ReactNode;
 };
 
-function EndIconButton({ onClick, ariaLabel, children }: {
+function EndIconButton({ onClick, ariaLabel, disabled, children }: {
     onClick?: () => void;
     ariaLabel: string;
+    disabled?: boolean;
     children: ReactNode;
 }) {
     return (
         <IconButton
             onClick={onClick}
             aria-label={ariaLabel}
+            disabled={disabled}
             disableRipple
             sx={{
                 width: `${SIZES.iconButtonSize}px`,
@@ -30,14 +32,25 @@ function EndIconButton({ onClick, ariaLabel, children }: {
                 height: `${SIZES.iconButtonSize}px`,
                 flexShrink: 0,
                 fontSize: '16px',
+                lineHeight: 1,
                 color: 'var(--color-on-primary)',
                 backgroundColor: 'var(--color-primary)',
                 border: '1px solid var(--color-outline)',
                 borderRadius: `${RADIUS.lg}px`,
-                transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease',
+                transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
                 '&:hover': {
                     color: 'var(--color-primary)',
                     backgroundColor: 'var(--color-on-primary)'
+                },
+                '&.Mui-disabled': {
+                    color: 'var(--color-on-primary)',
+                    backgroundColor: 'var(--color-primary)',
+                    opacity: 0.5
+                },
+                '& svg': {
+                    width: '16px',
+                    height: '16px',
+                    display: 'block'
                 }
             } satisfies SxProps<Theme>}
         >
@@ -67,13 +80,14 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
             <EndIconButton
                 onClick={() => setShowPassword(prev => !prev)}
                 ariaLabel={showPassword ? 'Hide The Password' : 'Show The Password'}
+                disabled={props.disabled}
             >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} fixedWidth />
             </EndIconButton>
         </InputAdornment>
     ) : endIcon ? (
         <InputAdornment position='end'>
-            <EndIconButton ariaLabel='Text Field Action'>
+            <EndIconButton ariaLabel='Text Field Action' disabled={props.disabled}>
                 {endIcon}
             </EndIconButton>
         </InputAdornment>
@@ -83,9 +97,7 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
         getOutlinedFieldSx(),
         {
             '& .MuiInputLabel-root': {
-                ...(!isMultiline && { top: `${(SIZES.fieldHeight - 56) / 2}px` }),
-                '&.MuiFormLabel-filled, &.Mui-focused': { top: 0 },
-                '&.Mui-error': { top: 0 }
+                ...(!isMultiline && getFieldLabelSx(SIZES.fieldHeight))
             },
             '& .MuiInputAdornment-root': {
                 margin: 0,

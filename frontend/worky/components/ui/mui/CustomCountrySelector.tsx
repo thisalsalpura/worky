@@ -4,8 +4,8 @@ import { IconButton, InputAdornment, List, ListItemButton, Popover } from '@mui/
 import { CustomTextField } from './CustomTextField';
 import { Country } from '@/components/interfaces/User';
 import { COUNTRIES } from '@/constants/countries';
-import { baseTypography, getMenuItemSx, getPopoverPaperSx } from '@/libs/mui-styles';
 import { RADIUS, SIZES } from '@/libs/design-tokens';
+import { baseTypography, getMenuItemSx, getPopoverPaperSx, hideScrollbarSx } from '@/libs/mui-styles';
 
 interface CountrySelectorProps {
     value: Country;
@@ -77,12 +77,13 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                 onClose={handleClose}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                marginThreshold={16}
                 slotProps={{
                     paper: {
                         sx: {
                             ...getPopoverPaperSx(),
-                            width: '360px',
-                            maxHeight: '360px',
+                            width: 'min(360px, calc(100vw - 32px))',
+                            maxHeight: 'min(360px, calc(100vh - 120px))',
                             display: 'flex',
                             flexDirection: 'column',
                             padding: '20px',
@@ -109,10 +110,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                         flexDirection: 'column',
                         gap: '4px',
                         overflowY: 'auto',
-                        scrollbarWidth: 'none',
-                        '&::-webkit-scrollbar': {
-                            display: 'none'
-                        }
+                        ...hideScrollbarSx
                     }}
                 >
                     {filtered.length === 0 ? (

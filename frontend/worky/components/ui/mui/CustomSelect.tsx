@@ -4,8 +4,8 @@ import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectProps 
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
-import { getMenuItemSx, getOutlinedFieldSx, getPopoverPaperSx } from '@/libs/mui-styles';
 import { SIZES } from '@/libs/design-tokens';
+import { getFieldLabelSx, getMenuItemSx, getOutlinedFieldSx, getPopoverPaperSx, hideScrollbarSx } from '@/libs/mui-styles';
 
 export interface SelectOption {
     value: string | number;
@@ -37,11 +37,7 @@ export function CustomSelect({
         getOutlinedFieldSx(),
         {
             width: fullWidth ? '100%' : 'auto',
-            '& .MuiInputLabel-root': {
-                top: `${(SIZES.fieldHeight - 56) / 2}px`,
-                '&.MuiFormLabel-filled, &.Mui-focused': { top: 0 },
-                '&.Mui-error': { top: 0 }
-            },
+            '& .MuiInputLabel-root': getFieldLabelSx(SIZES.fieldHeight),
             '& .MuiOutlinedInput-root': {
                 minHeight: `${SIZES.fieldHeight}px`,
                 '& .MuiSelect-select': {
@@ -59,7 +55,8 @@ export function CustomSelect({
 
     const menuSx: SxProps<Theme> = {
         '& .MuiPaper-root': getPopoverPaperSx(),
-        '& .MuiMenuItem-root': getMenuItemSx()
+        '& .MuiList-root': hideScrollbarSx,
+        '& .MuiMenuItem-root': getMenuItemSx(0)
     };
 
     return (
@@ -68,6 +65,7 @@ export function CustomSelect({
                 variant='outlined'
                 fullWidth={fullWidth}
                 error={error}
+                disabled={props.disabled}
                 sx={formControlSx}
             >
                 {label && (
@@ -98,10 +96,14 @@ export function CustomSelect({
                 )}
             </FormControl>
 
-            <div className='absolute top-1/2 right-4 -translate-y-1/2 flex items-center justify-center pointer-events-none'>
+            <div
+                className='absolute right-4 -translate-y-1/2 flex items-center justify-center pointer-events-none'
+                style={{ top: `${SIZES.fieldHeight / 2}px` }}
+            >
                 <FontAwesomeIcon
                     icon={props.open ? faChevronCircleUp : faChevronCircleDown}
-                    className={`text-base ${error ? 'text-on-error' : 'text-on-primary'}`}
+                    fixedWidth
+                    className={`text-base ${props.disabled ? 'text-on-primary opacity-50' : error ? 'text-on-error' : 'text-on-primary'}`}
                 />
             </div>
         </div>

@@ -5,8 +5,8 @@ import { Box, Tab, TabProps, Tabs, TabsProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { SIZES, SPACING } from '@/libs/design-tokens';
 import { getPillItemSx } from '@/libs/mui-styles';
-import { SIZES } from '@/libs/design-tokens';
 
 interface TabItem {
     label: string;
@@ -56,7 +56,7 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
             },
             '& .MuiTabs-flexContainer': {
                 height: 'auto',
-                gap: '4px'
+                gap: `${SPACING.space2}px`
             },
             '& .MuiTabs-scrollButtons': {
                 width: `${SIZES.itemSize}px`,
@@ -92,10 +92,10 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
                 variant='scrollable'
                 scrollButtons='auto'
                 slots={{
-                    StartScrollButtonIcon: () => (
+                    startScrollButtonIcon: () => (
                         <FontAwesomeIcon icon={faCircleChevronLeft} style={{ fontSize: '16px', display: 'block' }} />
                     ),
-                    EndScrollButtonIcon: () => (
+                    endScrollButtonIcon: () => (
                         <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
                     )
                 }}
