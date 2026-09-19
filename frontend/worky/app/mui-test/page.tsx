@@ -1,7 +1,5 @@
 'use client';
 import { ReactNode, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomSelect } from '@/components/ui/mui/CustomSelect';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
@@ -61,7 +59,6 @@ const MuiTest = () => {
                         type='email'
                         variant='outlined'
                         fullWidth
-                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                         value={textValue}
                         onChange={(e) => setTextValue(e.target.value)}
                     />
@@ -80,7 +77,6 @@ const MuiTest = () => {
                         type='text'
                         variant='outlined'
                         fullWidth
-                        endIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
                     />
 
                     <CustomTextField

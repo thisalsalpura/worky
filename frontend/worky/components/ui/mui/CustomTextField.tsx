@@ -3,7 +3,7 @@ import { ReactNode, useState } from 'react';
 import { IconButton, InputAdornment, TextField, TextFieldProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { RADIUS, SIZES } from '@/libs/design-tokens';
 import { getFieldLabelSx, getOutlinedFieldSx } from '@/libs/mui-styles';
 
