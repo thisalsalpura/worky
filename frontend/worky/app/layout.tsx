@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`} cz-shortcut-listen="true">
+      <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="min-h-screen flex flex-col">
 
