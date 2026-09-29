@@ -8,27 +8,27 @@ import {
 
 export const categories = [
   {
-    id: '1',
+    id: 'design',
     title: 'Graphic & Design',
     icon: faPenNib
   },
   {
-    id: '2',
+    id: 'tech',
     title: 'Programming & Tech',
     icon: faMicrochip
   },
   {
-    id: '3',
+    id: 'video',
     title: 'Video & Animation',
     icon: faVideo
   },
   {
-    id: '4',
+    id: 'writing',
     title: 'Writing & Translation',
     icon: faSignature
   },
   {
-    id: '5',
+    id: 'music',
     title: 'Music & Audio',
     icon: faMusic
   }
