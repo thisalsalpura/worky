@@ -1,19 +1,12 @@
 'use client';
 import { ReactNode, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { Tabs, TabsProps, Tab, TabProps, Box } from '@mui/material';
+import { Box, Tab, TabProps, Tabs, TabsProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-
-const ITEM_SIZE = 36;
-const BORDER_RADIUS = 12;
-
-const BASE_TYPOGRAPHY = {
-    fontSize: '14px',
-    fontFamily: 'var(--font-ropa-sans), sans-serif',
-    fontWeight: 600
-} as const;
+import { SIZES, SPACING } from '@/libs/design-tokens';
+import { getPillItemSx } from '@/libs/mui-styles';
 
 interface TabItem {
     label: string;
@@ -34,37 +27,13 @@ function CustomTab({ isDark, ...props }: TabProps & { isDark: boolean }) {
             {...props}
             sx={[
                 {
-                    ...BASE_TYPOGRAPHY,
-                    minWidth: 'fit-content',
-                    height: `${ITEM_SIZE}px`,
-                    minHeight: `${ITEM_SIZE}px`,
-                    color: isDark ? 'var(--color-on-primary)' : 'var(--color-primary)',
-                    backgroundColor: 'transparent',
-                    border: '1px solid var(--color-outline)',
-                    borderRadius: `${BORDER_RADIUS}px`,
-                    padding: '0 16px',
-                    opacity: 0.8,
-                    textTransform: 'none',
-                    transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
-                    overflow: 'hidden',
-                    '&:hover': {
-                        color: 'var(--color-on-primary)',
-                        backgroundColor: 'var(--color-primary)',
-                        opacity: 1
+                    ...getPillItemSx(SIZES.itemSize),
+                    margin: 0,
+                    marginRight: `${SPACING.space2}px`,
+                    '&:last-of-type': {
+                        marginRight: 0
                     },
-                    '&.Mui-selected': {
-                        color: 'var(--color-primary)',
-                        backgroundColor: 'var(--color-on-primary)',
-                        borderColor: 'var(--color-primary)',
-                        opacity: 1,
-                        '&:hover': {
-                            color: 'var(--color-on-primary)',
-                            backgroundColor: 'var(--color-primary)'
-                        }
-                    },
-                    '&.Mui-disabled': {
-                        opacity: 0.4
-                    }
+                    color: isDark ? 'var(--color-on-primary)' : 'var(--color-primary)'
                 },
                 ...(props.sx ? (Array.isArray(props.sx) ? props.sx : [props.sx]) : [])
             ]}
@@ -90,12 +59,11 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
                 display: 'none'
             },
             '& .MuiTabs-flexContainer': {
-                height: 'auto',
-                gap: '4px'
+                height: 'auto'
             },
             '& .MuiTabs-scrollButtons': {
-                width: `${ITEM_SIZE}px`,
-                height: `${ITEM_SIZE}px`,
+                width: `${SIZES.itemSize}px`,
+                height: `${SIZES.itemSize}px`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -124,13 +92,13 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
         <div suppressHydrationWarning className={`${containerClassName} w-full h-auto flex flex-col gap-y-4`}>
             <Tabs
                 {...props}
-                variant="scrollable"
-                scrollButtons="auto"
+                variant='scrollable'
+                scrollButtons='auto'
                 slots={{
-                    StartScrollButtonIcon: () => (
+                    startScrollButtonIcon: () => (
                         <FontAwesomeIcon icon={faCircleChevronLeft} style={{ fontSize: '16px', display: 'block' }} />
                     ),
-                    EndScrollButtonIcon: () => (
+                    endScrollButtonIcon: () => (
                         <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
                     )
                 }}

@@ -1,4 +1,4 @@
-import { FaqItem } from "./FaqItem";
+import { FaqItem } from './FaqItem';
 
 export interface Gig {
     id?: string;
@@ -9,7 +9,7 @@ export interface Gig {
     searchTags?: string[];
     faqs?: FaqItem[];
     packages?: GigPackage[];
-}
+};
 
 export interface GigPackage {
     title?: string;
@@ -18,4 +18,4 @@ export interface GigPackage {
     deliveryTime?: number;
     revisions?: number;
     price?: number;
-}
+};

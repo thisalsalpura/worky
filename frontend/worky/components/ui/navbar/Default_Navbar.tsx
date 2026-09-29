@@ -1,43 +1,45 @@
 'use client';
-import { useState } from "react";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "../Button";
-import { ThemeToggle } from "../ThemeToggle";
-import { CustomTextField } from "../mui/CustomTextField";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMagnifyingGlass, faBell, faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import { useTheme } from 'next-themes';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '../Button';
+import { ThemeToggle } from '../ThemeToggle';
+import { CustomTextField } from '../mui/CustomTextField';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faMagnifyingGlass, faBell, faCircleChevronUp, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 export function Default_Navbar() {
 
     const { resolvedTheme } = useTheme();
 
+    const isDark = resolvedTheme === 'dark';
+
     const router = useRouter();
 
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-    const [isCaretOpen, setIsCaretOpen] = useState<boolean>(false);
+    const [isCaretMenuOpen, setIsCaretMenuOpen] = useState<boolean>(false);
 
     const [searchText, setSearchText] = useState<string>('');
 
     const [errors, setErrors] = useState<Record<string, string>>({});
 
-    const isDark = resolvedTheme === 'dark';
-
     const toggleMenu = () => {
-        setIsOpen((previousOpen) => !previousOpen)
+        setIsMenuOpen((previousMenuOpen) => !previousMenuOpen);
+        setIsCaretMenuOpen(false);
     };
 
-    const toggleCaret = () => {
-        setIsCaretOpen((previousCaret) => !previousCaret)
+    const toggleCaretMenu = () => {
+        setIsCaretMenuOpen((previousCaretMenuOpen) => !previousCaretMenuOpen);
+        setIsMenuOpen(false);
     };
 
     const handleProfileClick = () => {
-        router.push("/profile");
-        setIsOpen(false);
-        setIsCaretOpen(false);
+        router.push('/profile');
+        setIsMenuOpen(false);
+        setIsCaretMenuOpen(false);
     };
 
     const navItems = () => {
@@ -119,8 +121,8 @@ export function Default_Navbar() {
 
                         <button onClick={toggleMenu} className='flex md:hidden transition-all duration-300 ease-in-out cursor-pointer' type='button' aria-label='Toggle Menu'>
                             <Image
-                                src={`/icons/${isOpen ? 'close' : 'menu'}.svg`}
-                                alt={`${isOpen ? 'close' : 'menu'}-icon`}
+                                src={`/icons/${isMenuOpen ? 'close' : 'menu'}.svg`}
+                                alt={`${isMenuOpen ? 'close' : 'menu'}-icon`}
                                 width={48}
                                 height={48}
                                 priority

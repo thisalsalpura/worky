@@ -1,11 +1,11 @@
 'use client';
-import { useState } from "react";
-import { FaqItem } from "@/components/interfaces/FaqItem";
-import { Accordion, AccordionSummary, AccordionDetails, AccordionSlots, Fade, accordionClasses, accordionDetailsClasses } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleChevronUp, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
-
-const BORDER_RADIUS = 12;
+import { useState } from 'react';
+import { Accordion, AccordionDetails, AccordionSlots, AccordionSummary, Fade, accordionClasses, accordionDetailsClasses } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleChevronDown, faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FaqItem } from '@/components/interfaces/FaqItem';
+import { Text } from '@/components/ui/Typography';
+import { RADIUS } from '@/libs/design-tokens';
 
 export function CustomAccordion({ item }: { item: FaqItem }) {
 
@@ -25,7 +25,7 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                     backgroundImage: 'none',
                     backgroundColor: 'transparent',
                     border: '1px solid var(--color-outline-variant)',
-                    borderRadius: `${BORDER_RADIUS}px !important`,
+                    borderRadius: `${RADIUS.lg}px !important`,
                     boxShadow: 'none',
                     overflow: 'hidden',
                     '& .MuiAccordionSummary-root': {
@@ -57,20 +57,22 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
         >
             <AccordionSummary
                 expandIcon={
-                    <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group">
+                    <div className='w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group'>
                         <FontAwesomeIcon
                             icon={expanded ? faCircleChevronUp : faCircleChevronDown}
-                            className="text-base text-background group-hover:text-on-background"
+                            className='text-base text-background group-hover:text-on-background'
                         />
                     </div>
                 }
                 aria-controls={`${item.id}-content`}
                 id={`${item.id}-header`}
             >
-                <p className="text-on-background font-base font-semibold">{item.question}</p>
+                <Text variant='body' className='text-on-background'>
+                    <span className='font-semibold'>{item.question}</span>
+                </Text>
             </AccordionSummary>
             <AccordionDetails>
-                <p className="text-on-background font-base">{item.answer}</p>
+                <Text variant='body' className='text-on-background'>{item.answer}</Text>
             </AccordionDetails>
         </Accordion>
     );

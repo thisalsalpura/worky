@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 
 function Bronze_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
             <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Bronze Package</h2>
 
             <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
@@ -32,7 +32,7 @@ function Bronze_Package() {
 
 function Silver_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
             <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Silver Package</h2>
 
             <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
@@ -53,7 +53,7 @@ function Silver_Package() {
 
 function Gold_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-6">
+        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
             <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Gold Package</h2>
 
             <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
@@ -85,13 +85,13 @@ const Single_Gig = () => {
     const FAQS: FaqItem[] = [
         {
             id: 'panel-1',
-            question: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita labore deserunt excepturi magni, ratione dolorem adipisci ducimus minus quia tenetur! Quia sit laboriosam molestias, nam ducimus sint dolor architecto laudantium?',
-            answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, sit quia necessitatibus at vel, ut asperiores iste expedita voluptates facilis rerum architecto. Enim eligendi iure commodi beatae dignissimos placeat unde?'
+            question: 'What is Lorem Ipsum?',
+            answer: 'Lorem Ipsum is placeholder text commonly used in the printing, publishing, and web design industries to demonstrate the visual form of a document without relying on meaningful content.'
         },
         {
             id: 'panel-2',
-            question: 'Quia sit laboriosam molestias, nam ducimus sint dolor architecto laudantium? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-            answer: 'Enim eligendi iure commodi beatae dignissimos placeat unde? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore necessitatibus at vel.'
+            question: 'Why is Lorem Ipsum used?',
+            answer: 'Lorem Ipsum is used because it provides a natural-looking distribution of letters and words, allowing designers and developers to focus on layout, typography, and design rather than the actual content.'
         }
     ];
 
@@ -124,7 +124,7 @@ const Single_Gig = () => {
                     <span className="cursor-pointer">Web Development</span>
                 </p>
 
-                <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2.5 transition-colors duration-300 cursor-pointer group">
+                <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2 transition-colors duration-300 cursor-pointer group">
                     <FontAwesomeIcon icon={faShare} className="text-sm text-primary group-hover:text-on-primary" />
                 </div>
             </div>
@@ -199,7 +199,7 @@ const Single_Gig = () => {
                             </Swiper>
                         </div>
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
                             <p className="text-2xl text-on-background font-heading font-semibold">Description</p>
 
                             <p className="text-on-background font-base">
@@ -217,35 +217,35 @@ const Single_Gig = () => {
                             </div>
                         </div>
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
                             <p className="text-2xl text-on-background font-heading font-semibold">Search Tags</p>
 
                             <div className="w-full h-auto flex flex-wrap items-start justify-start gap-4">
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">HTML</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">JavaScript</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">React</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Next.js</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Tailwind CSS</p>
                                 </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-5 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <p className="text-on-background font-base group-hover:text-background">Figma</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-5 gap-y-4">
+                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
                             <p className="text-2xl text-on-background font-heading font-semibold">FAQs</p>
 
                             <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
@@ -256,7 +256,7 @@ const Single_Gig = () => {
                         </div>
                     </div>
 
-                    <div className="lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-start lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-5 gap-y-6">
+                    <div className="lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-start lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-4 gap-y-8">
                         <CustomTabs
                             tabs={[
                                 { label: 'Bronze', content: <Bronze_Package /> },
