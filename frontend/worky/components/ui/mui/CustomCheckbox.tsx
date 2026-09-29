@@ -3,7 +3,8 @@ import { Checkbox, CheckboxProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { RADIUS } from '@/libs/design-tokens';
+
+const BORDER_RADIUS = 12;
 
 type CustomCheckboxProps = CheckboxProps & {
     label?: string;
@@ -14,7 +15,7 @@ type CustomCheckboxProps = CheckboxProps & {
 function CheckboxIcon({ checked = false }: { checked?: boolean }) {
     return (
         <span className={`w-5 h-5 flex items-center justify-center border-2 rounded-lg transition-all duration-300 ${checked ? 'bg-on-primary border-on-primary' : 'bg-transparent border-outline'}`}>
-            {checked && <FontAwesomeIcon icon={faCheck} className='text-xs text-primary' />}
+            {checked && <FontAwesomeIcon icon={faCheck} className="text-xs text-primary" />}
         </span>
     );
 }
@@ -24,7 +25,7 @@ export function CustomCheckbox({ label, containerClassName = '', labelClassName 
     const sx: SxProps<Theme> = [
         {
             color: 'var(--color-outline)',
-            borderRadius: `${RADIUS.lg}px`,
+            borderRadius: `${BORDER_RADIUS}px`,
             '&:hover': {
                 backgroundColor: 'transparent',
                 opacity: 0.8
