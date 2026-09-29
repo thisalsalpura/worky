@@ -1,49 +1,37 @@
-import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 import { HeadingLevel, TextVariant, TYPOGRAPHY } from '@/libs/design-tokens';
 
-type HeadingProps<T extends ElementType> = {
+type HeadingProps = {
     level: HeadingLevel;
-    as?: T;
+    as?: ElementType;
     className?: string;
     children: ReactNode;
-} & Omit<ComponentPropsWithoutRef<T>, 'className' | 'children' | 'as'>;
+};
 
-export function Heading<T extends ElementType = HeadingLevel>({
-    level,
-    as,
-    className = '',
-    children,
-    ...rest
-}: HeadingProps<T>) {
+export function Heading({ level, as, className = '', children }: HeadingProps) {
 
-    const Tag = (as ?? level) as ElementType;
+    const Tag = as ?? level;
 
     return (
-        <Tag className={`${TYPOGRAPHY[level]} ${className}`} {...rest}>
+        <Tag className={`${TYPOGRAPHY[level]} ${className}`}>
             {children}
         </Tag>
     );
 }
 
-type TextProps<T extends ElementType> = {
+type TextProps = {
     variant?: TextVariant;
-    as?: T;
+    as?: ElementType;
     className?: string;
     children: ReactNode;
-} & Omit<ComponentPropsWithoutRef<T>, 'className' | 'children' | 'as'>;
+};
 
-export function Text<T extends ElementType = 'p'>({
-    variant = 'body',
-    as,
-    className = '',
-    children,
-    ...rest
-}: TextProps<T>) {
+export function Text({ variant = 'body', as = 'p', className = '', children }: TextProps) {
 
-    const Tag = (as ?? 'p') as ElementType;
+    const Tag = as;
 
     return (
-        <Tag className={`${TYPOGRAPHY[variant]} ${className}`} {...rest}>
+        <Tag className={`${TYPOGRAPHY[variant]} ${className}`}>
             {children}
         </Tag>
     );

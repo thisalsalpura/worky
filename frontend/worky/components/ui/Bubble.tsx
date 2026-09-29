@@ -8,7 +8,7 @@ type BubbleProps = {
     scale: number[];
     duration?: number;
     style?: React.CSSProperties;
-};
+}
 
 export function Bubble({ className, x, y, scale, duration = 30, style }: BubbleProps) {
     return (
