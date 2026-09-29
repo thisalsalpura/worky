@@ -4,32 +4,32 @@ import {
   faVideo,
   faSignature,
   faMusic
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 export const categories = [
   {
-    id: '1',
-    title: 'Graphic & Design',
+    id: "design",
+    title: "Graphic & Design",
     icon: faPenNib
   },
   {
-    id: '2',
-    title: 'Programming & Tech',
+    id: "tech",
+    title: "Programming & Tech",
     icon: faMicrochip
   },
   {
-    id: '3',
-    title: 'Video & Animation',
+    id: "video",
+    title: "Video & Animation",
     icon: faVideo
   },
   {
-    id: '4',
-    title: 'Writing & Translation',
+    id: "writing",
+    title: "Writing & Translation",
     icon: faSignature
   },
   {
-    id: '5',
-    title: 'Music & Audio',
+    id: "music",
+    title: "Music & Audio",
     icon: faMusic
   }
 ] as const;

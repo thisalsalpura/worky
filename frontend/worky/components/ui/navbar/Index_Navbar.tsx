@@ -10,12 +10,12 @@ export function Index_Navbar() {
 
     const { resolvedTheme } = useTheme();
 
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
     const isDark = resolvedTheme === 'dark';
 
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
     const toggleMenu = () => {
-        setIsMenuOpen((previousMenuOpen) => !previousMenuOpen);
+        setIsOpen((previousOpen) => !previousOpen)
     };
 
     const navItems = () => {
@@ -51,8 +51,8 @@ export function Index_Navbar() {
 
                         <button onClick={toggleMenu} className='flex md:hidden transition-all duration-300 ease-in-out cursor-pointer' type='button' aria-label='Toggle Menu'>
                             <Image
-                                src={`/icons/${isMenuOpen ? 'close' : 'menu'}.svg`}
-                                alt={`${isMenuOpen ? 'close' : 'menu'}-icon`}
+                                src={`/icons/${isOpen ? 'close' : 'menu'}.svg`}
+                                alt={`${isOpen ? 'close' : 'menu'}-icon`}
                                 width={48}
                                 height={48}
                                 priority

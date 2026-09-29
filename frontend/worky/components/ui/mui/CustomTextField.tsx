@@ -1,56 +1,50 @@
 'use client';
 import { ReactNode, useState } from 'react';
-import { IconButton, InputAdornment, TextField, TextFieldProps } from '@mui/material';
+import { TextField, TextFieldProps, InputAdornment, IconButton } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
-import { RADIUS, SIZES } from '@/libs/design-tokens';
-import { getFieldLabelSx, getOutlinedFieldSx } from '@/libs/mui-styles';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const ICON_INSET = (SIZES.fieldHeight - SIZES.iconButtonSize) / 2;
+const FIELD_HEIGHT = 48;
+const ICON_SIZE = 36;
+const ICON_INSET = (FIELD_HEIGHT - ICON_SIZE) / 2;
+const BORDER_RADIUS = 12;
+
+const BASE_TYPOGRAPHY = {
+    fontSize: '16px',
+    fontFamily: 'var(--font-ropa-sans), sans-serif',
+    fontWeight: 600
+} as const;
 
 type CustomTextFieldProps = TextFieldProps & {
     prefix?: string;
     endIcon?: ReactNode;
 };
 
-function EndIconButton({ onClick, ariaLabel, disabled, children }: {
+function EndIconButton({ onClick, ariaLabel, children }: {
     onClick?: () => void;
     ariaLabel: string;
-    disabled?: boolean;
     children: ReactNode;
 }) {
     return (
         <IconButton
             onClick={onClick}
             aria-label={ariaLabel}
-            disabled={disabled}
             disableRipple
             sx={{
-                width: `${SIZES.iconButtonSize}px`,
-                minWidth: `${SIZES.iconButtonSize}px`,
-                height: `${SIZES.iconButtonSize}px`,
+                width: `${ICON_SIZE}px`,
+                minWidth: `${ICON_SIZE}px`,
+                height: `${ICON_SIZE}px`,
                 flexShrink: 0,
                 fontSize: '16px',
-                lineHeight: 1,
                 color: 'var(--color-on-primary)',
                 backgroundColor: 'var(--color-primary)',
                 border: '1px solid var(--color-outline)',
-                borderRadius: `${RADIUS.lg}px`,
-                transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease, opacity 300ms ease',
+                borderRadius: `${BORDER_RADIUS}px`,
+                transition: 'color 300ms ease, background-color 300ms ease, border-color 300ms ease',
                 '&:hover': {
                     color: 'var(--color-primary)',
                     backgroundColor: 'var(--color-on-primary)'
-                },
-                '&.Mui-disabled': {
-                    color: 'var(--color-on-primary)',
-                    backgroundColor: 'var(--color-primary)',
-                    opacity: 0.5
-                },
-                '& svg': {
-                    width: '16px',
-                    height: '16px',
-                    display: 'block'
                 }
             } satisfies SxProps<Theme>}
         >
@@ -65,47 +59,56 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
 
     const isPasswordField = props.type === 'password';
 
-    const inputSlotProps = (typeof props.slotProps?.input === 'object' ? props.slotProps.input : undefined) as
-        { startAdornment?: ReactNode; endAdornment?: ReactNode } | undefined;
-
-    const hasEndAdornment = isPasswordField || !!endIcon || !!inputSlotProps?.endAdornment;
+    const hasEndAdornment = isPasswordField || !!endIcon || !!props.InputProps?.endAdornment;
 
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const inputType = isPasswordField && showPassword ? 'text' : props.type;
 
     const startAdornment = prefix ? (
-        <InputAdornment position='start'>{prefix}</InputAdornment>
-    ) : inputSlotProps?.startAdornment;
+        <InputAdornment position="start">{prefix}</InputAdornment>
+    ) : props.InputProps?.startAdornment;
 
     const endAdornment = isPasswordField ? (
-        <InputAdornment position='end'>
+        <InputAdornment position="end">
             <EndIconButton
                 onClick={() => setShowPassword(prev => !prev)}
                 ariaLabel={showPassword ? 'Hide The Password' : 'Show The Password'}
-                disabled={props.disabled}
             >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} fixedWidth />
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </EndIconButton>
         </InputAdornment>
     ) : endIcon ? (
-        <InputAdornment position='end'>
-            <EndIconButton ariaLabel='Text Field Action' disabled={props.disabled}>
+        <InputAdornment position="end">
+            <EndIconButton ariaLabel="Text Field Action">
                 {endIcon}
             </EndIconButton>
         </InputAdornment>
-    ) : inputSlotProps?.endAdornment;
+    ) : props.InputProps?.endAdornment;
 
     const sx: SxProps<Theme> = [
-        getOutlinedFieldSx(),
         {
             '& .MuiInputLabel-root': {
-                ...(!isMultiline && getFieldLabelSx(SIZES.fieldHeight))
+                ...BASE_TYPOGRAPHY,
+                color: 'var(--color-on-primary)',
+                opacity: 0.8,
+                ...(!isMultiline && { top: `${(FIELD_HEIGHT - 56) / 2}px` }),
+                '&.MuiFormLabel-filled, &.Mui-focused': {
+                    top: 0,
+                    color: 'var(--color-on-primary)',
+                    opacity: 1
+                },
+                '&.Mui-error': {
+                    top: 0,
+                    color: 'var(--color-on-error)',
+                    opacity: 1
+                }
             },
             '& .MuiInputAdornment-root': {
                 margin: 0,
                 color: 'var(--color-on-primary)',
                 '& .MuiTypography-root': {
+                    ...BASE_TYPOGRAPHY,
                     color: 'var(--color-on-primary)'
                 },
                 '& .svg-inline--fa': {
@@ -120,8 +123,11 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
                 paddingRight: `${ICON_INSET}px`
             },
             '& .MuiOutlinedInput-root': {
+                ...BASE_TYPOGRAPHY,
+                color: 'var(--color-on-primary)',
+                borderRadius: `${BORDER_RADIUS}px`,
                 ...(!isMultiline && {
-                    minHeight: `${SIZES.fieldHeight}px`,
+                    minHeight: `${FIELD_HEIGHT}px`,
                     ...(hasEndAdornment && { paddingRight: 0 }),
                     '& input': {
                         paddingTop: '12px',
@@ -131,9 +137,34 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
                     }
                 }),
                 '& textarea': {
-                    fontSize: '16px',
-                    fontFamily: 'var(--font-ropa-sans), sans-serif',
-                    fontWeight: 600
+                    ...BASE_TYPOGRAPHY
+                },
+                '& fieldset': {
+                    borderColor: 'var(--color-on-primary)',
+                    opacity: 0.8
+                },
+                '&:hover fieldset': {
+                    borderColor: 'var(--color-on-primary)',
+                    opacity: 1
+                },
+                '&.Mui-focused fieldset': {
+                    borderColor: 'var(--color-on-primary)',
+                    opacity: 1
+                },
+                '&.Mui-error fieldset': {
+                    borderColor: 'var(--color-on-error)',
+                    opacity: 1
+                },
+                '&.Mui-error': {
+                    color: 'var(--color-on-error)'
+                }
+            },
+            '& .MuiFormHelperText-root': {
+                ...BASE_TYPOGRAPHY,
+                marginLeft: 0,
+                color: 'var(--color-on-primary)',
+                '&.Mui-error': {
+                    color: 'var(--color-on-error)'
                 }
             }
         },
@@ -144,13 +175,10 @@ export function CustomTextField({ prefix, endIcon, ...props }: CustomTextFieldPr
         <TextField
             {...props}
             type={inputType}
-            slotProps={{
-                ...props.slotProps,
-                input: {
-                    ...(typeof props.slotProps?.input === 'object' ? props.slotProps.input : {}),
-                    startAdornment,
-                    endAdornment
-                }
+            InputProps={{
+                ...props.InputProps,
+                startAdornment,
+                endAdornment
             }}
             sx={sx}
         />

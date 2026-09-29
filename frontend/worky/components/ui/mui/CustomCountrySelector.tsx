@@ -1,11 +1,18 @@
 'use client';
-import { useMemo, useState } from 'react';
-import { IconButton, InputAdornment, List, ListItemButton, Popover } from '@mui/material';
-import { CustomTextField } from './CustomTextField';
+import { useState, useMemo } from 'react';
 import { Country } from '@/components/interfaces/User';
+import { Popover, InputAdornment, IconButton, List, ListItemButton } from '@mui/material';
+import { CustomTextField } from './CustomTextField';
 import { COUNTRIES } from '@/constants/countries';
-import { RADIUS, SIZES } from '@/libs/design-tokens';
-import { baseTypography, getMenuItemSx, getPopoverPaperSx, hideScrollbarSx } from '@/libs/mui-styles';
+
+const BUTTON_HEIGHT = 48;
+const BORDER_RADIUS = 12;
+
+const BASE_TYPOGRAPHY = {
+    fontSize: '16px',
+    fontFamily: 'var(--font-ropa-sans), sans-serif',
+    fontWeight: 600
+} as const;
 
 interface CountrySelectorProps {
     value: Country;
@@ -41,21 +48,21 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
     };
 
     return (
-        <InputAdornment position='start' sx={{ margin: 0 }}>
+        <InputAdornment position="start" sx={{ margin: 0 }}>
             <IconButton
                 onClick={handleOpen}
                 disableRipple
-                aria-label='Select Country Code'
+                aria-label="Select Country Code"
                 sx={{
                     width: 'fit-content',
-                    height: `${SIZES.fieldHeight}px`,
+                    height: `${BUTTON_HEIGHT}px`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'var(--color-on-primary)',
                     backgroundColor: 'var(--color-primary)',
                     border: '1px solid var(--color-outline)',
-                    borderRadius: `${RADIUS.lg}px`,
+                    borderRadius: `${BORDER_RADIUS}px`,
                     paddingX: '10px',
                     gap: '8px',
                     opacity: 0.8,
@@ -67,8 +74,8 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                     }
                 }}
             >
-                <span style={baseTypography}>{value.flagCode}</span>
-                <span style={baseTypography}>{value.dial}</span>
+                <span style={{ ...BASE_TYPOGRAPHY }}>{value.flagCode}</span>
+                <span style={{ ...BASE_TYPOGRAPHY }}>{value.dial}</span>
             </IconButton>
 
             <Popover
@@ -77,26 +84,29 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                 onClose={handleClose}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                marginThreshold={16}
                 slotProps={{
                     paper: {
                         sx: {
-                            ...getPopoverPaperSx(),
-                            width: 'min(360px, calc(100vw - 32px))',
-                            maxHeight: 'min(360px, calc(100vh - 120px))',
+                            marginTop: '6px',
+                            width: '360px',
+                            maxHeight: '360px',
                             display: 'flex',
                             flexDirection: 'column',
+                            backgroundColor: 'var(--color-primary)',
+                            border: '1px solid var(--color-outline)',
+                            borderRadius: `${BORDER_RADIUS}px`,
                             padding: '20px',
                             gap: '8px',
+                            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.24)',
                             overflow: 'hidden'
                         }
                     }
                 }}
             >
                 <CustomTextField
-                    label='Search Country'
-                    type='text'
-                    variant='outlined'
+                    label="Search Country"
+                    type="text"
+                    variant="outlined"
                     fullWidth
                     value={searchCountry}
                     onChange={e => setSearchCountry(e.target.value)}
@@ -110,25 +120,56 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                         flexDirection: 'column',
                         gap: '4px',
                         overflowY: 'auto',
-                        ...hideScrollbarSx
+                        scrollbarWidth: 'none',
+                        '&::-webkit-scrollbar': {
+                            display: 'none'
+                        }
                     }}
                 >
                     {filtered.length === 0 ? (
-                        <ListItemButton sx={{ flexShrink: 0, ...getMenuItemSx() }}>
-                            <span style={baseTypography}>No Results</span>
+                        <ListItemButton
+                            sx={{
+                                flexShrink: 0,
+                                color: 'var(--color-on-primary)',
+                                borderRadius: `${BORDER_RADIUS}px`,
+                                padding: '10px',
+                                gap: '8px',
+                                transition: 'background-color 300ms ease',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.1)'
+                                }
+                            }}
+                        >
+                            <span style={{ ...BASE_TYPOGRAPHY }}>No Results</span>
                         </ListItemButton>
                     ) : filtered.map(country => (
                         <ListItemButton
                             key={country.code}
                             selected={country.code === value.code}
                             onClick={() => handleSelect(country)}
-                            sx={{ flexShrink: 0, ...getMenuItemSx() }}
+                            sx={{
+                                flexShrink: 0,
+                                color: 'var(--color-on-primary)',
+                                borderRadius: `${BORDER_RADIUS}px`,
+                                padding: '10px',
+                                gap: '8px',
+                                transition: 'background-color 300ms ease',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.1)'
+                                },
+                                '&.Mui-selected': {
+                                    backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.15)',
+                                    '&:hover': {
+                                        backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.2)'
+                                    }
+                                }
+                            }}
                         >
-                            <span style={{ ...baseTypography, flexShrink: 0 }}>
+                            <span style={{ ...BASE_TYPOGRAPHY, flexShrink: 0 }}>
                                 {country.flagCode}
                             </span>
                             <span style={{
-                                ...baseTypography,
+                                ...BASE_TYPOGRAPHY,
                                 flexGrow: 1,
                                 textOverflow: 'ellipsis',
                                 whiteSpace: 'nowrap',
@@ -136,7 +177,7 @@ export function CustomCountrySelector({ value, onChange }: CountrySelectorProps)
                             }}>
                                 {country.name}
                             </span>
-                            <span style={{ ...baseTypography, flexShrink: 0, opacity: 0.6 }}>
+                            <span style={{ ...BASE_TYPOGRAPHY, flexShrink: 0, opacity: 0.6 }}>
                                 {country.dial}
                             </span>
                         </ListItemButton>

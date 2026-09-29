@@ -1,8 +1,8 @@
-@custom-variant dark (&:where(.dark, .dark *));
-@import './style/theme.css';
-@import 'tailwindcss';
-@import 'swiper/css';
-@import 'swiper/css/autoplay';
+@variant dark (&:where(.dark, .dark *));
+@import "./style/theme.css";
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/autoplay";
 
 @theme inline {
   --font-heading: var(--font-londrina-solid);
@@ -28,13 +28,12 @@
   --color-error-container: var(--md-sys-color-error-container);
   --color-on-error-container: var(--md-sys-color-on-error-container);
 
+  --color-background: var(--md-sys-color-background);
+  --color-on-background: var(--md-sys-color-on-background);
   --color-surface: var(--md-sys-color-surface);
   --color-on-surface: var(--md-sys-color-on-surface);
   --color-surface-variant: var(--md-sys-color-surface-variant);
   --color-on-surface-variant: var(--md-sys-color-on-surface-variant);
-
-  --color-background: var(--md-sys-color-background);
-  --color-on-background: var(--md-sys-color-on-background);
 
   --color-outline: var(--md-sys-color-outline);
   --color-outline-variant: var(--md-sys-color-outline-variant);
@@ -44,7 +43,7 @@
 
 @layer utilities {
   .cus-btn {
-    @apply h-12 flex items-center justify-center font-base font-semibold border border-outline rounded-xl px-4 gap-x-4 transition-colors duration-300 cursor-pointer;
+    @apply h-12 font-base font-semibold flex items-center justify-center border border-outline rounded-xl px-5 gap-x-5 transition-colors duration-300 cursor-pointer;
   }
 
   .cus-btn-ping {

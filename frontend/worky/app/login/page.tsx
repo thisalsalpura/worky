@@ -1,15 +1,13 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import { Country, User } from '@/components/interfaces/User';
+import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
-import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
-import { COUNTRIES } from '@/constants/countries';
 import { Button } from '@/components/ui/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { COUNTRIES } from '@/constants/countries';
+import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
 
 const Login = () => {
 
@@ -18,8 +16,8 @@ const Login = () => {
     const [checked, setChecked] = useState<boolean>(false);
 
     const [loginData, setLoginData] = useState<User>({
-        email: '',
-        password: ''
+        email: "",
+        password: ""
     });
 
     const DEFAULT_COUNTRY = COUNTRIES.find(c => c.code === 'LK') || { code: '', name: '', dial: '', flagCode: '' };
@@ -27,13 +25,13 @@ const Login = () => {
     const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
 
     const [registerData, setRegisterData] = useState<User>({
-        fname: '',
-        lname: '',
-        email: '',
-        password: '',
+        fname: "",
+        lname: "",
+        email: "",
+        password: "",
         mobileCountryCode: country,
-        mobileNum: 7,
-        role: ''
+        mobileNum: undefined,
+        role: ""
     });
 
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -50,7 +48,7 @@ const Login = () => {
                         transition={{ duration: 0.5 }}
                         className="w-full h-full grid grid-cols-12"
                     >
-                        <div className="h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4">
+                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center md:p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
                             <div className="w-auto h-auto flex items-center justify-center">
@@ -66,8 +64,8 @@ const Login = () => {
                         </div>
 
                         <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Login</h3>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
+                                <h3 className="text-2xl text-background text-left font-heading">Login</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
@@ -75,7 +73,6 @@ const Login = () => {
                                         type="email"
                                         variant="outlined"
                                         fullWidth
-                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={loginData.email}
                                         onChange={(e) => {
                                             setLoginData(prev => ({ ...prev, email: e.target.value }));
@@ -100,14 +97,14 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:gap-x-4">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-4 sm:gap-x-4">
                                     <div className="flex items-center justify-center">
                                         <CustomCheckbox
-                                            label="Remember Me"
                                             checked={checked}
                                             onChange={(e) => setChecked(e.target.checked)}
+                                            label="Remember Me"
                                             slotProps={{
-                                                input: { 'aria-label': 'Controlled' }
+                                                input: { 'aria-label': 'Controlled' },
                                             }}
                                         />
                                     </div>
@@ -118,16 +115,15 @@ const Login = () => {
                                 </div>
 
                                 <div className='w-full h-auto flex flex-col gap-y-4'>
-                                    <Button name="Login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Login" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                                     <p className="text-background text-left font-base">Not Registered?</p>
 
-                                    <Button name="Register" onClick={() => setIsLogin(false)} btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Register" onClick={() => setIsLogin(false)} btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                                 </div>
 
                                 <div className="flex flex-col items-center justify-center gap-y-4">
                                     <p className="text-background text-center font-base">Or Login Google</p>
-
                                     <div className='w-full h-auto flex items-center justify-center'>
                                         <button className='w-10 h-10 flex items-center justify-center cus-animated-bg border border-outline rounded-full p-2 cursor-pointer' style={{ '--animated-bg-color': 'var(--color-on-primary)' } as React.CSSProperties}>
                                             <Image
@@ -154,8 +150,8 @@ const Login = () => {
                         className="w-full h-full grid grid-cols-12"
                     >
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Register</h3>
+                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-5 md:p-10 gap-y-8">
+                                <h3 className="text-2xl text-background text-left font-heading">Register</h3>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
@@ -191,7 +187,6 @@ const Login = () => {
                                         type="email"
                                         variant="outlined"
                                         fullWidth
-                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={registerData.email}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, email: e.target.value }));
@@ -233,21 +228,22 @@ const Login = () => {
                                             }}
                                             error={!!errors.mobileNum}
                                             helperText={errors.mobileNum}
+                                            inputProps={{ min: 7, maxLength: 17 }}
                                         />
                                     </div>
                                 </div>
 
                                 <div className='w-full h-auto flex flex-col gap-y-4'>
-                                    <Button name="Register" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Register" btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
 
                                     <p className="text-background text-left font-base">Already Registered?</p>
 
-                                    <Button name="Login" onClick={() => setIsLogin(true)} btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name="Login" onClick={() => setIsLogin(true)} btnContainer="w-full text-on-primary bg-primary hover:text-primary hover:bg-on-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4">
+                        <div className="h-full hidden lg:flex lg:col-span-6 items-center justify-center md:p-4">
                             <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
                             <div className="w-auto h-auto flex items-center justify-center">
