@@ -29,10 +29,6 @@ function CustomTab({ isDark, ...props }: TabProps & { isDark: boolean }) {
                 {
                     ...getPillItemSx(SIZES.itemSize),
                     margin: 0,
-                    marginRight: `${SPACING.space2}px`,
-                    '&:last-of-type': {
-                        marginRight: 0
-                    },
                     color: isDark ? 'var(--color-on-primary)' : 'var(--color-primary)'
                 },
                 ...(props.sx ? (Array.isArray(props.sx) ? props.sx : [props.sx]) : [])
@@ -59,7 +55,8 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
                 display: 'none'
             },
             '& .MuiTabs-flexContainer': {
-                height: 'auto'
+                height: 'auto',
+                gap: `${SPACING.space2}px`
             },
             '& .MuiTabs-scrollButtons': {
                 width: `${SIZES.itemSize}px`,
