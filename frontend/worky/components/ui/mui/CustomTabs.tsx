@@ -12,7 +12,7 @@ interface TabItem {
     label: string;
     content: ReactNode;
     disabled?: boolean;
-}
+};
 
 type CustomTabsProps = Omit<TabsProps, 'children'> & {
     tabs: TabItem[];

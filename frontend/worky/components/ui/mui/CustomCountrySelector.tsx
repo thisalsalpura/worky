@@ -10,7 +10,7 @@ import { baseTypography, getMenuItemSx, getPopoverPaperSx, hideScrollbarSx } fro
 interface CountrySelectorProps {
     value: Country;
     onChange: (country: Country) => void;
-}
+};
 
 export function CustomCountrySelector({ value, onChange }: CountrySelectorProps) {
 

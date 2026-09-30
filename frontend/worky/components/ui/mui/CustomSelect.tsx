@@ -10,7 +10,7 @@ import { getFieldLabelSx, getMenuItemSx, getOutlinedFieldSx, getPopoverPaperSx, 
 export interface SelectOption {
     value: string | number;
     label: string;
-}
+};
 
 type CustomSelectProps = Omit<SelectProps, 'variant'> & {
     label?: string;
