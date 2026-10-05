@@ -9,6 +9,18 @@
           <option value="worky" />
           <option value="worky" />
           <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -17,10 +29,34 @@
           <option value="tools.jackson.core:jackson-core:3.0.3" />
           <option value="org.assertj:assertj-core:3.27.6" />
           <option value="org.apache.tomcat.embed:tomcat-embed-core:11.0.15" />
+          <option value="org.springframework.boot:spring-boot:4.0.1" />
+          <option value="org.springframework:spring-web:7.0.2" />
+          <option value="org.springframework:spring-beans:7.0.2" />
+          <option value="ch.qos.logback:logback-classic:1.5.22" />
+          <option value="org.apache.logging.log4j:log4j-api:2.25.3" />
+          <option value="tools.jackson.core:jackson-databind:3.0.3" />
+          <option value="com.fasterxml.jackson.core:jackson-databind:2.20.1" />
+          <option value="org.springframework:spring-core:7.0.2" />
+          <option value="org.springframework.boot:spring-boot-autoconfigure:4.0.1" />
+          <option value="org.springframework.data:spring-data-commons:4.0.1" />
+          <option value="org.apache.tomcat.embed:tomcat-embed-websocket:11.0.15" />
+          <option value="com.fasterxml.jackson.core:jackson-core:2.20.1" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
