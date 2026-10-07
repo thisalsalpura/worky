@@ -1,2 +1,6 @@
+# 1. Global fallback for all files
+* text=auto eol=lf
+
+# 2. Specific overrides for specific files/extensions
 /mvnw text eol=lf
 *.cmd text eol=crlf
