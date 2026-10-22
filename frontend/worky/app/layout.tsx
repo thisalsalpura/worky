@@ -24,7 +24,7 @@ const ropaSans = Ropa_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: 'Worky',
+    template: '%s | Worky',
     default: 'Worky - Freelance Marketplace Platform'
   },
   description: 'Worky is a scalable Freelance Marketplace Platform, connecting Clients and Freelancers Efficiently.',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en' data-scroll-behavior='smooth' suppressHydrationWarning>
-      <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`} cz-shortcut-listen='true'>
+      <body className={`${londrinaSolid.variable} ${ropaSans.variable} antialiased`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           <div className='min-h-screen flex flex-col'>
 

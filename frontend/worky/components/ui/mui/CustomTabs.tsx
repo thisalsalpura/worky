@@ -41,9 +41,13 @@ function CustomTab({ isDark, ...props }: TabProps & { isDark: boolean }) {
     );
 }
 
-export function CustomTabs({ tabs, containerClassName = '', panelClassName = '', ...props }: CustomTabsProps) {
+export function CustomTabs({ tabs, containerClassName = '', panelClassName = '', value, onChange, ...props }: CustomTabsProps) {
 
     const [activeTab, setActiveTab] = useState<number>(0);
+
+    const clampedActiveTab = Math.min(activeTab, Math.max(0, tabs.length - 1));
+
+    const selectedTab = typeof value === 'number' ? value : clampedActiveTab;
 
     const { resolvedTheme } = useTheme();
 
@@ -102,13 +106,16 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
                         <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
                     )
                 }}
-                value={activeTab}
-                onChange={(_, newValue) => setActiveTab(newValue)}
+                value={tabs.length === 0 ? false : Math.min(selectedTab, tabs.length - 1)}
+                onChange={(event, newValue) => {
+                    if (value === undefined) setActiveTab(newValue);
+                    onChange?.(event, newValue);
+                }}
                 sx={tabsSx}
             >
                 {tabs.map((tab, index) => (
                     <CustomTab
-                        key={index}
+                        key={tabs.every((candidate, candidateIndex) => candidateIndex === index || candidate.label !== tab.label) ? tab.label : index}
                         label={tab.label}
                         disabled={tab.disabled}
                         isDark={isDark}
