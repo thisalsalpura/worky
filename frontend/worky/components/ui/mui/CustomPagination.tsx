@@ -44,7 +44,7 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
         <div suppressHydrationWarning className={`${containerClassName} w-full md:w-fit flex items-center justify-center bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-2.5`}>
             <Pagination
                 {...props}
-                renderItem={(item) => (
+                renderItem={props.renderItem ?? ((item) => (
                     <PaginationItem
                         {...item}
                         slots={{
@@ -56,7 +56,7 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                             )
                         }}
                     />
-                )}
+                ))}
                 sx={sx}
             />
         </div>

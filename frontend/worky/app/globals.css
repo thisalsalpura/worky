@@ -1,8 +1,8 @@
-@custom-variant dark (&:where(.dark, .dark *));
 @import './style/theme.css';
 @import 'tailwindcss';
 @import 'swiper/css';
 @import 'swiper/css/autoplay';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --font-heading: var(--font-londrina-solid);

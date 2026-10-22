@@ -8,7 +8,7 @@ import { Button } from '../Button';
 import { ThemeToggle } from '../ThemeToggle';
 import { CustomTextField } from '../mui/CustomTextField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMagnifyingGlass, faBell, faCircleChevronUp, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faCircleChevronUp, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 export function Default_Navbar() {
 
@@ -49,11 +49,10 @@ export function Default_Navbar() {
 
                 <div className='w-full h-auto flex flex-row items-center justify-center gap-x-4'>
                     <button className='w-auto h-12 flex-1 flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-xl px-2 md:px-4 gap-x-2 md:gap-x-4 transition-colors duration-300 cursor-pointer group'>
-                        <FontAwesomeIcon icon={faBars} className='text-lg text-on-primary group-hover:text-primary' />
                         <span className='text-on-primary font-base font-semibold group-hover:text-primary'>All Categories</span>
                     </button>
 
-                    <button className='w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
+                    <button aria-label='Notifications' className='w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
                         <FontAwesomeIcon icon={faBell} className='text-lg text-on-primary group-hover:text-primary' />
                     </button>
 
@@ -78,7 +77,6 @@ export function Default_Navbar() {
                         type='text'
                         variant='outlined'
                         fullWidth
-                        endIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
                         value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
@@ -114,7 +112,7 @@ export function Default_Navbar() {
                         <div className='w-auto h-full flex flex-row items-center justify-center gap-x-4'>
                             <ThemeToggle />
 
-                            <button onClick={toggleCaretMenu} className='w-12 h-12 hidden md:flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
+                            <button onClick={toggleCaretMenu} aria-label='Toggle Categories Menu' className='w-12 h-12 hidden md:flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
                                 <FontAwesomeIcon icon={isCaretMenuOpen ? faCircleChevronUp : faCircleChevronDown} className='text-lg text-on-primary group-hover:text-primary' />
                             </button>
                         </div>
@@ -136,7 +134,6 @@ export function Default_Navbar() {
                     aria-hidden={!isCaretMenuOpen}
                 >
                     <button className='w-auto h-12 flex flex-row items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-xl px-2 md:px-4 gap-x-2 md:gap-x-4 transition-colors duration-300 cursor-pointer group'>
-                        <FontAwesomeIcon icon={faBars} className='text-lg text-on-primary group-hover:text-primary' />
                         <span className='text-on-primary font-base font-semibold group-hover:text-primary'>All Categories</span>
                     </button>
 
@@ -147,7 +144,6 @@ export function Default_Navbar() {
                             type='text'
                             variant='outlined'
                             fullWidth
-                            endIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
                             value={searchText}
                             onChange={(e) => {
                                 setSearchText(e.target.value);
@@ -159,7 +155,7 @@ export function Default_Navbar() {
                     </div>
 
                     <div className='w-auto h-full flex flex-row items-center justify-center gap-x-4'>
-                        <button className='w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
+                        <button aria-label='Notifications' className='w-12 h-12 flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
                             <FontAwesomeIcon icon={faBell} className='text-lg text-on-primary group-hover:text-primary' />
                         </button>
 

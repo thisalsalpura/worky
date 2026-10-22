@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSlots, AccordionSummary, Fade, accordionClasses, accordionDetailsClasses } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronDown, faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,10 @@ import { RADIUS } from '@/libs/design-tokens';
 export function CustomAccordion({ item }: { item: FaqItem }) {
 
     const [expanded, setExpanded] = useState<boolean>(false);
+
+    const generatedId = useId();
+
+    const itemId = item.id ?? generatedId;
 
     return (
         <Accordion
@@ -64,8 +68,8 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                         />
                     </div>
                 }
-                aria-controls={`${item.id}-content`}
-                id={`${item.id}-header`}
+                aria-controls={`${itemId}-content`}
+                id={`${itemId}-header`}
             >
                 <Text variant='body' className='text-on-background'>
                     <span className='font-semibold'>{item.question}</span>

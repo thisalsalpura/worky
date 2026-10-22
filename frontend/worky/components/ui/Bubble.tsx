@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 type BubbleProps = {
     className: string;
@@ -11,10 +11,13 @@ type BubbleProps = {
 };
 
 export function Bubble({ className, x, y, scale, duration = 30, style }: BubbleProps) {
+
+    const prefersReducedMotion = useReducedMotion();
+
     return (
         <motion.div
             className={`${className} absolute rounded-full`}
-            animate={{ x, y, scale }}
+            animate={prefersReducedMotion ? { scale } : { x, y, scale }}
             transition={{
                 duration,
                 repeat: Infinity,

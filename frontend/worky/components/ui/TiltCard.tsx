@@ -16,6 +16,8 @@ export function TiltCard({ children, className }: TiltCardProps) {
 
         if (!tiltNode) return;
 
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         VanillaTilt.init(tiltNode, {
             max: 15,
             speed: 400,
