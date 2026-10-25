@@ -8,7 +8,7 @@ import { Button } from '../Button';
 import { ThemeToggle } from '../ThemeToggle';
 import { CustomTextField } from '../mui/CustomTextField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faCircleChevronUp, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faCircleUp, faCircleDown } from '@fortawesome/free-regular-svg-icons';
 
 export function Default_Navbar() {
 
@@ -113,7 +113,7 @@ export function Default_Navbar() {
                             <ThemeToggle />
 
                             <button onClick={toggleCaretMenu} aria-label='Toggle Categories Menu' className='w-12 h-12 hidden md:flex items-center justify-center bg-primary hover:bg-on-primary border border-outline rounded-full transition-colors duration-300 cursor-pointer group'>
-                                <FontAwesomeIcon icon={isCaretMenuOpen ? faCircleChevronUp : faCircleChevronDown} className='text-lg text-on-primary group-hover:text-primary' />
+                                <FontAwesomeIcon icon={isCaretMenuOpen ? faCircleUp : faCircleDown} className='text-lg text-on-primary group-hover:text-primary' />
                             </button>
                         </div>
 

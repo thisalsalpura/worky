@@ -17,10 +17,10 @@ export function Bubble({ className, x, y, scale, duration = 30, style }: BubbleP
     return (
         <motion.div
             className={`${className} absolute rounded-full`}
-            animate={prefersReducedMotion ? { scale } : { x, y, scale }}
+            animate={prefersReducedMotion ? { scale: scale[0] } : { x, y, scale }}
             transition={{
-                duration,
-                repeat: Infinity,
+                duration: prefersReducedMotion ? 0 : duration,
+                repeat: prefersReducedMotion ? 0 : Infinity,
                 repeatType: 'mirror',
                 ease: 'easeInOut'
             }}

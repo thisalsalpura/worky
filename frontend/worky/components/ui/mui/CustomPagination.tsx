@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 import { Pagination, PaginationItem, PaginationProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { SIZES } from '@/libs/design-tokens';
 import { getPillItemSx } from '@/libs/mui-styles';
 
@@ -49,10 +49,10 @@ export function CustomPagination({ containerClassName = '', ...props }: CustomPa
                         {...item}
                         slots={{
                             previous: () => (
-                                <FontAwesomeIcon icon={faCircleChevronLeft} style={{ fontSize: '16px', display: 'block' }} />
+                                <FontAwesomeIcon icon={faCircleLeft} style={{ fontSize: '16px', display: 'block' }} />
                             ),
                             next: () => (
-                                <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
+                                <FontAwesomeIcon icon={faCircleRight} style={{ fontSize: '16px', display: 'block' }} />
                             )
                         }}
                     />

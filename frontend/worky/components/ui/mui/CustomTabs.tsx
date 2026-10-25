@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import { Box, Tab, TabProps, Tabs, TabsProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { SIZES, SPACING } from '@/libs/design-tokens';
 import { getPillItemSx } from '@/libs/mui-styles';
 
@@ -47,7 +47,11 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
 
     const clampedActiveTab = Math.min(activeTab, Math.max(0, tabs.length - 1));
 
-    const selectedTab = typeof value === 'number' ? value : clampedActiveTab;
+    const effectiveTabIndex = tabs.length === 0 || value === false
+        ? false
+        : typeof value === 'number'
+            ? Math.min(Math.max(value, 0), tabs.length - 1)
+            : clampedActiveTab;
 
     const { resolvedTheme } = useTheme();
 
@@ -100,13 +104,13 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
                 scrollButtons='auto'
                 slots={{
                     startScrollButtonIcon: () => (
-                        <FontAwesomeIcon icon={faCircleChevronLeft} style={{ fontSize: '16px', display: 'block' }} />
+                        <FontAwesomeIcon icon={faCircleLeft} style={{ fontSize: '16px', display: 'block' }} />
                     ),
                     endScrollButtonIcon: () => (
-                        <FontAwesomeIcon icon={faCircleChevronRight} style={{ fontSize: '16px', display: 'block' }} />
+                        <FontAwesomeIcon icon={faCircleRight} style={{ fontSize: '16px', display: 'block' }} />
                     )
                 }}
-                value={tabs.length === 0 ? false : Math.min(selectedTab, tabs.length - 1)}
+                value={effectiveTabIndex}
                 onChange={(event, newValue) => {
                     if (value === undefined) setActiveTab(newValue);
                     onChange?.(event, newValue);
@@ -115,7 +119,7 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
             >
                 {tabs.map((tab, index) => (
                     <CustomTab
-                        key={tabs.every((candidate, candidateIndex) => candidateIndex === index || candidate.label !== tab.label) ? tab.label : index}
+                        key={tabs.every((candidate, candidateIndex) => candidateIndex === index || candidate.label !== tab.label) ? `label:${tab.label}` : `index:${index}`}
                         label={tab.label}
                         disabled={tab.disabled}
                         isDark={isDark}
@@ -124,7 +128,7 @@ export function CustomTabs({ tabs, containerClassName = '', panelClassName = '',
             </Tabs>
 
             <Box className={`${panelClassName} w-full h-auto`}>
-                {tabs[activeTab]?.content}
+                {effectiveTabIndex === false ? undefined : tabs[effectiveTabIndex]?.content}
             </Box>
         </div>
     );

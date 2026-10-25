@@ -1,8 +1,8 @@
 'use client';
 import { useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 
 export function ThemeToggle() {
 

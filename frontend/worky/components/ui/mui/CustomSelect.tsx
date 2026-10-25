@@ -3,7 +3,7 @@ import { ReactNode, useId } from 'react';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUp, faCircleDown } from '@fortawesome/free-regular-svg-icons';
 import { SIZES } from '@/libs/design-tokens';
 import { getFieldLabelSx, getMenuItemSx, getOutlinedFieldSx, getPopoverPaperSx, hideScrollbarSx } from '@/libs/mui-styles';
 
@@ -107,7 +107,7 @@ export function CustomSelect({
                 style={{ top: `${SIZES.fieldHeight / 2}px` }}
             >
                 <FontAwesomeIcon
-                    icon={props.open ? faChevronCircleUp : faChevronCircleDown}
+                    icon={props.open ? faCircleUp : faCircleDown}
                     fixedWidth
                     className={`text-base ${props.disabled ? 'text-on-primary opacity-50' : error ? 'text-on-error' : 'text-on-primary'}`}
                 />
