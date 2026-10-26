@@ -1,9 +1,9 @@
 'use client';
-import { ReactNode } from 'react';
+import { ReactNode, useId } from 'react';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUp, faCircleDown } from '@fortawesome/free-regular-svg-icons';
 import { SIZES } from '@/libs/design-tokens';
 import { getFieldLabelSx, getMenuItemSx, getOutlinedFieldSx, getPopoverPaperSx, hideScrollbarSx } from '@/libs/mui-styles';
 
@@ -11,6 +11,10 @@ export interface SelectOption {
     value: string | number;
     label: string;
 };
+
+function NoIcon() {
+    return null;
+}
 
 type CustomSelectProps = Omit<SelectProps, 'variant'> & {
     label?: string;
@@ -31,7 +35,9 @@ export function CustomSelect({
     ...props
 }: CustomSelectProps) {
 
-    const labelId = `${props.id ?? props.name ?? 'select'}-label`;
+    const generatedId = useId();
+
+    const labelId = `${props.id ?? props.name ?? generatedId}-label`;
 
     const formControlSx: SxProps<Theme> = [
         getOutlinedFieldSx(),
@@ -79,7 +85,7 @@ export function CustomSelect({
                     labelId={label ? labelId : undefined}
                     label={label}
                     variant='outlined'
-                    IconComponent={() => null}
+                    IconComponent={NoIcon}
                     MenuProps={{ sx: menuSx }}
                 >
                     {options.map((option) => (
@@ -101,7 +107,7 @@ export function CustomSelect({
                 style={{ top: `${SIZES.fieldHeight / 2}px` }}
             >
                 <FontAwesomeIcon
-                    icon={props.open ? faChevronCircleUp : faChevronCircleDown}
+                    icon={props.open ? faCircleUp : faCircleDown}
                     fixedWidth
                     className={`text-base ${props.disabled ? 'text-on-primary opacity-50' : error ? 'text-on-error' : 'text-on-primary'}`}
                 />

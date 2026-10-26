@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Accordion, AccordionDetails, AccordionSlots, AccordionSummary, Fade, accordionClasses, accordionDetailsClasses } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronDown, faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUp, faCircleDown } from '@fortawesome/free-regular-svg-icons';
 import { FaqItem } from '@/components/interfaces/FaqItem';
 import { Text } from '@/components/ui/Typography';
 import { RADIUS } from '@/libs/design-tokens';
@@ -10,6 +10,10 @@ import { RADIUS } from '@/libs/design-tokens';
 export function CustomAccordion({ item }: { item: FaqItem }) {
 
     const [expanded, setExpanded] = useState<boolean>(false);
+
+    const generatedId = useId();
+
+    const itemId = item.id ?? generatedId;
 
     return (
         <Accordion
@@ -56,16 +60,16 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
             ]}
         >
             <AccordionSummary
+                id={`${itemId}-header`}
+                aria-controls={`${itemId}-content`}
                 expandIcon={
                     <div className='w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group'>
                         <FontAwesomeIcon
-                            icon={expanded ? faCircleChevronUp : faCircleChevronDown}
+                            icon={expanded ? faCircleUp : faCircleDown}
                             className='text-base text-background group-hover:text-on-background'
                         />
                     </div>
                 }
-                aria-controls={`${item.id}-content`}
-                id={`${item.id}-header`}
             >
                 <Text variant='body' className='text-on-background'>
                     <span className='font-semibold'>{item.question}</span>
