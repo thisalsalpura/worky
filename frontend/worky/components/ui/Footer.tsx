@@ -88,12 +88,12 @@ export function Footer() {
                         </Text>
 
                         <div className='flex flex-wrap justify-start md:justify-end gap-4'>
-                            <a href='#' aria-label='Download on Google Play' target='_blank' rel='noopener noreferrer'>
-                                <FontAwesomeIcon icon={faGooglePlay} className='text-2xl text-background hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer' />
-                            </a>
-
                             <a href='#' aria-label='Download on App Store' target='_blank' rel='noopener noreferrer'>
                                 <FontAwesomeIcon icon={faApple} className='text-2xl text-background hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer' />
+                            </a>
+
+                            <a href='#' aria-label='Download on Google Play' target='_blank' rel='noopener noreferrer'>
+                                <FontAwesomeIcon icon={faGooglePlay} className='text-2xl text-background hover:-rotate-12 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer' />
                             </a>
                         </div>
                     </div>

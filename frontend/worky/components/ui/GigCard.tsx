@@ -1,14 +1,11 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Heading, Text } from '@/components/ui/Typography';
 
 export function GigCard() {
-
-    const router = useRouter();
-
     return (
-        <div onClick={() => router.push('/single-gig')} className='w-full md:w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-4 gap-y-4 cursor-pointer'>
+        <Link href='/single-gig' className='w-full md:w-64 h-auto flex flex-col items-start justify-start bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-4 gap-y-4 cursor-pointer'>
             <div className='w-full h-44 flex items-center justify-center border border-outline-variant rounded-lg overflow-hidden'>
                 <Image
                     src='/images/empty-gig-img.svg'
@@ -48,6 +45,6 @@ export function GigCard() {
                     From LKR 9.99
                 </Heading>
             </div>
-        </div>
+        </Link>
     );
 }

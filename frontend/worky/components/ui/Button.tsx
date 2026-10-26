@@ -15,11 +15,8 @@ export function Button({ name, href, onClick, btnContainer, btnPing, btnPingDot 
     const router = useRouter();
 
     const handleClick = () => {
-        if (onClick) {
-            onClick();
-        } else if (href) {
-            router.push(href);
-        }
+        if (onClick) onClick();
+        else if (href) router.push(href);
     };
 
     return (

@@ -23,9 +23,9 @@ function EndIconButton({ onClick, ariaLabel, disabled, children }: {
     return (
         <IconButton
             onClick={onClick}
-            aria-label={ariaLabel}
             disabled={disabled}
             disableRipple
+            aria-label={ariaLabel}
             sx={{
                 width: `${SIZES.iconButtonSize}px`,
                 minWidth: `${SIZES.iconButtonSize}px`,
