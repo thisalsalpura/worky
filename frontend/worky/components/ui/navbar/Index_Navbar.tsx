@@ -14,8 +14,6 @@ export function Index_Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-    const mobileMenuId = 'index-navbar-mobile-menu';
-
     const toggleMenu = () => {
         setIsMenuOpen((previousMenuOpen) => !previousMenuOpen);
     };
@@ -51,7 +49,7 @@ export function Index_Navbar() {
 
                         <ThemeToggle />
 
-                        <button onClick={toggleMenu} className='flex md:hidden transition-all duration-300 ease-in-out cursor-pointer' type='button' aria-label='Toggle Menu' aria-expanded={isMenuOpen} aria-controls={mobileMenuId}>
+                        <button onClick={toggleMenu} className='flex md:hidden transition-all duration-300 ease-in-out cursor-pointer' type='button' aria-label='Toggle Menu' aria-expanded={isMenuOpen} aria-controls='mobile-menu'>
                             <Image
                                 src={`/icons/${isMenuOpen ? 'close' : 'menu'}.svg`}
                                 alt={`${isMenuOpen ? 'close' : 'menu'}-icon`}
@@ -64,7 +62,7 @@ export function Index_Navbar() {
                 </div>
 
                 <div
-                    id={mobileMenuId}
+                    id='mobile-menu'
                     className={`mt-2 absolute left-0 right-0 flex md:hidden items-center justify-center bg-blur backdrop-blur-2xl border border-outline rounded-2xl transition-all duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0 opacity-100 visible pointer-events-auto' : 'translate-x-full opacity-0 invisible pointer-events-none'} overflow-hidden z-50`}
                     aria-hidden={!isMenuOpen}
                 >

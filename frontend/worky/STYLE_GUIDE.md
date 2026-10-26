@@ -3,7 +3,7 @@
 This document is the single source of truth for visual and code-pattern
 consistency across the Worky frontend. Every component and page rewrite
 follows these rules. Nothing in here is arbitrary — each scale is a fixed
-step system so nobody has to "eyeball" a spacing or font value again.
+step system so nobody has to 'eyeball' a spacing or font value again.
 
 ---
 
@@ -33,7 +33,7 @@ instead of raw `text-*` classes so the scale can never drift again.
 Rules:
 
 - Never hardcode `text-2xl`, `text-3xl`, etc. directly in a page/component.
-  Always go through `<Heading level="h2">` or `<Text variant="body">`.
+  Always go through `<Heading level='h2'>` or `<Text variant='body'>`.
 - Only one `h1` per page.
 - Heading color defaults to `text-on-background dark:text-background`
   (see Color section) unless placed on an inverted surface

@@ -60,6 +60,8 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
             ]}
         >
             <AccordionSummary
+                id={`${itemId}-header`}
+                aria-controls={`${itemId}-content`}
                 expandIcon={
                     <div className='w-8 h-8 shrink-0 flex items-center justify-center bg-on-background border border-outline-variant hover:bg-background rounded-full transition-colors duration-300 cursor-pointer group'>
                         <FontAwesomeIcon
@@ -68,8 +70,6 @@ export function CustomAccordion({ item }: { item: FaqItem }) {
                         />
                     </div>
                 }
-                aria-controls={`${itemId}-content`}
-                id={`${itemId}-header`}
             >
                 <Text variant='body' className='text-on-background'>
                     <span className='font-semibold'>{item.question}</span>
