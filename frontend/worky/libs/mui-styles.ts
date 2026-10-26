@@ -154,12 +154,12 @@ export function getMenuItemSx(radius: number = RADIUS.lg) {
         gap: '8px',
         transition: 'background-color 300ms ease',
         '&:hover': {
-            backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.1)'
+            backgroundColor: 'color-mix(in srgb, var(--color-on-primary) 10%, transparent)'
         },
         '&.Mui-selected': {
-            backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.15)',
+            backgroundColor: 'color-mix(in srgb, var(--color-on-primary) 15%, transparent)',
             '&:hover': {
-                backgroundColor: 'rgba(var(--color-on-primary-rgb, 255,255,255), 0.2)'
+                backgroundColor: 'color-mix(in srgb, var(--color-on-primary) 20%, transparent)'
             }
         }
     };

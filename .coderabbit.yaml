@@ -1,7 +1,23 @@
 language: "en-US"
 
 reviews:
-  profile: "chill"
+  profile: "assertive"
+  path_filters:
+    - "!**/.idea/**"
+    - "!**/.next/**"
+    - "!**/.vscode/**"
+    - "!**/build/**"
+    - "!**/coverage/**"
+    - "!**/dist/**"
+    - "!**/node_modules/**"
+    - "!**/out/**"
+    - "!**/target/**"
+    - "!**/tmp/**"
+    - "!**/temp/**"
+    - "!**/*.log"
+    - "!**/.coderabbit.yaml"
+    - "!**/.DS_Store"
+    - "!**/Thumbs.db"
   request_changes_workflow: false
   high_level_summary: true
   high_level_summary_in_walkthrough: true
@@ -9,7 +25,7 @@ reviews:
 
   auto_review:
     enabled: true
-    drafts: false
+    drafts: true
     base_branches:
       - main
 

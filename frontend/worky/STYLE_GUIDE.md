@@ -3,7 +3,7 @@
 This document is the single source of truth for visual and code-pattern
 consistency across the Worky frontend. Every component and page rewrite
 follows these rules. Nothing in here is arbitrary — each scale is a fixed
-step system so nobody has to "eyeball" a spacing or font value again.
+step system so nobody has to 'eyeball' a spacing or font value again.
 
 ---
 
@@ -33,7 +33,7 @@ instead of raw `text-*` classes so the scale can never drift again.
 Rules:
 
 - Never hardcode `text-2xl`, `text-3xl`, etc. directly in a page/component.
-  Always go through `<Heading level="h2">` or `<Text variant="body">`.
+  Always go through `<Heading level='h2'>` or `<Text variant='body'>`.
 - Only one `h1` per page.
 - Heading color defaults to `text-on-background dark:text-background`
   (see Color section) unless placed on an inverted surface
@@ -79,7 +79,7 @@ Standardized patterns (use these exact combinations, don't invent new ones):
 | `radius-full` | `rounded-full` | —    | Avatars, icon buttons, pills, pagination items                                           |
 
 The MUI `BORDER_RADIUS` constant in every Custom\* component must always
-reference `RADIUS.lg` / `RADIUS.xl` from `lib/design-tokens.ts` — never a
+reference `RADIUS.lg` / `RADIUS.xl` from `libs/design-tokens.ts` — never a
 raw duplicated number.
 
 ---
@@ -135,7 +135,7 @@ import { motion } from "framer-motion";
 // 3. Absolute internal imports (@/...), grouped: interfaces → constants → lib → components
 import { User } from "@/components/interfaces/User";
 import { COUNTRIES } from "@/constants/countries";
-import { RADIUS, SPACING } from "@/lib/design-tokens";
+import { RADIUS, SPACING } from "@/libs/design-tokens";
 import { Button } from "@/components/ui/Button";
 
 // 4. Local constants (SCREAMING_SNAKE_CASE), always pulled from design-tokens where applicable
@@ -169,9 +169,9 @@ Rules:
   event handlers (`onClick`, `onChange`) → styling (`className`, `sx`) →
   `aria-*`.
 - No inline magic numbers for radius/height — pull from
-  `lib/design-tokens.ts`.
+  `libs/design-tokens.ts`.
 - Every MUI wrapper component pulls its shared `sx` foundation from
-  `lib/muiStyles.ts` and only adds component-specific overrides locally.
+  `libs/mui-styles.ts` and only adds component-specific overrides locally.
 
 ---
 
@@ -181,7 +181,7 @@ Previously, `CustomTextField`, `CustomSelect`, `CustomTabs`,
 `CustomPagination`, `CustomCheckbox`, and `CustomAccordion` each
 re-implemented near-identical `sx` objects (border colors, radius, hover
 states, focus states, typography). These are now centralized in
-`lib/muiStyles.ts`:
+`libs/mui-styles.ts`:
 
 - `baseTypography` — shared font/size/weight object.
 - `getOutlinedFieldSx()` — shared border/hover/focus/error states for
@@ -206,4 +206,4 @@ Going forward, every file rewritten in this project:
 4. Uses only the color pairings from Section 4 (no manual `dark:` text
    overrides).
 5. Follows the import order and component shape from Section 5.
-6. Pulls shared MUI style logic from `lib/muiStyles.ts` per Section 6.
+6. Pulls shared MUI style logic from `libs/mui-styles.ts` per Section 6.
