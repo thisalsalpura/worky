@@ -21,6 +21,12 @@
           <option value="worky" />
           <option value="worky" />
           <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
+          <option value="worky" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -41,10 +47,22 @@
           <option value="org.springframework.data:spring-data-commons:4.0.1" />
           <option value="org.apache.tomcat.embed:tomcat-embed-websocket:11.0.15" />
           <option value="com.fasterxml.jackson.core:jackson-core:2.20.1" />
+          <option value="org.springframework:spring-webmvc:7.0.2" />
+          <option value="org.springframework.data:spring-data-jpa:4.0.1" />
+          <option value="net.minidev:json-smart:2.6.0" />
+          <option value="org.springframework:spring-expression:7.0.2" />
+          <option value="org.ow2.asm:asm:9.7.1" />
+          <option value="com.vaadin.external.google:android-json:0.0.20131108.vaadin1" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
