@@ -1,73 +1,81 @@
 'use client';
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faClock, faShare } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FaqItem } from "@/components/interfaces/FaqItem";
-import { CustomAccordion } from "@/components/ui/mui/CustomAccordion";
-import { CustomTabs } from "@/components/ui/mui/CustomTabs";
-import { Button } from "@/components/ui/Button";
+import { useState } from 'react';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faShare } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaqItem } from '@/components/interfaces/FaqItem';
+import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
+import { CustomTabs } from '@/components/ui/mui/CustomTabs';
+import { Button } from '@/components/ui/Button';
+import { Heading, Text } from '@/components/ui/Typography';
 
 function Bronze_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
-            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Bronze Package</h2>
+        <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
+            <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Bronze Package</Heading>
 
-            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
 
-            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
-                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
-                <p className="text-on-background dark:text-background font-base font-semibold">3 Days Delivery</p>
+            <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
+                <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
+                <Text variant='body' className='text-on-background dark:text-background'>
+                    <span className='font-semibold'>3 Days Delivery</span>
+                </Text>
             </div>
 
-            <div className="w-full h-auto flex items-center justify-end">
-                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 99.99</p>
+            <div className='w-full h-auto flex items-center justify-end'>
+                <Heading level='h6' as='p' className='text-on-background dark:text-background'>LKR 99.99</Heading>
             </div>
 
-            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+            <Button name='Add to Cart' btnContainer='w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group' btnPing='bg-primary group-hover:bg-on-primary' btnPingDot='bg-primary group-hover:bg-on-primary' />
         </div>
     );
 }
 
 function Silver_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
-            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Silver Package</h2>
+        <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
+            <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Silver Package</Heading>
 
-            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
 
-            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
-                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
-                <p className="text-on-background dark:text-background font-base font-semibold">2 Days Delivery</p>
+            <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
+                <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
+                <Text variant='body' className='text-on-background dark:text-background'>
+                    <span className='font-semibold'>2 Days Delivery</span>
+                </Text>
             </div>
 
-            <div className="w-full h-auto flex items-center justify-end">
-                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 199.99</p>
+            <div className='w-full h-auto flex items-center justify-end'>
+                <Heading level='h6' as='p' className='text-on-background dark:text-background'>LKR 199.99</Heading>
             </div>
 
-            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+            <Button name='Add to Cart' btnContainer='w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group' btnPing='bg-primary group-hover:bg-on-primary' btnPingDot='bg-primary group-hover:bg-on-primary' />
         </div>
     );
 }
 
 function Gold_Package() {
     return (
-        <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
-            <h2 className="text-2xl text-on-background dark:text-background font-heading font-semibold">Gold Package</h2>
+        <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
+            <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Gold Package</Heading>
 
-            <p className="text-on-background dark:text-background font-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</p>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
 
-            <div className="w-full h-auto flex flex-row items-center justify-end gap-x-2">
-                <FontAwesomeIcon icon={faClock} className="text-base text-on-background dark:text-background" />
-                <p className="text-on-background dark:text-background font-base font-semibold">1 Days Delivery</p>
+            <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
+                <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
+                <Text variant='body' className='text-on-background dark:text-background'>
+                    <span className='font-semibold'>1 Days Delivery</span>
+                </Text>
             </div>
 
-            <div className="w-full h-auto flex items-center justify-end">
-                <p className="text-lg text-on-background dark:text-background font-base font-semibold">LKR 299.99</p>
+            <div className='w-full h-auto flex items-center justify-end'>
+                <Heading level='h6' as='p' className='text-on-background dark:text-background'>LKR 299.99</Heading>
             </div>
 
-            <Button name="Add to Cart" btnContainer="w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group" btnPing="bg-primary group-hover:bg-on-primary" btnPingDot="bg-primary group-hover:bg-on-primary" />
+            <Button name='Add to Cart' btnContainer='w-full text-primary bg-on-primary hover:text-on-primary hover:bg-primary group' btnPing='bg-primary group-hover:bg-on-primary' btnPingDot='bg-primary group-hover:bg-on-primary' />
         </div>
     );
 }
@@ -75,11 +83,11 @@ function Gold_Package() {
 const Single_Gig = () => {
 
     const [gigImages, setGigImages] = useState<string[]>([
-        "/images/empty-gig-img.svg",
-        "/images/empty-gig-img.svg",
-        "/images/empty-gig-img.svg",
-        "/images/empty-gig-img.svg",
-        "/images/empty-gig-img.svg"
+        '/images/empty-gig-img.svg',
+        '/images/empty-gig-img.svg',
+        '/images/empty-gig-img.svg',
+        '/images/empty-gig-img.svg',
+        '/images/empty-gig-img.svg'
     ]);
 
     const FAQS: FaqItem[] = [
@@ -112,34 +120,34 @@ const Single_Gig = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-y-12">
-            <div className="w-full h-auto flex items-center justify-between gap-x-4">
-                <p className="text-sm text-primary font-base">
-                    <span className="opacity-40 cursor-pointer">Home</span>
-                    <FontAwesomeIcon icon={faAngleRight} className="opacity-40" />
-                    <span className="opacity-40 cursor-pointer">SingleGig</span>
+        <div className='w-full h-full flex flex-col items-center justify-center gap-y-12'>
+            <div className='w-full h-auto flex items-center justify-between gap-x-4'>
+                <Text as='p' variant='bodySm' className='text-primary'>
+                    <span className='opacity-40 cursor-pointer'>Home</span>
+                    <FontAwesomeIcon icon={faAngleRight} className='opacity-40' />
+                    <span className='opacity-40 cursor-pointer'>SingleGig</span>
                     <FontAwesomeIcon icon={faAngleRight} />
-                    <span className="cursor-pointer">Programming & Tech</span>
+                    <span className='cursor-pointer'>Programming & Tech</span>
                     <FontAwesomeIcon icon={faAngleRight} />
-                    <span className="cursor-pointer">Web Development</span>
-                </p>
+                    <span className='cursor-pointer'>Web Development</span>
+                </Text>
 
-                <div className="w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2 transition-colors duration-300 cursor-pointer group">
-                    <FontAwesomeIcon icon={faShare} className="text-sm text-primary group-hover:text-on-primary" />
+                <div className='w-auto h-auto flex items-center justify-center bg-on-primary border border-outline hover:bg-primary rounded-xl p-2 transition-colors duration-300 cursor-pointer group'>
+                    <FontAwesomeIcon icon={faShare} className='text-sm text-primary group-hover:text-on-primary' />
                 </div>
             </div>
 
-            <div className="w-full h-auto md:p-4">
-                <div className="w-full h-auto grid grid-cols-12 gap-y-8 lg:gap-x-8">
-                    <div className="col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8">
-                        <h2 className="w-full h-auto text-2xl text-on-background font-heading font-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, tenetur incidunt quis veniam quasi eos velit repellendus animi aperiam placeat voluptatibus tempore dignissimos eveniet magnam tempora facere explicabo, repellat provident?</h2>
+            <div className='w-full h-auto md:p-4'>
+                <div className='w-full h-auto grid grid-cols-12 gap-y-8 lg:gap-x-8'>
+                    <div className='col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8'>
+                        <Heading level='h3' as='h2' className='w-full h-auto text-on-background'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, tenetur incidunt quis veniam quasi eos velit repellendus animi aperiam placeat voluptatibus tempore dignissimos eveniet magnam tempora facere explicabo, repellat provident?</Heading>
 
-                        <div className="w-full h-auto flex items-center justify-start gap-x-4">
-                            <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer">
-                                <div className="w-10 h-10 flex items-center justify-center bg-surface-variant rounded-full overflow-hidden">
+                        <div className='w-full h-auto flex items-center justify-start gap-x-4'>
+                            <div className='w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer'>
+                                <div className='w-10 h-10 flex items-center justify-center bg-surface-variant rounded-full overflow-hidden'>
                                     <Image
-                                        src="/images/user-img.svg"
-                                        alt="user-image"
+                                        src='/images/user-img.svg'
+                                        alt='user-image'
                                         width={40}
                                         height={40}
                                         className='object-cover'
@@ -148,26 +156,28 @@ const Single_Gig = () => {
                                 </div>
                             </div>
 
-                            <div className="w-auto h-auto flex-1 flex flex-col items-start justify-center gap-y-2">
-                                <p className="w-auto text-on-background font-base font-semibold line-clamp-1">Ben Stokes</p>
-                                <p className="w-auto text-xs text-on-background font-base line-clamp-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</p>
+                            <div className='w-auto h-auto flex-1 flex flex-col items-start justify-center gap-y-2'>
+                                <Text variant='body' className='w-auto text-on-background line-clamp-1'>
+                                    <span className='font-semibold'>Ben Stokes</span>
+                                </Text>
+                                <Text variant='caption' className='w-auto text-on-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</Text>
                             </div>
                         </div>
 
-                        <div className="w-full h-96 flex items-center justify-center border border-outline-variant rounded-lg p-2">
-                            <div className="w-full h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
+                        <div className='w-full h-96 flex items-center justify-center border border-outline-variant rounded-lg p-2'>
+                            <div className='w-full h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden'>
                                 <Image
                                     src={activeImage}
-                                    alt="gig-image"
+                                    alt='gig-image'
                                     width={366}
                                     height={366}
-                                    className={`w-full h-full aspect-video object-cover transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+                                    className={`w-full h-full aspect-video object-cover transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                                     priority
                                 />
                             </div>
                         </div>
 
-                        <div className="w-full h-auto px-2">
+                        <div className='w-full h-auto px-2'>
                             <Swiper
                                 spaceBetween={8}
                                 breakpoints={{
@@ -175,18 +185,18 @@ const Single_Gig = () => {
                                     640: { slidesPerView: 3 },
                                     1024: { slidesPerView: 4 }
                                 }}
-                                className="w-full h-full"
+                                className='w-full h-full'
                             >
                                 {gigImages.map((gigImage, index) => (
-                                    <SwiperSlide key={index} className="h-full flex justify-center px-2">
+                                    <SwiperSlide key={index} className='h-full flex justify-center px-2'>
                                         <div
                                             onClick={() => handleImageSelect(gigImage, index)}
-                                            className={`h-28 flex items-center justify-center border rounded-lg p-2 transition-all duration-300 cursor-pointer ${activeIndex === index ? "border-primary opacity-100" : "border-outline-variant opacity-40"}`}
+                                            className={`h-28 flex items-center justify-center border rounded-lg p-2 transition-all duration-300 cursor-pointer ${activeIndex === index ? 'border-primary opacity-100' : 'border-outline-variant opacity-40'}`}
                                         >
-                                            <div className="h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden">
+                                            <div className='h-full bg-surface-variant border border-outline-variant rounded-lg overflow-hidden'>
                                                 <Image
                                                     src={gigImage}
-                                                    alt="gig-image"
+                                                    alt='gig-image'
                                                     width={94}
                                                     height={94}
                                                     className='w-full h-full aspect-video object-cover'
@@ -199,56 +209,60 @@ const Single_Gig = () => {
                             </Swiper>
                         </div>
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
-                            <p className="text-2xl text-on-background font-heading font-semibold">Description</p>
+                        <div className='w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4'>
+                            <Heading level='h3' as='p' className='text-on-background'>Description</Heading>
 
-                            <p className="text-on-background font-base">
+                            <Text variant='body' className='text-on-background'>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti iusto quo voluptatum blanditiis eius sequi, maiores veritatis voluptatem cumque necessitatibus doloremque, vel neque ipsum beatae fuga magni asperiores saepe autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, mollitia! Unde vero dolorum asperiores numquam, ipsum reprehenderit distinctio possimus pariatur quasi eveniet voluptatum earum laudantium cupiditate suscipit ullam, alias vitae?
-                            </p>
+                            </Text>
 
-                            <div className="w-auto h-auto flex flex-row items-center justify-start gap-x-2">
-                                <p className="text-on-background font-base font-semibold">Category :</p>
-                                <p className="text-on-background font-base">Programming & Tech</p>
+                            <div className='w-auto h-auto flex flex-row items-center justify-start gap-x-2'>
+                                <Text variant='body' className='text-on-background'>
+                                    <span className='font-semibold'>Category :</span>
+                                </Text>
+                                <Text variant='body' className='text-on-background'>Programming & Tech</Text>
                             </div>
 
-                            <div className="w-auto h-auto flex flex-row items-center justify-start gap-x-2">
-                                <p className="text-on-background font-base font-semibold">Sub Category :</p>
-                                <p className="text-on-background font-base">Web Development</p>
-                            </div>
-                        </div>
-
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
-                            <p className="text-2xl text-on-background font-heading font-semibold">Search Tags</p>
-
-                            <div className="w-full h-auto flex flex-wrap items-start justify-start gap-4">
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">HTML</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">CSS</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">JavaScript</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">React</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">Next.js</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">Tailwind CSS</p>
-                                </div>
-                                <div className="w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group" style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <p className="text-on-background font-base group-hover:text-background">Figma</p>
-                                </div>
+                            <div className='w-auto h-auto flex flex-row items-center justify-start gap-x-2'>
+                                <Text variant='body' className='text-on-background'>
+                                    <span className='font-semibold'>Sub Category :</span>
+                                </Text>
+                                <Text variant='body' className='text-on-background'>Web Development</Text>
                             </div>
                         </div>
 
-                        <div className="w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4">
-                            <p className="text-2xl text-on-background font-heading font-semibold">FAQs</p>
+                        <div className='w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4'>
+                            <Heading level='h3' as='p' className='text-on-background'>Search Tags</Heading>
 
-                            <div className="w-full h-auto flex flex-col items-start justify-start gap-y-4">
+                            <div className='w-full h-auto flex flex-wrap items-start justify-start gap-4'>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>HTML</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>CSS</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>JavaScript</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>React</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>Next.js</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>Tailwind CSS</Text>
+                                </div>
+                                <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>Figma</Text>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='w-full h-auto flex flex-col items-start justify-start border border-outline-variant rounded-lg p-4 gap-y-4'>
+                            <Heading level='h3' as='p' className='text-on-background'>FAQs</Heading>
+
+                            <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
                                 {FAQS.map(faq => (
                                     <CustomAccordion key={faq.id} item={faq} />
                                 ))}
@@ -256,7 +270,7 @@ const Single_Gig = () => {
                         </div>
                     </div>
 
-                    <div className="lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-start lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-4 gap-y-8">
+                    <div className='lg:top-22 col-span-12 lg:col-span-5 h-auto lg:h-fit flex flex-col items-center justify-start lg:sticky bg-background dark:bg-on-background border border-outline-variant rounded-lg shadow-lg p-4 gap-y-8'>
                         <CustomTabs
                             tabs={[
                                 { label: 'Bronze', content: <Bronze_Package /> },
