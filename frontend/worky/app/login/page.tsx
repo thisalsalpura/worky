@@ -8,8 +8,7 @@ import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
 import { COUNTRIES } from '@/constants/countries';
 import { Button } from '@/components/ui/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Heading, Text } from '@/components/ui/Typography';
 
 const Login = () => {
 
@@ -40,23 +39,23 @@ const Login = () => {
 
     return (
         <div className='w-full h-full flex items-center justify-center'>
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode='wait'>
                 {isLogin ? (
                     <motion.div
-                        key="login"
+                        key='login'
                         initial={{ opacity: 0, x: -50 }}
                         exit={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="w-full h-full grid grid-cols-12"
+                        className='w-full h-full grid grid-cols-12'
                     >
-                        <div className="h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4">
-                            <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
+                        <div className='h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4'>
+                            <h2 className='absolute text-9xl text-center font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center">
+                            <div className='w-auto h-auto flex items-center justify-center'>
                                 <Image
-                                    src="/images/login-img.svg"
-                                    alt="login-image"
+                                    src='/images/login-img.svg'
+                                    alt='login-image'
                                     width={400}
                                     height={400}
                                     className='object-cover aspect-square'
@@ -66,44 +65,43 @@ const Login = () => {
                         </div>
 
                         <div className='h-full col-span-12 lg:col-span-6 flex items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Login</h3>
+                            <div className='w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+                                <Heading level='h3' className='text-background text-left'>Login</Heading>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
-                                        label="Email Address"
-                                        type="email"
-                                        variant="outlined"
+                                        label='Email Address'
+                                        type='email'
+                                        variant='outlined'
                                         fullWidth
-                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={loginData.email}
                                         onChange={(e) => {
                                             setLoginData(prev => ({ ...prev, email: e.target.value }));
-                                            setErrors(prev => ({ ...prev, email: "" }));
+                                            setErrors(prev => ({ ...prev, email: '' }));
                                         }}
                                         error={!!errors.email}
                                         helperText={errors.email}
                                     />
 
                                     <CustomTextField
-                                        label="Password"
-                                        type="password"
-                                        variant="outlined"
+                                        label='Password'
+                                        type='password'
+                                        variant='outlined'
                                         fullWidth
                                         value={loginData.password}
                                         onChange={(e) => {
                                             setLoginData(prev => ({ ...prev, password: e.target.value }));
-                                            setErrors(prev => ({ ...prev, password: "" }));
+                                            setErrors(prev => ({ ...prev, password: '' }));
                                         }}
                                         error={!!errors.password}
                                         helperText={errors.password}
                                     />
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:gap-x-4">
-                                    <div className="flex items-center justify-center">
+                                <div className='flex flex-col sm:flex-row items-center justify-between gap-y-4 sm:gap-x-4'>
+                                    <div className='flex items-center justify-center'>
                                         <CustomCheckbox
-                                            label="Remember Me"
+                                            label='Remember Me'
                                             checked={checked}
                                             onChange={(e) => setChecked(e.target.checked)}
                                             slotProps={{
@@ -112,27 +110,27 @@ const Login = () => {
                                         />
                                     </div>
 
-                                    <div className="flex items-center justify-center">
-                                        <span className="text-background font-base border-b-2 border-b-background cursor-pointer">Forgot Password?</span>
+                                    <div className='flex items-center justify-center'>
+                                        <Text as='span' variant='body' className='text-background border-b-2 border-b-background cursor-pointer'>Forgot Password?</Text>
                                     </div>
                                 </div>
 
                                 <div className='w-full h-auto flex flex-col gap-y-4'>
-                                    <Button name="Login" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name='Login' btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
 
-                                    <p className="text-background text-left font-base">Not Registered?</p>
+                                    <Text variant='body' className='text-background text-left'>Not Registered?</Text>
 
-                                    <Button name="Register" onClick={() => setIsLogin(false)} btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name='Register' onClick={() => setIsLogin(false)} btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
                                 </div>
 
-                                <div className="flex flex-col items-center justify-center gap-y-4">
-                                    <p className="text-background text-center font-base">Or Login Google</p>
+                                <div className='flex flex-col items-center justify-center gap-y-4'>
+                                    <Text variant='body' className='text-background text-center'>Continue with Google</Text>
 
                                     <div className='w-full h-auto flex items-center justify-center'>
                                         <button className='w-10 h-10 flex items-center justify-center cus-animated-bg border border-outline rounded-full p-2 cursor-pointer' style={{ '--animated-bg-color': 'var(--color-on-primary)' } as React.CSSProperties}>
                                             <Image
-                                                src="/icons/google-icon.svg"
-                                                alt="google-icon"
+                                                src='/icons/google-icon.svg'
+                                                alt='google-icon'
                                                 width={24}
                                                 height={24}
                                                 className='object-cover'
@@ -146,70 +144,69 @@ const Login = () => {
                     </motion.div>
                 ) : (
                     <motion.div
-                        key="register"
+                        key='register'
                         initial={{ opacity: 0, x: 50 }}
                         exit={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="w-full h-full grid grid-cols-12"
+                        className='w-full h-full grid grid-cols-12'
                     >
                         <div className='h-full col-span-12 lg:col-span-6 items-center justify-center md:p-4'>
-                            <div className="w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8">
-                                <h3 className="text-2xl md:text-3xl text-background text-left font-heading">Register</h3>
+                            <div className='w-full h-auto flex flex-col bg-on-background border-2 border-on-background rounded-lg p-4 md:p-8 gap-y-8'>
+                                <Heading level='h3' className='text-background text-left'>Register</Heading>
 
                                 <div className='w-full h-auto flex flex-col gap-y-8'>
                                     <CustomTextField
-                                        label="First Name"
-                                        type="text"
-                                        variant="outlined"
+                                        label='First Name'
+                                        type='text'
+                                        variant='outlined'
                                         fullWidth
                                         value={registerData.fname}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, fname: e.target.value }));
-                                            setErrors(prev => ({ ...prev, fname: "" }));
+                                            setErrors(prev => ({ ...prev, fname: '' }));
                                         }}
                                         error={!!errors.fname}
                                         helperText={errors.fname}
                                     />
 
                                     <CustomTextField
-                                        label="Last Name"
-                                        type="text"
-                                        variant="outlined"
+                                        label='Last Name'
+                                        type='text'
+                                        variant='outlined'
                                         fullWidth
                                         value={registerData.lname}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, lname: e.target.value }));
-                                            setErrors(prev => ({ ...prev, lname: "" }));
+                                            setErrors(prev => ({ ...prev, lname: '' }));
                                         }}
                                         error={!!errors.lname}
                                         helperText={errors.lname}
                                     />
 
                                     <CustomTextField
-                                        label="Email Address"
-                                        type="email"
-                                        variant="outlined"
+                                        label='Email Address'
+                                        type='email'
+                                        variant='outlined'
                                         fullWidth
-                                        endIcon={<FontAwesomeIcon icon={faEnvelope} />}
                                         value={registerData.email}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, email: e.target.value }));
-                                            setErrors(prev => ({ ...prev, email: "" }));
+                                            setErrors(prev => ({ ...prev, email: '' }));
                                         }}
                                         error={!!errors.email}
                                         helperText={errors.email}
                                     />
 
                                     <CustomTextField
-                                        label="Password"
-                                        type="password"
-                                        variant="outlined"
+                                        label='Password'
+                                        type='password'
+                                        variant='outlined'
                                         fullWidth
                                         value={registerData.password}
                                         onChange={(e) => {
                                             setRegisterData(prev => ({ ...prev, password: e.target.value }));
-                                            setErrors(prev => ({ ...prev, password: "" }));
+                                            setErrors(prev => ({ ...prev, password: '' }));
                                         }}
                                         error={!!errors.password}
                                         helperText={errors.password}
@@ -222,14 +219,14 @@ const Login = () => {
                                         />
 
                                         <CustomTextField
-                                            label="Mobile Number"
-                                            type="number"
-                                            variant="outlined"
+                                            label='Mobile Number'
+                                            type='number'
+                                            variant='outlined'
                                             fullWidth
                                             value={registerData.mobileNum}
                                             onChange={(e) => {
                                                 setRegisterData(prev => ({ ...prev, mobileNum: Number(e.target.value) }));
-                                                setErrors(prev => ({ ...prev, mobileNum: "" }));
+                                                setErrors(prev => ({ ...prev, mobileNum: '' }));
                                             }}
                                             error={!!errors.mobileNum}
                                             helperText={errors.mobileNum}
@@ -238,22 +235,22 @@ const Login = () => {
                                 </div>
 
                                 <div className='w-full h-auto flex flex-col gap-y-4'>
-                                    <Button name="Register" btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name='Register' btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
 
-                                    <p className="text-background text-left font-base">Already Registered?</p>
+                                    <Text variant='body' className='text-background text-left'>Already Registered?</Text>
 
-                                    <Button name="Login" onClick={() => setIsLogin(true)} btnContainer="w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group" btnPing="bg-on-primary group-hover:bg-primary" btnPingDot="bg-on-primary group-hover:bg-primary" />
+                                    <Button name='Login' onClick={() => setIsLogin(true)} btnContainer='w-full bg-primary text-on-primary hover:bg-on-primary hover:text-primary group' btnPing='bg-on-primary group-hover:bg-primary' btnPingDot='bg-on-primary group-hover:bg-primary' />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4">
-                            <h2 className="absolute text-9xl text-center font-heading custom-text-style" style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
+                        <div className='h-full lg:col-span-6 hidden lg:flex items-center justify-center md:p-4'>
+                            <h2 className='absolute text-9xl text-center font-heading custom-text-style' style={{ WebkitTextStroke: '1px var(--color-on-background)' }}>Worky</h2>
 
-                            <div className="w-auto h-auto flex items-center justify-center">
+                            <div className='w-auto h-auto flex items-center justify-center'>
                                 <Image
-                                    src="/images/register-img.svg"
-                                    alt="register-image"
+                                    src='/images/register-img.svg'
+                                    alt='register-image'
                                     width={400}
                                     height={400}
                                     className='object-cover aspect-square'

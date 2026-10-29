@@ -7,10 +7,10 @@ import { categories } from '@/constants/categories';
 import { TiltCard } from '@/components/ui/TiltCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { Heading, Text } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import { HorizontalRule } from '@/components/ui/HorizontalRule';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { Heading, Text } from '@/components/ui/Typography';
 
 const Index = () => {
 
@@ -25,13 +25,13 @@ const Index = () => {
       <section className='w-full h-auto bg-on-background rounded-lg'>
         <div className='w-full h-auto grid grid-cols-12 grid-rows-12'>
 
-          <div className='col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-4 flex items-center md:items-start p-4'>
+          <div className='col-start-1 col-span-12 md:col-span-4 row-start-1 row-span-4 md:row-span-7 flex items-center md:items-start p-4'>
             <Heading level='h3' className='text-center md:text-left custom-text-style' style={{ WebkitTextStroke: '1px var(--color-background)' }}>
               Find skilled freelancers ready to bring your ideas to Life. <span className='text-primary-container'>Post your project, connect with talent and get quality work done—on your Terms.</span>
             </Heading>
           </div>
 
-          <div className='col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-5 md:row-start-4 row-span-4 md:row-span-6 flex items-center justify-center p-4 overflow-hidden'>
+          <div className='col-start-1 md:col-start-5 col-span-12 md:col-span-4 row-start-5 md:row-start-1 row-span-4 md:row-span-12 flex items-center justify-center p-4 overflow-hidden'>
             <Image
               src='/images/home-img.svg'
               alt='home-img'
@@ -42,7 +42,7 @@ const Index = () => {
             />
           </div>
 
-          <div className='col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-9 row-span-4 flex items-center md:items-end p-4'>
+          <div className='col-start-1 md:col-start-9 col-span-12 md:col-span-4 row-start-9 md:row-start-6 row-span-4 md:row-span-7 flex items-center md:items-end p-4'>
             <Heading level='h3' className='text-center md:text-right custom-text-style' style={{ WebkitTextStroke: '1px var(--color-background)' }}>
               <span className='text-primary-container'>Turn your skills into Income.</span> Create your profile, showcase your expertise and start getting hired by clients who value what you Do.
             </Heading>
