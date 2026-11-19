@@ -3,14 +3,14 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import { categories } from '@/constants/categories';
-import { TiltCard } from '@/components/ui/TiltCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { categories } from '@/constants/categories';
+import { TiltCard } from '@/components/ui/TiltCard';
 import { Button } from '@/components/ui/Button';
 import { HorizontalRule } from '@/components/ui/HorizontalRule';
-import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { Heading, Text } from '@/components/ui/Typography';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 
 const Index = () => {
 

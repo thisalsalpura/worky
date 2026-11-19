@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Gig } from '@/components/interfaces/Gig';
+import { GigCard } from '@/components/ui/GigCard';
+import { Button } from '@/components/ui/Button';
+import { Heading, Text } from '@/components/ui/Typography';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomSelect } from '@/components/ui/mui/CustomSelect';
-import { Button } from '@/components/ui/Button';
-import { GigCard } from '@/components/ui/GigCard';
 import { CustomPagination } from '@/components/ui/mui/CustomPagination';
-import { Heading, Text } from '@/components/ui/Typography';
 
 const Advanced_Search = () => {
 

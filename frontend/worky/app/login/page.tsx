@@ -1,14 +1,14 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Country, User } from '@/components/interfaces/User';
 import { AnimatePresence, motion } from 'framer-motion';
+import { COUNTRIES } from '@/constants/countries';
+import { Country, User } from '@/components/interfaces/User';
+import { Button } from '@/components/ui/Button';
+import { Heading, Text } from '@/components/ui/Typography';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
 import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
-import { COUNTRIES } from '@/constants/countries';
-import { Button } from '@/components/ui/Button';
-import { Heading, Text } from '@/components/ui/Typography';
 
 const Login = () => {
 

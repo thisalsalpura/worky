@@ -1,17 +1,17 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Country, User } from '@/components/interfaces/User';
-import { COUNTRIES } from '@/constants/countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faLocationDot, faShare, faEnvelopeCircleCheck, faPersonCircleCheck, faPlugCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faTrashCan } from '@fortawesome/free-regular-svg-icons';
-import { CustomSelect } from '@/components/ui/mui/CustomSelect';
-import { CustomTextField } from '@/components/ui/mui/CustomTextField';
-import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
+import { COUNTRIES } from '@/constants/countries';
+import { Country, User } from '@/components/interfaces/User';
 import { Button } from '@/components/ui/Button';
-import { Heading, Text } from '@/components/ui/Typography';
 import { HorizontalRule } from '@/components/ui/HorizontalRule';
+import { Heading, Text } from '@/components/ui/Typography';
+import { CustomTextField } from '@/components/ui/mui/CustomTextField';
+import { CustomSelect } from '@/components/ui/mui/CustomSelect';
+import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector';
 
 const Profile = () => {
 
@@ -140,9 +140,9 @@ const Profile = () => {
 
                             <div className='w-auto h-auto flex-1 flex flex-col items-center md:items-start justify-center'>
                                 <Text variant='body' className='text-on-background dark:text-background text-center md:text-left'>
-                                    <span className='font-semibold'>Colombo, Sri Lanka</span>
+                                    <span className='font-semibold'>Colombo, Sri Lanka.</span>
                                 </Text>
-                                <Text variant='body' className='text-on-background dark:text-background text-center md:text-left'>If you want to update your Location, click the Location icon and then click update Location.</Text>
+                                <Text variant='body' className='text-on-background dark:text-background text-center md:text-left'>If you want to update your Location, click the Location Icon and then click the Update Location.</Text>
                             </div>
                         </div>
 
@@ -385,7 +385,7 @@ const Profile = () => {
                                             <Text variant='body' className='text-on-surface-variant text-center md:text-left'>
                                                 <span className='font-semibold'>Email Verification Status</span>
                                             </Text>
-                                            <Text variant='body' className='text-on-surface-variant text-center md:text-left'>{'If you haven\u2019t verified your Email Address yet, click the Verify button and verify your Email Address.'}</Text>
+                                            <Text variant='body' className='text-on-surface-variant text-center md:text-left'>{'If you haven\u2019t verified your Email Address yet, click the Verify Button and verify your Email Address.'}</Text>
                                         </div>
                                     </div>
 
@@ -402,7 +402,7 @@ const Profile = () => {
                                             <Text variant='body' className='text-on-surface-variant text-center md:text-left'>
                                                 <span className='font-semibold'>Account Status</span>
                                             </Text>
-                                            <Text variant='body' className='text-on-surface-variant text-center md:text-left'>If your account is currently Inactive, contact the Worky Team.</Text>
+                                            <Text variant='body' className='text-on-surface-variant text-center md:text-left'>If your Account is currently Inactive, contact the Worky Team.</Text>
                                         </div>
                                     </div>
 
@@ -441,7 +441,7 @@ const Profile = () => {
                                 <Text variant='body' className='text-on-surface-variant text-center md:text-left'>
                                     <span className='font-semibold'>Subscribe the Newsletter</span>
                                 </Text>
-                                <Text variant='body' className='text-on-surface-variant text-center md:text-left'>{'By subscribing to our Newsletter, you\u2019ll receive the latest updates and news from Worky.'}</Text>
+                                <Text variant='body' className='text-on-surface-variant text-center md:text-left'>{'By Subscribing to our Newsletter, you\u2019ll receive the latest Updates and News from Worky.'}</Text>
                             </div>
                         </div>
 
@@ -458,7 +458,7 @@ const Profile = () => {
                                 <Text variant='body' className='text-on-error-container text-center md:text-left'>
                                     <span className='font-semibold'>Disconnect Account</span>
                                 </Text>
-                                <Text variant='body' className='text-on-error-container text-center md:text-left'>{'By disconnecting your Account, you\u2019ll temporarily delete your Worky Account.'}</Text>
+                                <Text variant='body' className='text-on-error-container text-center md:text-left'>{'By Disconnecting your Account, you\u2019ll temporarily delete your Worky Account.'}</Text>
                             </div>
                         </div>
 

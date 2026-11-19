@@ -5,8 +5,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { categories } from '@/constants/categories';
 import { Bubble } from '@/components/ui/Bubble';
 import { GigCard } from '@/components/ui/GigCard';
-import { CustomPagination } from '@/components/ui/mui/CustomPagination';
 import { Heading, Text } from '@/components/ui/Typography';
+import { CustomPagination } from '@/components/ui/mui/CustomPagination';
 
 const Home = () => {
     return (
@@ -112,7 +112,7 @@ const Home = () => {
                                     <Text variant='body' className='w-auto text-on-background dark:text-background line-clamp-1'>
                                         <span className='font-semibold'>Ben Stokes</span>
                                     </Text>
-                                    <Text variant='caption' className='w-auto text-on-background dark:text-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</Text>
+                                    <Text variant='caption' className='w-auto text-on-background dark:text-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa rem nesciunt quibusdam, corrupti in delectus vitae expedita odit consequatur a.</Text>
                                 </div>
                             </div>
 
@@ -134,7 +134,7 @@ const Home = () => {
                                     <Text variant='body' className='w-auto text-on-background dark:text-background line-clamp-1'>
                                         <span className='font-semibold'>Ben Stokes</span>
                                     </Text>
-                                    <Text variant='caption' className='w-auto text-on-background dark:text-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</Text>
+                                    <Text variant='caption' className='w-auto text-on-background dark:text-background line-clamp-1'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, rem nobis. Ex itaque delectus reiciendis totam voluptatum natus vitae dolore.</Text>
                                 </div>
                             </div>
                         </ul>

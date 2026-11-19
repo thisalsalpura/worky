@@ -1,22 +1,22 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faShare } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaqItem } from '@/components/interfaces/FaqItem';
-import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
-import { CustomTabs } from '@/components/ui/mui/CustomTabs';
 import { Button } from '@/components/ui/Button';
 import { Heading, Text } from '@/components/ui/Typography';
+import { CustomTabs } from '@/components/ui/mui/CustomTabs';
+import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
 
 function Bronze_Package() {
     return (
         <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
             <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Bronze Package</Heading>
 
-            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptate repellendus asperiores, consectetur voluptates ducimus obcaecati deleniti doloribus nemo ullam amet unde, nihil velit architecto vero dolore odit! Amet autem odio obcaecati voluptatibus, officiis dolor adipisci commodi placeat iure omnis, laborum voluptate possimus quis veritatis nobis consequuntur quod impedit. Nam.</Text>
 
             <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
                 <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
@@ -39,7 +39,7 @@ function Silver_Package() {
         <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
             <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Silver Package</Heading>
 
-            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, voluptate provident! Rem autem iste cum placeat explicabo sapiente id tenetur labore enim ipsam sequi est ducimus, temporibus iure laboriosam, voluptates eius accusamus consequatur voluptatem non nesciunt velit quos nostrum ab. Nam minus, quae impedit consequuntur alias quasi sunt et rem!</Text>
 
             <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
                 <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
@@ -62,7 +62,7 @@ function Gold_Package() {
         <div className='w-full h-auto flex flex-col items-start justify-start gap-y-4'>
             <Heading level='h3' as='h2' className='text-on-background dark:text-background'>Gold Package</Heading>
 
-            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam deserunt quis illo! Quas, delectus ipsa! Tempora excepturi architecto odit quia amet! Veniam dolore ipsam voluptatem, aliquid qui eius beatae!</Text>
+            <Text variant='body' className='text-on-background dark:text-background'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente repellendus iusto debitis fuga voluptatibus tempora laboriosam, eaque excepturi consequatur quis mollitia voluptatum sed recusandae unde! Delectus consequatur corporis, sint qui enim voluptatum. Accusamus consectetur error ipsa molestiae a expedita, non ab maxime veritatis quam modi, dignissimos, corrupti minima aliquid sit?</Text>
 
             <div className='w-full h-auto flex flex-row items-center justify-end gap-x-2'>
                 <FontAwesomeIcon icon={faClock} className='text-base text-on-background dark:text-background' />
@@ -93,13 +93,13 @@ const Single_Gig = () => {
     const FAQS: FaqItem[] = [
         {
             id: 'panel-1',
-            question: 'What is Lorem Ipsum?',
-            answer: 'Lorem Ipsum is placeholder text commonly used in the printing, publishing, and web design industries to demonstrate the visual form of a document without relying on meaningful content.'
+            question: 'Lorem ipsum dolor sit amet.',
+            answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque non sint quas quibusdam minima deserunt eum quisquam exercitationem accusamus nisi?'
         },
         {
             id: 'panel-2',
-            question: 'Why is Lorem Ipsum used?',
-            answer: 'Lorem Ipsum is used because it provides a natural-looking distribution of letters and words, allowing designers and developers to focus on layout, typography, and design rather than the actual content.'
+            question: 'Lorem ipsum dolor sit amet.',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea numquam autem voluptatum hic perferendis exercitationem maiores! Eaque vero cupiditate facilis?'
         }
     ];
 
@@ -140,7 +140,7 @@ const Single_Gig = () => {
             <div className='w-full h-auto md:p-4'>
                 <div className='w-full h-auto grid grid-cols-12 gap-y-8 lg:gap-x-8'>
                     <div className='col-span-12 lg:col-span-7 h-auto flex flex-col items-center justify-start gap-y-8'>
-                        <Heading level='h3' as='h2' className='w-full h-auto text-on-background'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, tenetur incidunt quis veniam quasi eos velit repellendus animi aperiam placeat voluptatibus tempore dignissimos eveniet magnam tempora facere explicabo, repellat provident?</Heading>
+                        <Heading level='h3' as='h2' className='w-full h-auto text-on-background'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas delectus vitae iste eaque fuga at est nisi asperiores reiciendis obcaecati?</Heading>
 
                         <div className='w-full h-auto flex items-center justify-start gap-x-4'>
                             <div className='w-12 h-12 shrink-0 flex items-center justify-center border border-outline rounded-full cursor-pointer'>
@@ -160,7 +160,7 @@ const Single_Gig = () => {
                                 <Text variant='body' className='w-auto text-on-background line-clamp-1'>
                                     <span className='font-semibold'>Ben Stokes</span>
                                 </Text>
-                                <Text variant='caption' className='w-auto text-on-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam ab odio aperiam nisi consequuntur, explicabo maiores saepe quod expedita sequi vel libero voluptate molestias laboriosam aliquid provident quia repellat eos!</Text>
+                                <Text variant='caption' className='w-auto text-on-background line-clamp-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, officia.</Text>
                             </div>
                         </div>
 
@@ -213,7 +213,7 @@ const Single_Gig = () => {
                             <Heading level='h3' as='p' className='text-on-background'>Description</Heading>
 
                             <Text variant='body' className='text-on-background'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti iusto quo voluptatum blanditiis eius sequi, maiores veritatis voluptatem cumque necessitatibus doloremque, vel neque ipsum beatae fuga magni asperiores saepe autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, mollitia! Unde vero dolorum asperiores numquam, ipsum reprehenderit distinctio possimus pariatur quasi eveniet voluptatum earum laudantium cupiditate suscipit ullam, alias vitae?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eligendi aperiam vero molestias nemo facere consequuntur, architecto sint! Nulla modi beatae soluta voluptatem autem sunt maiores amet ducimus quam minus cumque odit atque officiis dolor, et ipsa accusantium, eveniet dolorum aliquid perferendis, explicabo temporibus blanditiis? Ratione, delectus neque? Fuga, eligendi.
                             </Text>
 
                             <div className='w-auto h-auto flex flex-row items-center justify-start gap-x-2'>
@@ -248,10 +248,10 @@ const Single_Gig = () => {
                                     <Text variant='body' className='text-on-background group-hover:text-background'>React</Text>
                                 </div>
                                 <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <Text variant='body' className='text-on-background group-hover:text-background'>Next.js</Text>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>Tailwind CSS</Text>
                                 </div>
                                 <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
-                                    <Text variant='body' className='text-on-background group-hover:text-background'>Tailwind CSS</Text>
+                                    <Text variant='body' className='text-on-background group-hover:text-background'>Next.js</Text>
                                 </div>
                                 <div className='w-auto h-auto cus-animated-bg border border-outline-variant rounded-2xl px-4 py-2 group' style={{ '--animated-bg-color': 'var(--color-on-background)' } as React.CSSProperties}>
                                     <Text variant='body' className='text-on-background group-hover:text-background'>Figma</Text>
