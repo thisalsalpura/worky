@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { HorizontalRule } from './HorizontalRule';
 import { social_medias } from '@/constants/social_medias';
 import { Heading, Text } from '@/components/ui/Typography';
 
@@ -13,7 +14,7 @@ export function Footer() {
                     <Heading level='h3' as='h2' className='text-background text-left'>Worky</Heading>
                 </Link>
 
-                <div className='w-full h-0.5 bg-outline opacity-20' />
+                <HorizontalRule />
 
                 <div className='w-full h-auto grid grid-cols-12 items-start justify-center gap-y-4 md:gap-x-4'>
                     <div className='col-span-12 md:col-span-3 flex flex-col items-start justify-center gap-y-4'>
@@ -65,7 +66,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className='w-full h-0.5 bg-outline opacity-20' />
+                <HorizontalRule />
 
                 <div className='w-full h-auto grid grid-cols-12 items-start justify-center gap-y-4 md:gap-x-4'>
                     <div className='col-span-12 md:col-span-6 flex flex-col md:flex-row items-start justify-center md:justify-start gap-y-4 md:gap-x-4'>
@@ -99,7 +100,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className='w-full h-0.5 bg-outline opacity-20' />
+                <HorizontalRule />
 
                 <Heading level='h4' as='p' className='text-background text-center'>Copyright © 2026 Worky All Rights Reserved.</Heading>
             </div>
