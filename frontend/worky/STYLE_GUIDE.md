@@ -129,7 +129,6 @@ import Image from "next/image";
 
 // 2. Third-party library imports (alphabetical by package)
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 // 3. Absolute internal imports (@/...), grouped: interfaces → constants → lib → components

@@ -1,5 +1,9 @@
 'use client';
 import { ReactNode, useState } from 'react';
+import { COUNTRIES } from '@/constants/countries';
+import { Country } from '@/components/interfaces/User';
+import { FaqItem } from '@/components/interfaces/FaqItem';
+import { Heading, Text } from '@/components/ui/Typography';
 import { CustomTextField } from '@/components/ui/mui/CustomTextField';
 import { CustomSelect } from '@/components/ui/mui/CustomSelect';
 import { CustomCheckbox } from '@/components/ui/mui/CustomCheckbox';
@@ -7,21 +11,17 @@ import { CustomCountrySelector } from '@/components/ui/mui/CustomCountrySelector
 import { CustomTabs } from '@/components/ui/mui/CustomTabs';
 import { CustomPagination } from '@/components/ui/mui/CustomPagination';
 import { CustomAccordion } from '@/components/ui/mui/CustomAccordion';
-import { Heading, Text } from '@/components/ui/Typography';
-import { FaqItem } from '@/components/interfaces/FaqItem';
-import { Country } from '@/components/interfaces/User';
-import { COUNTRIES } from '@/constants/countries';
 
 const FAQS: FaqItem[] = [
     {
         id: 'panel-1',
-        question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ducimus, accusamus error enim veniam repudiandae? Illo vel itaque maiores adipisci magni placeat quas, soluta optio, rerum cupiditate, deleniti esse delectus?',
-        answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor assumenda placeat sit, veniam iure quia! Odio ex assumenda hic tempore! Id, maxime cumque. Similique numquam asperiores praesentium tempore accusamus distinctio?'
+        question: 'Lorem ipsum dolor sit amet.',
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum molestiae numquam ut aliquam dignissimos. Voluptatibus.'
     },
     {
         id: 'panel-2',
-        question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum incidunt laborum, omnis veniam vero nulla ratione excepturi quibusdam sequi doloribus iure eius iusto accusantium fugiat id eos itaque minus doloremque.',
-        answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum in sint provident, optio distinctio recusandae quidem. Laboriosam eveniet harum atque assumenda, quaerat necessitatibus corrupti, id quidem sapiente reprehenderit vel exercitationem?'
+        question: 'Lorem ipsum dolor sit amet.',
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident accusamus sint quasi numquam molestiae?'
     }
 ];
 
@@ -120,17 +120,17 @@ const MuiTest = () => {
                             { value: 'design', label: 'Design' }
                         ]}
                         value={selectValue}
-                        onChange={(e) => setSelectValue(e.target.value as string)}
+                        onChange={(e) => setSelectValue(String(e.target.value))}
                     />
 
                     <CustomSelect
                         label='Error State'
                         fullWidth
-                        error
-                        helperText='Please select an Option!'
                         options={[{ value: 'select', label: 'Select Option' }]}
                         value='select'
                         onChange={() => { }}
+                        error
+                        helperText='Please select an Option!'
                     />
                 </div>
             </Section>

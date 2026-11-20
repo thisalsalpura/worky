@@ -60,8 +60,10 @@ export function CustomSelect({
     ];
 
     const menuSx: SxProps<Theme> = {
-        '& .MuiPaper-root': getPopoverPaperSx(),
-        '& .MuiList-root': hideScrollbarSx,
+        '& .MuiPaper-root': {
+            ...getPopoverPaperSx(),
+            ...hideScrollbarSx
+        },
         '& .MuiMenuItem-root': getMenuItemSx(0)
     };
 
